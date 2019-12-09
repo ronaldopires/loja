@@ -1,0 +1,473 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0;
+}
+
+#iconPesquisar {
+    position: relative;
+    left: -25px;
+}
+
+span a i {
+    color: black;
+}
+
+.form-inline .form-control {
+    /* width: 400px; */
+}
+
+#menu .nav-link {
+    font-family: 'Quicksand', sans-serif;
+    color: #f0ebeb;
+}
+
+#menu2 {
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+#menu2 .nav-link {
+    color: black;
+}
+
+
+/*Caroussel*/
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.carousel-indicators li.active {
+    background: #0a3b06;
+}
+
+
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon {
+height: 100px;
+width: 100px;
+outline: black;
+background-size: 100%, 100%;
+border-radius: 50%;
+border: 1px solid black;
+background-image: none;
+}
+
+.carousel-control-next-icon:after {
+content: '>';
+font-size: 55px;
+color: red;
+}
+
+.carousel-control-prev-icon:after {
+content: '<';
+font-size: 55px;
+color: red;
+} */
+
+.carousel-inner>.carousel-item>img {
+    width: 100%;
+    height: 600px;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/*spinner*/
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #0a3b06;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .8);
+    position: fixed;
+    left: 0%;
+    top: 0;
+    z-index: 9999999999;
+    margin: 0 auto;
+    background-color: rgba(3, 21, 0, 0.69);
+}
+
+
+/*Alertas*/
+
+.alertAdd,
+.alertDel {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    z-index: 999999;
+    transition-duration: 4s;
+    opacity: 0;
+    animation: test 3s ease;
+    text-align: center;
+}
+
+@keyframes test {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*Table*/
+
+
+/*Contato*/
+
+.form-control::-webkit-input-placeholder {
+    color: rgb(10, 59, 6);
+}
+
+.form-control:-moz-placeholder {
+    color: rgba(0, 0, 0, 0.40);
+}
+
+.form-control::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.40);
+}
+
+.form-control:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.40);
+}
+
+input.form-control:focus {
+    border-color: #0a3b06;
+    box-shadow: inset 0 1px 1px rgba(151, 219, 231, 0.15), 0 0 8px rgba(78, 217, 203, 0.3);
+}
+
+textarea.form-control:focus {
+    border-color: #0a3b06;
+    box-shadow: inset 0 1px 1px rgba(10, 219, 20, 0.5), 0 0 8px rgba(10, 59, 6, 0.6);
+}
+
+
+/*Botão do modal em produtos*/
+
+
+/*Página Finalizar*/
+
+.containers {
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.64);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.64);
+    box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.64);
+}
+
+
+/**/
+
+@import url("https://fonts.googleapis.com/css?family=Cairo&display=swap");
+#pageLogin {
+    /* background-color: #004c40; */
+    height: 500px;
+    margin-top: 30px;
+}
+
+#login-container {
+    width: 450px;
+    height: auto;
+    background-color: #00796b;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#login-container h3 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+#login-container hr {
+    margin-top: 15px;
+    margin-bottom: 2.7rem;
+    width: 250px;
+    border-color: #ffffff;
+}
+
+#login-container .input-group {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#login-container .input-group span {
+    background-color: #004c40;
+    color: #ffffff;
+    border-color: #004c40;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#login-container .input-group input {
+    border: 1px solid #00796b;
+    border-radius: 0px 10px 10px 0px;
+    font-family: 'Cairo', sans-serif;
+}
+
+#login-container .input-group input:focus {
+    box-shadow: none;
+    border: 1px solid #05ffd9;
+}
+
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 55px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container-checkbox:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.container-checkbox input:checked~.checkmark {
+    background-color: #004c40;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.container-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.container-checkbox .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.btn-customized {
+    background-color: #004c40;
+    margin-top: 30px;
+    color: #ffffff;
+    border-color: #004c40;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 10px;
+    width: 150px;
+}
+
+.btn-customized:hover,
+.btn-customized:focus,
+.btn-customized:active {
+    color: #ffffff;
+    border-color: #08ad95;
+}
+
+
+/*Zoom img*/
+
+
+/* [1] The container */
+
+.img-hover-zoom {
+    height: 300px;
+    /* [1.1] Set it as per your need */
+    overflow: hidden;
+    /* [1.2] Hide the overflowing of child elements */
+}
+
+
+/* [2] Transition property for smooth transformation of images */
+
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+
+
+/* [3] Finally, transforming the image when container gets hovered */
+
+.img-hover-zoom:hover img {
+    transform: scale(1.5);
+}
+
+
+/* The Image container */
+
+.img-hover-zoom {
+    height: 300px;
+    /* Modify this according to your need */
+    overflow: hidden;
+    /* Removing this will break the effects */
+}
+
+
+/*Card Produtos */
+
+#divProduto:hover {
+    box-shadow: 6px 6px 10px #adadad;
+}
+
+
+/*Tamanho*/
+
+.tamanho {
+    background-color: #17a2b8;
+    border: 1px solid #17a2b8;
+}
+
+.tamanho input[type='radio']:checked {
+    background-color: #ffffff;
+    color: #17a2b8;
+    border: 1px solid #17a2b8;
+}
+
+input[type="radio"]:checked+label {
+    background-color: #ffffff;
+    color: #17a2b8 !important;
+    border: 1px solid #17a2b8 !important;
+}
+
+.tamanho {
+    color: #ffffff;
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tamanho:hover {
+    background-color: #ffffff;
+    color: #17a2b8;
+    border: 1px solid #17a2b8;
+}
+
+
+/*Formulário de Cadastro*/
+
+h11 {
+    color: red;
+    margin-left: 5px;
+    font-weight: bold;
+}

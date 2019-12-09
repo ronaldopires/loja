@@ -1,0 +1,5 @@
+<?php
+
+Login::Logoff();
+
+?>
