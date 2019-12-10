@@ -51,12 +51,6 @@ class Conexao extends Config
             }
         }
 
-        /* if (count($params) > 0) {
-            foreach ($params as $key => $value) {
-                $this->obj->bindvalue($key, $value);
-            }
-        } */
-
         return $this->obj->execute();
     }
 

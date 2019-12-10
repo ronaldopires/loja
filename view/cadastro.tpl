@@ -87,11 +87,11 @@
                         <input id="cpf" name="cli_cpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11">
                     </div>
 
-                    <div class="input-group col-4">
+                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento <h11> *</h11></span>
                         </div>
-                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onkeyup='showhide()'>
+                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10">
                     </div>
                     <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px; " id="newpost"></span>
 
@@ -115,7 +115,7 @@
                             <span class="input-group-text">Celular <h11> *</h11></span>
                         </div>
                         <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="13" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('## #####-####', this)">
-                    </div>
+                    </div>{*
                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Telefone</span>
@@ -123,38 +123,6 @@
                         <input id="telefone" name="cli_fone" class="form-control" placeholder="XX XXXX-XXXX" type="tel" maxlength="12" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('## ####-####', this)">
                     </div>
                 </div>
-
-                <!--
-                    <div class="form-inline mb-3">
-                        <div class="input-group col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Estado Cívil <h11> *</h11></span>
-                            </div>
-                            <select required id="Estado Civil" name="Estado Civil" class="form-control">
-                                <option value=""></option>
-                                <option value="Solteiro(a)">Solteiro(a)</option>
-                                <option value="Casado(a)">Casado(a)</option>
-                                <option value="Divorciado(a)">Divorciado(a)</option>
-                                <option value="Viuvo(a)">Viuvo(a)</option>
-                            </select>
-                        </div>
-                        <div class="input-group col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Escolaridade</span>
-                            </div>
-                            <select required id="escolaridade" name="escolaridade" class="form-control">
-                                <option value=""></option>
-                                <option value="Analfabeto">Analfabeto</option>
-                                <option value="Fundamental Incompleto">Fundamental Incompleto</option>
-                                <option value="Fundamental Completo">Fundamental Completo</option>
-                                <option value="Médio Incompleto">Médio Incompleto</option>
-                                <option value="Médio Completo">Médio Completo</option>
-                                <option value="Superior Incompleto">Superior Incompleto</option>
-                                <option value="Superior Completo">Superior Completo</option>
-                            </select>
-                        </div>
-                    </div>
-                    -->
 
                 <div class="form-inline mb-3">
                     <div class="input-group col-8">
@@ -197,13 +165,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Rua <h11> *</h11></span>
                         </div>
-                        <input id="rua" name="cli_endereco" class="form-control" required type="text">
+                        <input id="rua" name="cli_endereco" class="form-control" required type="text" value="">
                     </div>
                     <div class="input-group col-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Número <h11> *</h11></span>
                         </div>
-                        <input id="numero" name="cli_numero" class="form-control" required type="text">
+                        <input id="numero" name="cli_numero" class="form-control" required type="text" value="">
                     </div>
                 </div>
 
@@ -212,21 +180,21 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Bairro <h11> *</h11></span>
                         </div>
-                        <input id="bairro" name="cli_bairro" class="form-control" required type="text">
+                        <input id="bairro" name="cli_bairro" class="form-control" required type="text" value="">
                     </div>
                     <div class="input-group col">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Cidade <h11> *</h11></span>
                         </div>
-                        <input id="cidade" name="cli_cidade" class="form-control" required type="text">
+                        <input id="cidade" name="cli_cidade" class="form-control" required type="text" value="">
                     </div>
                     <div class="input-group col-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">UF <h11> *</h11></span>
                         </div>
-                        <input id="estado" name="cli_uf" class="form-control" required type="text">
+                        <input id="estado" name="cli_uf" class="form-control" required type="text" value="">
                     </div>
-                </div>
+                </div> *}
 
                 <div class="form-inline mb-3 justify-content-center">
                     <div class="input-group col-auto p-0">

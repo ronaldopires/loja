@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2019 at 11:36 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.8
+-- Tempo de geração: 10-Dez-2019 às 15:23
+-- Versão do servidor: 10.4.10-MariaDB
+-- versão do PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lojacarvalho`
+-- Banco de dados: `lojacarvalho`
 --
 CREATE DATABASE IF NOT EXISTS `lojacarvalho` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `lojacarvalho`;
@@ -27,7 +27,7 @@ USE `lojacarvalho`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_categorias`
+-- Estrutura da tabela `qc_categorias`
 --
 
 CREATE TABLE `qc_categorias` (
@@ -37,7 +37,7 @@ CREATE TABLE `qc_categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `qc_categorias`
+-- Extraindo dados da tabela `qc_categorias`
 --
 
 INSERT INTO `qc_categorias` (`cate_id`, `cate_nome`, `cate_slug`) VALUES
@@ -50,42 +50,35 @@ INSERT INTO `qc_categorias` (`cate_id`, `cate_nome`, `cate_slug`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_clientes`
+-- Estrutura da tabela `qc_clientes`
 --
 
 CREATE TABLE `qc_clientes` (
   `cli_id` int(11) NOT NULL,
   `cli_nome` varchar(80) NOT NULL,
   `cli_sobrenome` varchar(80) NOT NULL,
+  `cli_cpf` varchar(12) NOT NULL,
+  `cli_data_nasc` date NOT NULL,
+  `cli_sexo` char(1) NOT NULL,
+  `cli_celular` varchar(10) NOT NULL,
+  `cli_fone` varchar(10) DEFAULT NULL,
+  `cli_email` varchar(60) NOT NULL,
+  `cli_senha` varchar(40) NOT NULL,
+  `cli_confirm_senha` varchar(40) NOT NULL,
+  `cli_cep` varchar(10) NOT NULL,
   `cli_endereco` varchar(100) NOT NULL,
-  `cli_numero` varchar(20) NOT NULL,
   `cli_bairro` varchar(80) NOT NULL,
   `cli_cidade` varchar(150) NOT NULL,
   `cli_uf` varchar(2) NOT NULL,
-  `cli_cep` varchar(10) NOT NULL,
-  `cli_cpf` varchar(12) NOT NULL,
-  `cli_rg` varchar(20) NOT NULL,
-  `cli_ddd` int(2) NOT NULL,
-  `cli_fone` varchar(10) NOT NULL,
-  `cli_celular` varchar(10) NOT NULL,
-  `cli_email` varchar(60) NOT NULL,
-  `cli_pass` varchar(40) NOT NULL,
-  `cli_data_nasc` date NOT NULL,
+  `cli_numero` varchar(20) NOT NULL,
   `cli_data_cad` date NOT NULL,
   `cli_hora_cad` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `qc_clientes`
---
-
-INSERT INTO `qc_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_endereco`, `cli_numero`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_cep`, `cli_cpf`, `cli_rg`, `cli_ddd`, `cli_fone`, `cli_celular`, `cli_email`, `cli_pass`, `cli_data_nasc`, `cli_data_cad`, `cli_hora_cad`) VALUES
-(1, 'Cliente', 'Teste', 'rua teste', '2', 'teste', 'São Paulo', 'SP', '08040470', '12345678900', '123456789', 11, '123456789', '123456789', 'ronaldo.carvalho@hotmail.com', '123', '2019-09-03', '2019-11-17', '19:00:00');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_imagens`
+-- Estrutura da tabela `qc_imagens`
 --
 
 CREATE TABLE `qc_imagens` (
@@ -96,7 +89,7 @@ CREATE TABLE `qc_imagens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `qc_imagens`
+-- Extraindo dados da tabela `qc_imagens`
 --
 
 INSERT INTO `qc_imagens` (`img_id`, `img_nome`, `img_pro_id`, `img_pasta`) VALUES
@@ -107,7 +100,7 @@ INSERT INTO `qc_imagens` (`img_id`, `img_nome`, `img_pro_id`, `img_pasta`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_pedidos`
+-- Estrutura da tabela `qc_pedidos`
 --
 
 CREATE TABLE `qc_pedidos` (
@@ -126,7 +119,7 @@ CREATE TABLE `qc_pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `qc_pedidos`
+-- Extraindo dados da tabela `qc_pedidos`
 --
 
 INSERT INTO `qc_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`, `ped_ref`, `ped_pag_status`, `ped_pag_forma`, `ped_pag_tipo`, `ped_pag_codigo`, `ped_frete_valor`, `ped_frete_tipo`) VALUES
@@ -140,7 +133,7 @@ INSERT INTO `qc_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_pedidos_itens`
+-- Estrutura da tabela `qc_pedidos_itens`
 --
 
 CREATE TABLE `qc_pedidos_itens` (
@@ -152,7 +145,7 @@ CREATE TABLE `qc_pedidos_itens` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `qc_pedidos_itens`
+-- Extraindo dados da tabela `qc_pedidos_itens`
 --
 
 INSERT INTO `qc_pedidos_itens` (`item_id`, `item_produto`, `item_valor`, `item_qtd`, `item_ped_cod`) VALUES
@@ -188,7 +181,7 @@ INSERT INTO `qc_pedidos_itens` (`item_id`, `item_produto`, `item_valor`, `item_q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `qc_produtos`
+-- Estrutura da tabela `qc_produtos`
 --
 
 CREATE TABLE `qc_produtos` (
@@ -212,7 +205,7 @@ CREATE TABLE `qc_produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `qc_produtos`
+-- Extraindo dados da tabela `qc_produtos`
 --
 
 INSERT INTO `qc_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `pro_peso`, `pro_valor`, `pro_largura`, `pro_altura`, `pro_comprimento`, `pro_img`, `pro_slug`, `pro_estoque`, `pro_modelo`, `pro_ref`, `pro_fabricante`, `pro_ativo`, `pro_frete_free`) VALUES
@@ -236,81 +229,81 @@ INSERT INTO `qc_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `p
 (18, 4, 'Tenis de Corrida', 'Tenis de Corrida', 50.000, 159.00, 50, 50, 50, 'tenis-couro.jpg', 'tenis-couro-masculino', 25, 'Nike', 'Ref - 65412354', 1, '1', 'Não');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `qc_categorias`
+-- Índices para tabela `qc_categorias`
 --
 ALTER TABLE `qc_categorias`
   ADD PRIMARY KEY (`cate_id`);
 
 --
--- Indexes for table `qc_clientes`
+-- Índices para tabela `qc_clientes`
 --
 ALTER TABLE `qc_clientes`
   ADD PRIMARY KEY (`cli_id`);
 
 --
--- Indexes for table `qc_imagens`
+-- Índices para tabela `qc_imagens`
 --
 ALTER TABLE `qc_imagens`
   ADD PRIMARY KEY (`img_id`);
 
 --
--- Indexes for table `qc_pedidos`
+-- Índices para tabela `qc_pedidos`
 --
 ALTER TABLE `qc_pedidos`
   ADD PRIMARY KEY (`ped_id`);
 
 --
--- Indexes for table `qc_pedidos_itens`
+-- Índices para tabela `qc_pedidos_itens`
 --
 ALTER TABLE `qc_pedidos_itens`
   ADD PRIMARY KEY (`item_id`);
 
 --
--- Indexes for table `qc_produtos`
+-- Índices para tabela `qc_produtos`
 --
 ALTER TABLE `qc_produtos`
   ADD PRIMARY KEY (`pro_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `qc_categorias`
+-- AUTO_INCREMENT de tabela `qc_categorias`
 --
 ALTER TABLE `qc_categorias`
   MODIFY `cate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `qc_clientes`
+-- AUTO_INCREMENT de tabela `qc_clientes`
 --
 ALTER TABLE `qc_clientes`
-  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `qc_imagens`
+-- AUTO_INCREMENT de tabela `qc_imagens`
 --
 ALTER TABLE `qc_imagens`
   MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `qc_pedidos`
+-- AUTO_INCREMENT de tabela `qc_pedidos`
 --
 ALTER TABLE `qc_pedidos`
   MODIFY `ped_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `qc_pedidos_itens`
+-- AUTO_INCREMENT de tabela `qc_pedidos_itens`
 --
 ALTER TABLE `qc_pedidos_itens`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `qc_produtos`
+-- AUTO_INCREMENT de tabela `qc_produtos`
 --
 ALTER TABLE `qc_produtos`
   MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
