@@ -1,6 +1,6 @@
-{* {if $LOGADO == true}
+{if $LOGADO == true}
   
-{else} *}
+{else}
 
 <div class="container-fluid" id="pageLogin">
 
@@ -52,5 +52,4 @@
 </div>
 
 </div>
-
-{* {/if} *}
+{/if}

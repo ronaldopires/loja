@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Carrinho' => $baseDir . '/model/Carrinho.class.php',
     'Categorias' => $baseDir . '/model/Categorias.class.php',
+    'Clientes' => $baseDir . '/model/Clientes.class.php',
     'Conexao' => $baseDir . '/model/Conexao.class.php',
     'Config' => $baseDir . '/model/Config.class.php',
     'Correios' => $baseDir . '/model/Correios.class.php',
