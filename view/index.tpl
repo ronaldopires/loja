@@ -71,7 +71,7 @@
                 <span style="font-size: 18px;">
                 <i class="fas fa-user"></i>
                 <span>
-                <a href="{$PAG_LOGIN}" class="btn btn-success btn-sm" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt mr-2 text-light"></i>Login</a>
+                <a href="{$PAG_LOGIN}" class="btn btn-success btn-sm" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt mr-2 text-light"></i>Entrar</a>
                 {/if}
             </div>
         </div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-11-24 03:20:20
+/* Smarty version 3.1.34-dev-7, created on 2019-12-10 04:43:21
   from 'C:\xampp\htdocs\loja\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dd9e8e403b1b8_19474295',
+  'unifunc' => 'content_5def14595770d8_72245839',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88a1285121fb32d2e24d6766738b0f2210382789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\index.tpl',
-      1 => 1574561105,
+      1 => 1575949400,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dd9e8e403b1b8_19474295 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5def14595770d8_72245839 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -107,7 +107,7 @@ function content_5dd9e8e403b1b8_19474295 (Smarty_Internal_Template $_smarty_tpl)
                 <i class="fas fa-user"></i>
                 <span>
                 <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGIN']->value;?>
-" class="btn btn-success btn-sm" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt mr-2 text-light"></i>Login</a>
+" class="btn btn-success btn-sm" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt mr-2 text-light"></i>Entrar</a>
                 <?php }?>
             </div>
         </div>
