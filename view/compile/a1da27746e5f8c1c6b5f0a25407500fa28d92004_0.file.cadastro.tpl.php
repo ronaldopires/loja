@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-10 07:31:17
+/* Smarty version 3.1.34-dev-7, created on 2019-12-10 20:53:32
   from 'C:\xampp\htdocs\loja\view\cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5def3bb57b4c21_89849979',
+  'unifunc' => 'content_5deff7bc7bb068_70570566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1da27746e5f8c1c6b5f0a25407500fa28d92004' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\cadastro.tpl',
-      1 => 1575959333,
+      1 => 1576007604,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5def3bb57b4c21_89849979 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5deff7bc7bb068_70570566 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     function formatar(mascara, documento) {
@@ -112,11 +112,11 @@ echo '<script'; ?>
                         <input id="cpf" name="cli_cpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11">
                     </div>
 
-                    <div class="input-group col-4">
+                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento <h11> *</h11></span>
                         </div>
-                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onkeyup='showhide()'>
+                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10">
                     </div>
                     <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px; " id="newpost"></span>
 
@@ -144,121 +144,6 @@ echo '<script'; ?>
 -[0-9]<?php echo 3.4;?>
 $" OnKeyPress="formatar('## #####-####', this)">
                     </div>
-                    <div class="input-group col-4">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Telefone</span>
-                        </div>
-                        <input id="telefone" name="cli_fone" class="form-control" placeholder="XX XXXX-XXXX" type="tel" maxlength="12" pattern="\[0-9]<?php echo 2;?>
-\[0-9]<?php echo 4.6;?>
--[0-9]<?php echo 3.4;?>
-$" OnKeyPress="formatar('## ####-####', this)">
-                    </div>
-                </div>
-
-                <!--
-                    <div class="form-inline mb-3">
-                        <div class="input-group col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Estado Cívil <h11> *</h11></span>
-                            </div>
-                            <select required id="Estado Civil" name="Estado Civil" class="form-control">
-                                <option value=""></option>
-                                <option value="Solteiro(a)">Solteiro(a)</option>
-                                <option value="Casado(a)">Casado(a)</option>
-                                <option value="Divorciado(a)">Divorciado(a)</option>
-                                <option value="Viuvo(a)">Viuvo(a)</option>
-                            </select>
-                        </div>
-                        <div class="input-group col">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Escolaridade</span>
-                            </div>
-                            <select required id="escolaridade" name="escolaridade" class="form-control">
-                                <option value=""></option>
-                                <option value="Analfabeto">Analfabeto</option>
-                                <option value="Fundamental Incompleto">Fundamental Incompleto</option>
-                                <option value="Fundamental Completo">Fundamental Completo</option>
-                                <option value="Médio Incompleto">Médio Incompleto</option>
-                                <option value="Médio Completo">Médio Completo</option>
-                                <option value="Superior Incompleto">Superior Incompleto</option>
-                                <option value="Superior Completo">Superior Completo</option>
-                            </select>
-                        </div>
-                    </div>
-                    -->
-
-                <div class="form-inline mb-3">
-                    <div class="input-group col-8">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">E-mail <h11> *</h11></span>
-                        </div>
-                        <input type="email" id="email" name="cli_email" class="form-control" placeholder="email@email.com" required autocomplete="off">
-                    </div>
-                </div>
-                <div class="form-inline mb-3">
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Senha <h11> *</h11></span>
-                        </div>
-                        <input type="password" id="senha" name="cli_senha" class="form-control" placeholder="Senha" required>
-                    </div>
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Repetir Senha <h11> *</h11></span>
-                        </div>
-                        <input type="password" id="confirmsenha" name="cli_confirm_senha" class="form-control" placeholder="Confirmar Senha" required />
-                    </div>
-                    <span class="col" id="message"></span>
-                </div>
-                <hr>
-                <h5 class="text-center">Endereço</h5>
-                <hr>
-                <div class="form-inline mb-3">
-                    <div class="input-group col-auto">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">CEP <h11> *</h11></span>
-                        </div>
-                        <input id="cep" name="cli_cep" placeholder="Apenas números" class="form-control input-md" required="" value="" type="search" maxlength="8">
-                        <button type="button" class="btn btn-outline-primary ml-3" onclick="pesquisacep(cep.value)">Pesquisar</button>
-                    </div>
-                </div>
-
-                <div class="form-inline mb-3">
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Rua <h11> *</h11></span>
-                        </div>
-                        <input id="rua" name="cli_endereco" class="form-control" required type="text">
-                    </div>
-                    <div class="input-group col-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Número <h11> *</h11></span>
-                        </div>
-                        <input id="numero" name="cli_numero" class="form-control" required type="text">
-                    </div>
-                </div>
-
-                <div class="form-inline mb-3">
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Bairro <h11> *</h11></span>
-                        </div>
-                        <input id="bairro" name="cli_bairro" class="form-control" required type="text">
-                    </div>
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Cidade <h11> *</h11></span>
-                        </div>
-                        <input id="cidade" name="cli_cidade" class="form-control" required type="text">
-                    </div>
-                    <div class="input-group col-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">UF <h11> *</h11></span>
-                        </div>
-                        <input id="estado" name="cli_uf" class="form-control" required type="text">
-                    </div>
-                </div>
-
                 <div class="form-inline mb-3 justify-content-center">
                     <div class="input-group col-auto p-0">
                         <button type="submit" class="btn btn-outline-success">Cadastrar</button>
