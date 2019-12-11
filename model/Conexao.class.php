@@ -8,7 +8,7 @@ class Conexao extends Config
 
     public $paginacao_links, $totalpags, $limite, $inicio;
 
-    function __construct()
+    public function __construct()
     {
         $this->host = self::BD_HOST;
         $this->user = self::BD_USER;
@@ -29,7 +29,7 @@ class Conexao extends Config
     {
         $options = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
         );
         $link = new PDO(
             "mysql:host={$this->host};dbname={$this->banco}",
@@ -40,7 +40,7 @@ class Conexao extends Config
         return $link;
     }
 
-    function ExecuteSQL($query, array $params = NULL)
+    public function ExecuteSQL($query, array $params = null)
     {
         $this->obj = $this->Conectar()->prepare($query);
 
@@ -54,19 +54,19 @@ class Conexao extends Config
         return $this->obj->execute();
     }
 
-    function ListarDados()
+    public function ListarDados()
     {
         return $this->obj->fetch(PDO::FETCH_ASSOC);
     }
-    function TotalDados()
+    public function TotalDados()
     {
         return $this->obj->rowCount();
     }
-    function GetItens()
+    public function GetItens()
     {
         return $this->itens;
     }
-    function PaginacaoLinks($campo, $tabela)
+    public function PaginacaoLinks($campo, $tabela)
     {
         $pag = new Paginacao();
         $pag->GetPaginacao($campo, $tabela);
@@ -92,7 +92,7 @@ class Conexao extends Config
         $pag .= '<li class="page-item"><a class="page-link" href="?p=1">Primeira</a></li>';
         /*$pag .= '<li class="page-item"><a class="page-link" href=""><i class="fas fa-angle-double-left"></i></a></li>';*/
 
-        foreach ($paginas as $p) :
+        foreach ($paginas as $p):
             $pag .= '<li class="page-item"><a class="page-link" href="?p=' . $p . '">' . $p . '</a></li>';
         endforeach;
 
@@ -105,7 +105,7 @@ class Conexao extends Config
         }
     }
 
-    function ShowPaginacao()
+    public function ShowPaginacao()
     {
         return $this->Paginacao($this->paginacao_links);
     }

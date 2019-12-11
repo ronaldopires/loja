@@ -87,7 +87,7 @@
                         <input id="cpf" name="cli_cpf" placeholder="Apenas números" class="form-control" required type="text" maxlength="11">
                     </div>
 
-                     <div class="input-group col-4">
+                    <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento <h11> *</h11></span>
                         </div>
@@ -115,7 +115,7 @@
                             <span class="input-group-text">Celular <h11> *</h11></span>
                         </div>
                         <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="13" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('## #####-####', this)">
-                    </div>{*
+                    </div>
                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Telefone</span>
@@ -194,7 +194,7 @@
                         </div>
                         <input id="estado" name="cli_uf" class="form-control" required type="text" value="">
                     </div>
-                </div> *}
+                </div>
 
                 <div class="form-inline mb-3 justify-content-center">
                     <div class="input-group col-auto p-0">
