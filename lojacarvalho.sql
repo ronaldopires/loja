@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Dez-2019 às 15:23
+-- Tempo de geração: 11-Dez-2019 às 04:53
 -- Versão do servidor: 10.4.10-MariaDB
 -- versão do PHP: 7.3.12
 
@@ -60,8 +60,8 @@ CREATE TABLE `qc_clientes` (
   `cli_cpf` varchar(12) NOT NULL,
   `cli_data_nasc` date NOT NULL,
   `cli_sexo` char(1) NOT NULL,
-  `cli_celular` varchar(10) NOT NULL,
-  `cli_fone` varchar(10) DEFAULT NULL,
+  `cli_celular` varchar(13) NOT NULL,
+  `cli_fone` varchar(12) NOT NULL,
   `cli_email` varchar(60) NOT NULL,
   `cli_senha` varchar(40) NOT NULL,
   `cli_confirm_senha` varchar(40) NOT NULL,
@@ -74,6 +74,13 @@ CREATE TABLE `qc_clientes` (
   `cli_data_cad` date NOT NULL,
   `cli_hora_cad` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `qc_clientes`
+--
+
+INSERT INTO `qc_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_cpf`, `cli_data_nasc`, `cli_sexo`, `cli_celular`, `cli_fone`, `cli_email`, `cli_senha`, `cli_confirm_senha`, `cli_cep`, `cli_endereco`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_numero`, `cli_data_cad`, `cli_hora_cad`) VALUES
+(42, 'Ronaldo', 'Pires de Carvalho', '39630231808', '0000-00-00', 'm', '11 95554-4918', '11 2057-5984', 'ronaldo@hotmail.com', '3c9909afec25354d551dae21590bb26e38d53f21', '3c9909afec25354d551dae21590bb26e38d53f21', '08040740', 'Rua das Nemésias', 'Jardim Casa Pintada', 'São Paulo', 'SP', '422', '2019-12-11', '04:47:53');
 
 -- --------------------------------------------------------
 
@@ -282,7 +289,7 @@ ALTER TABLE `qc_categorias`
 -- AUTO_INCREMENT de tabela `qc_clientes`
 --
 ALTER TABLE `qc_clientes`
-  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `qc_imagens`
