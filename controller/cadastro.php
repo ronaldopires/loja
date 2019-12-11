@@ -48,6 +48,20 @@ if (isset($_POST['cli_email'])) {
 
     $clientes->Inserir();
 
+    //ASSIGNS PARA TEMPLATE
+    $smarty->assign('NOME', $cli_nome);
+    $smarty->assign('SITE', Config::SITE_NOME);
+    $smarty->assign('EMAIL', $cli_email);
+    $smarty->assign('SENHA', $cli_senha);
+    $smarty->assign('PAG_MINHA_CONTA', Rotas::pag_ClienteConta());
+    $smarty->assign('SITE_HOME', Rotas::get_siteHOME());
+    
+    $email = new EnviarEmail();
+    $assunto = 'Cadastro Efetuado - ' . Config::SITE_NOME;
+    $msg = $smarty->fetch('email_cliente_cadastro.tpl');
+    $destinatarios = array($cli_email, Config::SITE_EMAIL_ADM);
+    $email->Enviar($assunto, $msg, $destinatarios);
+
     echo '<div class="alert alert-success alertAdd">Cadastro efetuado com sucesso</div>';
     Rotas::Redirecionar(2, Rotas::pag_Login());
     exit();
