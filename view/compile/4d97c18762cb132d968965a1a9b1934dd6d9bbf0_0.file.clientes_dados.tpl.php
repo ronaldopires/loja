@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-11 21:25:09
+/* Smarty version 3.1.34-dev-7, created on 2019-12-12 03:48:24
   from 'C:\xampp\htdocs\loja\view\clientes_dados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df150a59ee6f4_83373420',
+  'unifunc' => 'content_5df1aa78e0d825_73304091',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d97c18762cb132d968965a1a9b1934dd6d9bbf0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_dados.tpl',
-      1 => 1576095908,
+      1 => 1576118904,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df150a59ee6f4_83373420 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df1aa78e0d825_73304091 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters">
         <div class="col-12 border my-4 rounded">
@@ -98,7 +98,7 @@ function content_5df150a59ee6f4_83373420 (Smarty_Internal_Template $_smarty_tpl)
                 <h5 class="text-center">Endereço</h5>
                 <hr>
                 <div class="form-inline mb-3">
-                    <div class="input-group col-auto">
+                    <div class="input-group col-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">CEP</span>
                         </div>
