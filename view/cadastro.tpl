@@ -114,13 +114,15 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Celular <h11> *</h11></span>
                         </div>
-                        <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="13" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('## #####-####', this)">
+                        <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="2">
+                        <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="10" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('#####-####', this)">
                     </div>
                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Telefone</span>
                         </div>
-                        <input id="telefone" name="cli_fone" class="form-control" placeholder="XX XXXX-XXXX" type="tel" maxlength="12" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('## ####-####', this)">
+                        <input id="ddd_fone" name="cli_ddd_fone" class="form-control col-3" placeholder="DDD" type="tel" maxlength="2">
+                        <input id="telefone" name="cli_fone" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9" pattern="\[0-9]{2}\[0-9]{4.6}-[0-9]{3.4}$" OnKeyPress="formatar('####-####', this)">
                     </div>
                 </div>
 

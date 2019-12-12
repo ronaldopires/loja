@@ -68,7 +68,7 @@
                 <h5 class="text-center">Endereço</h5>
                 <hr>
                 <div class="form-inline mb-3">
-                    <div class="input-group col-auto">
+                    <div class="input-group col-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">CEP</span>
                         </div>

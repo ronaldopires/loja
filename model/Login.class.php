@@ -33,7 +33,7 @@ class Login extends Conexao
             $_SESSION['CLI']['cli_uf'] = $lista['cli_uf'];
             $_SESSION['CLI']['cli_cpf'] = $lista['cli_cpf'];
             $_SESSION['CLI']['cli_cep'] = $lista['cli_cep'];
-            $_SESSION['CLI']['cli_ddd'] = $lista['cli_ddd'];
+            /* $_SESSION['CLI']['cli_ddd'] = $lista['cli_ddd']; */
             $_SESSION['CLI']['cli_fone'] = $lista['cli_fone'];
             $_SESSION['CLI']['cli_email'] = $lista['cli_email'];
             $_SESSION['CLI']['cli_celular'] = $lista['cli_celular'];

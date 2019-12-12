@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-11 14:35:22
+/* Smarty version 3.1.34-dev-7, created on 2019-12-12 00:42:44
   from 'C:\xampp\htdocs\loja\view\cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df0f09a1c2990_99143560',
+  'unifunc' => 'content_5df17ef4274639_88875498',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1da27746e5f8c1c6b5f0a25407500fa28d92004' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\cadastro.tpl',
-      1 => 1576070986,
+      1 => 1576107763,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df0f09a1c2990_99143560 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df17ef4274639_88875498 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     function formatar(mascara, documento) {
@@ -139,19 +139,21 @@ echo '<script'; ?>
                         <div class="input-group-prepend">
                             <span class="input-group-text">Celular <h11> *</h11></span>
                         </div>
-                        <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="13" pattern="\[0-9]<?php echo 2;?>
+                        <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="2">
+                        <input id="celular" name="cli_celular" class="form-control" required placeholder="XX XXXXX-XXXX" type="tel" maxlength="10" pattern="\[0-9]<?php echo 2;?>
 \[0-9]<?php echo 4.6;?>
 -[0-9]<?php echo 3.4;?>
-$" OnKeyPress="formatar('## #####-####', this)">
+$" OnKeyPress="formatar('#####-####', this)">
                     </div>
                     <div class="input-group col-4">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Telefone</span>
                         </div>
-                        <input id="telefone" name="cli_fone" class="form-control" placeholder="XX XXXX-XXXX" type="tel" maxlength="12" pattern="\[0-9]<?php echo 2;?>
+                        <input id="ddd_fone" name="cli_ddd_fone" class="form-control col-3" placeholder="DDD" type="tel" maxlength="2">
+                        <input id="telefone" name="cli_fone" class="form-control" placeholder="XXXX-XXXX" type="tel" maxlength="9" pattern="\[0-9]<?php echo 2;?>
 \[0-9]<?php echo 4.6;?>
 -[0-9]<?php echo 3.4;?>
-$" OnKeyPress="formatar('## ####-####', this)">
+$" OnKeyPress="formatar('####-####', this)">
                     </div>
                 </div>
 
