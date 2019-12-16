@@ -8,14 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--JQuery-->
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
     <!--FavIcon-->
     <link rel="shortcut icon" href="#" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!-- JavaScript -->
     <script src="{$GET_TEMA}/tema/js/script.js"></script>
@@ -23,7 +21,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="{$GET_TEMA}/tema/css/estilo.css" type="text/css">
     <link rel="stylesheet" href="{$GET_TEMA}/tema/css/normalize.css" type="text/css">
-    
+
 
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
@@ -37,7 +35,7 @@
 </head>
 
 <body>
-    
+
     <!--Container Principal-->
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -45,28 +43,24 @@
                 <div class="jumbotron jumbotron-fluid m-0">
                     <div class="container">
                         <h1 class="display-7">Loja Carvalho</h1>
-                        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu
-                            elemento
-                            pai.</p>
+                        <p class="lead">Este é um jumbotron modificado que ocupa todo o espaço horizontal de seu elemento pai.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row no-gutters text-right" style="border-bottom: 2px solid black;">
+        <div class="row no-gutters text-right">
             <div class="col d-flex py-3 justify-content-end">
                 <form class="form-inline">
-                    <input class="form-control" type="search" placeholder="Pesquisar produtos"
-                        aria-label="Pesquisar produtos">
+                    <input class="form-control" type="search" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
                     <span id="iconPesquisar">
                         <a href="#"><i class="fas fa-search"></i></a>
                     </span>
                 </form>
             </div>
-            
+
             <div class="col-3 py-3 pr-2">
-                {if $LOGADO == true}
-                    Olá {$USER} <a href="{$PAG_LOGOFF}" class="ml-2 btn btn-outline-danger btn-sm"><i class="fas fa-sign-in-alt mr-2"></i> Sair </a> 
-                {else}
+                {if $LOGADO == true} Olá {$USER} <a href="{$PAG_LOGOFF}" class="ml-2 btn btn-outline-danger btn-sm"><i class="fas fa-sign-in-alt mr-2"></i> Sair </a> {else}
                 <!--Login-->
                 <span style="font-size: 18px;">
                 <i class="fas fa-user"></i>
@@ -78,52 +72,51 @@
         <div class="row no-gutters">
             <div class="col p-0">
                 <!--Menu-->
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="menu">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center" id="menu">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
                         aria-expanded="false" aria-label="Alterna navegação">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                </button>
 
-                    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{$GET_SITE_HOME}"><i class="fas fa-home mr-2"></i>Home<span class="sr-only">(página atual)</span></a>
-                            </li>
-                            {if $LOGADO == true}
-                            <li class="nav-item active">
-                                <a class="nav-link" href="{$PAG_MINHA_CONTA}"><i class="fas fa-user-edit mr-2"></i>Minha Conta</a>
-                            </li>
-                            {/if}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{$PAG_PRODUTOS}"><i class="fas fa-tag mr-2"></i>Produtos</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span>Categorias</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{$PAG_PRODUTOS}">Todos</a>
-                                    <div class="dropdown-divider"></div>
+                <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{$GET_SITE_HOME}"><i class="fas fa-home mr-2"></i>Home<span class="sr-only">(página atual)</span></a>
+                        </li>
+                        {if $LOGADO == true}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{$PAG_MINHA_CONTA}"><i class="fas fa-user-edit mr-2"></i>Minha Conta</a>
+                        </li>
+                        {/if}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{$PAG_PRODUTOS}"><i class="fas fa-tag mr-2"></i>Produtos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span>Categorias</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{$PAG_PRODUTOS}">Todos</a>
+                                <div class="dropdown-divider"></div>
 
-                                    {foreach from=$CATEGORIAS item=C}
-                                    <a class="dropdown-item" href="{$C.cate_link}">{$C.cate_nome}</a>
-                                    {/foreach}
-                                </div>
-                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-right" href="{$PAG_CARRINHO}"><i class="fas fa-shopping-cart mr-2"></i>Carrinho</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{$PAG_CONTATO}"><i class="fas fa-envelope mr-2"></i>Contato</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{$PAG_SOBRE}"></i>Sobre</a>
-                            </li>
-                        </ul>
+                                {foreach from=$CATEGORIAS item=C}
+                                <a class="dropdown-item" href="{$C.cate_link}">{$C.cate_nome}</a> {/foreach}
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-right" href="{$PAG_CARRINHO}"><i class="fas fa-shopping-cart mr-2"></i>Carrinho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{$PAG_CONTATO}"><i class="fas fa-envelope mr-2"></i>Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{$PAG_SOBRE}"></i>Sobre</a>
+                        </li>
+                    </ul>
 
-                    </div>
+                </div>
                 </nav>
             </div>
         </div>
@@ -134,10 +127,8 @@
         <div class="container-fluid">
             <div class="row no-gutters">
                 <div class="col-12 p-0">
-                <!-- Rotas das páginas -->
-                    {php}
-                        Rotas::get_Pagina();
-                    {/php}
+                    <!-- Rotas das páginas -->
+                    {php} Rotas::get_Pagina(); {/php}
                 </div>
             </div>
         </div>
@@ -149,20 +140,13 @@
                 <p>2019</p>
             </div>
         </div>
-        
+
         <!--End container -->
     </div>
 
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-    {* <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script> *}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <!-- Popper.js, Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -8,11 +8,12 @@ if (isset($_POST['cli_email'])) {
     $cli_cpf = $_POST['cli_cpf'];
     $cli_data_nasc = $_POST['cli_data_nasc'];
     $cli_sexo = $_POST['cli_sexo'];
+    $cli_ddd_celular = $_POST['cli_ddd_celular'];
     $cli_celular = $_POST['cli_celular'];
+    $cli_ddd_fone = $_POST['cli_ddd_fone'];
     $cli_fone = $_POST['cli_fone'];
     $cli_email = $_POST['cli_email'];
     $cli_senha = $_POST['cli_senha'];
-    $cli_confirm_senha = $_POST['cli_confirm_senha'];
     $cli_cep = $_POST['cli_cep'];
     $cli_endereco = $_POST['cli_endereco'];
     $cli_numero = $_POST['cli_numero'];
@@ -31,11 +32,12 @@ if (isset($_POST['cli_email'])) {
         $cli_cpf,
         $cli_data_nasc,
         $cli_sexo,
+        $cli_ddd_celular,
         $cli_celular,
+        $cli_ddd_fone,
         $cli_fone,
         $cli_email,
         $cli_senha,
-        $cli_confirm_senha,
         $cli_cep,
         $cli_endereco,
         $cli_numero,

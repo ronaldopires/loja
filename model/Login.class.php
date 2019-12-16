@@ -33,15 +33,16 @@ class Login extends Conexao
             $_SESSION['CLI']['cli_uf'] = $lista['cli_uf'];
             $_SESSION['CLI']['cli_cpf'] = $lista['cli_cpf'];
             $_SESSION['CLI']['cli_cep'] = $lista['cli_cep'];
-            /* $_SESSION['CLI']['cli_ddd'] = $lista['cli_ddd']; */
+            $_SESSION['CLI']['cli_ddd_fone'] = $lista['cli_ddd_fone'];
             $_SESSION['CLI']['cli_fone'] = $lista['cli_fone'];
             $_SESSION['CLI']['cli_email'] = $lista['cli_email'];
+            $_SESSION['CLI']['cli_ddd_celular'] = $lista['cli_ddd_celular'];
             $_SESSION['CLI']['cli_celular'] = $lista['cli_celular'];
             $_SESSION['CLI']['cli_data_nasc'] = $lista['cli_data_nasc'];
             $_SESSION['CLI']['cli_hora_cad'] = $lista['cli_hora_cad'];
             $_SESSION['CLI']['cli_data_cad'] = $lista['cli_data_cad'];
             $_SESSION['CLI']['cli_senha'] = $lista['cli_senha'];
-            Rotas::Redirecionar(0, Rotas::pag_MinhaConta());
+            Rotas::Redirecionar(0, Rotas::pag_MeuPerfil());
         } else {
 
         }

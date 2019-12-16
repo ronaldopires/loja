@@ -2,7 +2,7 @@
 
         class Clientes extends Conexao
         {
-            private $cli_nome, $cli_sobrenome, $cli_cpf, $cli_data_nasc, $cli_sexo, $cli_celular, $cli_fone, $cli_email, $cli_senha, $cli_confirm_senha, $cli_cep, $cli_endereco, $cli_numero, $cli_bairro, $cli_cidade, $cli_uf, $cli_data_cad,
+            private $cli_nome, $cli_sobrenome, $cli_cpf, $cli_data_nasc, $cli_sexo, $cli_ddd_celular, $cli_celular, $cli_ddd_fone, $cli_fone, $cli_email, $cli_senha, $cli_cep, $cli_endereco, $cli_numero, $cli_bairro, $cli_cidade, $cli_uf, $cli_data_cad,
                 $cli_hora_cad;
 
             public function __construct()
@@ -16,11 +16,12 @@
                 $cli_cpf,
                 $cli_data_nasc,
                 $cli_sexo,
+                $cli_ddd_celular,
                 $cli_celular,
+                $cli_ddd_fone,
                 $cli_fone,
                 $cli_email,
                 $cli_senha,
-                $cli_confirm_senha,
                 $cli_cep,
                 $cli_endereco,
                 $cli_numero,
@@ -35,11 +36,12 @@
                 $this->setCli_cpf($cli_cpf);
                 $this->setCli_data_nasc($cli_data_nasc);
                 $this->setCli_sexo($cli_sexo);
+                $this->setCli_ddd_celular($cli_ddd_celular);
                 $this->setCli_celular($cli_celular);
+                $this->setCli_ddd_fone($cli_ddd_fone);
                 $this->setCli_fone($cli_fone);
                 $this->setCli_email($cli_email);
                 $this->setCli_senha($cli_senha);
-                $this->setCli_confirm_senha($cli_confirm_senha);
                 $this->setCli_cep($cli_cep);
                 $this->setCli_endereco($cli_endereco);
                 $this->setCli_numero($cli_numero);
@@ -63,7 +65,7 @@
                     exit();
                 }
                 //query para inserir clientes
-                $query = "INSERT INTO {$this->prefix}clientes (cli_nome, cli_sobrenome, cli_cpf, cli_data_nasc, cli_sexo, cli_celular, cli_fone, cli_email, cli_senha, cli_confirm_senha, cli_cep, cli_endereco, cli_numero, cli_bairro, cli_cidade, cli_uf, cli_data_cad, cli_hora_cad) VALUES (:cli_nome, :cli_sobrenome, :cli_cpf, :cli_data_nasc, :cli_sexo, :cli_celular, :cli_fone, :cli_email, :cli_senha, :cli_confirm_senha, :cli_cep, :cli_endereco, :cli_numero, :cli_bairro, :cli_cidade, :cli_uf, :cli_data_cad, :cli_hora_cad) ";
+                $query = "INSERT INTO {$this->prefix}clientes (cli_nome, cli_sobrenome, cli_cpf, cli_data_nasc, cli_sexo, cli_ddd_celular, cli_celular, cli_ddd_fone, cli_fone, cli_email, cli_senha, cli_cep, cli_endereco, cli_numero, cli_bairro, cli_cidade, cli_uf, cli_data_cad, cli_hora_cad) VALUES (:cli_nome, :cli_sobrenome, :cli_cpf, :cli_data_nasc, :cli_sexo, :cli_ddd_celular, :cli_celular, :cli_ddd_fone, :cli_fone, :cli_email, :cli_senha, :cli_cep, :cli_endereco, :cli_numero, :cli_bairro, :cli_cidade, :cli_uf, :cli_data_cad, :cli_hora_cad) ";
 
                 $params = array(
                     ':cli_nome' => $this->getCli_nome(),
@@ -71,11 +73,12 @@
                     ':cli_cpf' => $this->getCli_cpf(),
                     ':cli_data_nasc' => $this->getCli_data_nasc(),
                     ':cli_sexo' => $this->getCli_sexo(),
+                    ':cli_ddd_celular' => $this->getCli_ddd_celular(),
                     ':cli_celular' => $this->getCli_celular(),
+                    ':cli_ddd_fone' => $this->getCli_ddd_fone(),
                     ':cli_fone' => $this->getCli_fone(),
                     ':cli_email' => $this->getCli_email(),
                     ':cli_senha' => $this->getCli_senha(),
-                    ':cli_confirm_senha' => $this->getCli_confirm_senha(),
                     ':cli_cep' => $this->getCli_cep(),
                     ':cli_endereco' => $this->getCli_endereco(),
                     ':cli_numero' => $this->getCli_numero(),
@@ -88,6 +91,63 @@
 
                 $this->ExecuteSQL($query, $params);
             }
+
+            //Metodo para editar os dados do cliente
+            function Editar($id)
+            {
+                // verifico se ja tem este CPF no banco
+                if ($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_SESSION['CLI']['cli_cpf']) :
+                    echo '<div class="alert alert-danger text-center alertAdd" id="mostrar_erro"> Este CPF já existe </div>';
+                    Rotas::Redirecionar(2, Rotas::pag_CLienteDados());
+                    exit();
+                endif;
+                // verifica se o email já esta cadastrado 
+                if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_SESSION['CLI']['cli_email']) :
+                    echo '<div class="alert alert-danger text-center" id="mostrar_erro"> Este E-mail já existe </div>';
+                    Rotas::Redirecionar(2, Rotas::pag_CLienteDados());
+                    exit();
+                endif;
+
+                // caso passou na verificação grava no banco
+                $query = " UPDATE {$this->prefix}clientes SET cli_nome=:cli_nome, cli_sobrenome=:cli_sobrenome,cli_data_nasc=:cli_data_nasc,";
+                $query .= " cli_cpf=:cli_cpf, cli_ddd_fone=:cli_ddd_fone,cli_fone=:cli_fone,cli_ddd_celular=:cli_ddd_celular, cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro ,";
+                $query .= " cli_cidade=:cli_cidade ,cli_uf=:cli_uf ,cli_cep=:cli_cep,cli_email=:cli_email ,cli_data_cad=:cli_data_cad, cli_hora_cad=:cli_hora_cad ";
+                $query .= " WHERE  cli_id = :cli_id";
+                //  $query .=" (:cli_nome, :cli_sobrenome,:cli_data_nasc,:cli_rg,";
+                //  $query .=" :cli_cpf, :cli_ddd,:cli_fone,:cli_celular ,:cli_endereco ,:cli_numero,:cli_bairro ,";
+                //  $query .=" :cli_cidade ,:cli_uf ,:cli_cep ,:cli_email ,:cli_data_cad, :cli_hora_cad, :cli_senha)";  
+
+                $params = array(
+                    ':cli_nome'     => $this->getCli_nome(),
+                    ':cli_sobrenome' => $this->getCli_sobrenome(),
+                    ':cli_data_nasc' => $this->getCli_data_nasc(),
+                    ':cli_cpf'      => $this->getCli_cpf(),
+                    ':cli_ddd_fone'      => $this->getCli_ddd_fone(),
+                    ':cli_fone'     => $this->getCli_fone(),
+                    ':cli_ddd_celular'  => $this->getCli_ddd_celular(),
+                    ':cli_celular'  => $this->getCli_celular(),
+                    ':cli_endereco' => $this->getCli_endereco(),
+                    ':cli_numero'   => $this->getCli_numero(),
+                    ':cli_bairro'   => $this->getCli_bairro(),
+                    ':cli_cidade'   => $this->getCli_cidade(),
+                    ':cli_uf'       => $this->getCli_uf(),
+                    ':cli_cep'      => $this->getCli_cep(),
+                    ':cli_email'    => $this->getCli_email(),
+                    ':cli_data_cad' => $this->getCli_data_cad(),
+                    ':cli_hora_cad' => $this->getCli_hora_cad(),
+                    /* ':cli_senha'    => $this->getCli_senha(), */
+                    ':cli_id'       => (int) $id
+
+                );
+
+                //  echo $query;
+                if ($this->ExecuteSQL($query, $params)) :
+                    return true;
+                else :
+                    return false;
+                endif;
+            }
+
             //Buscar se o CPF do cliente já existe
             public function GetClienteCPF($cpf)
             {
@@ -139,9 +199,17 @@
             {
                 return $this->cli_sexo;
             }
+            public function getCli_ddd_celular()
+            {
+                return $this->cli_ddd_celular;
+            }
             public function getCli_celular()
             {
                 return $this->cli_celular;
+            }
+            public function getCli_ddd_fone()
+            {
+                return $this->cli_ddd_fone;
             }
             public function getCli_fone()
             {
@@ -155,10 +223,7 @@
             {
                 return $this->cli_senha;
             }
-            public function getCli_confirm_senha()
-            {
-                return $this->cli_confirm_senha;
-            }
+
             public function getCli_cep()
             {
                 return $this->cli_cep;
@@ -226,9 +291,17 @@
             {
                 $this->cli_sexo = $cli_sexo;
             }
+            public function setCli_ddd_celular($cli_ddd_celular)
+            {
+                $this->cli_ddd_celular = $cli_ddd_celular;
+            }
             public function setCli_celular($cli_celular)
             {
                 $this->cli_celular = $cli_celular;
+            }
+            public function setCli_ddd_fone($cli_ddd_fone)
+            {
+                $this->cli_ddd_fone = $cli_ddd_fone;
             }
             public function setCli_fone($cli_fone)
             {
@@ -253,10 +326,7 @@
             {
                 $this->cli_senha = md5($cli_senha);
             }
-            public function setCli_confirm_senha($cli_confirm_senha)
-            {
-                $this->cli_confirm_senha = md5($cli_confirm_senha);
-            }
+
             public function setCli_cep($cli_cep)
             {
                 $cep = filter_var($cli_cep, FILTER_SANITIZE_NUMBER_INT);

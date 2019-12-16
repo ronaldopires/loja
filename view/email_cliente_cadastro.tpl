@@ -1,5 +1,3 @@
-<!-- CORPO DA PÁGINA DE EMAIL CADASTRO CLIENTE -->
-
 <h3>Olá {$NOME} , obrigado por se cadastrar em {$SITE}</h3>
 
 <p>Cadastro efetuado com sucesso, para fazer o login use seu email cadastrado ( {$EMAIL} ) e sua senha</p>
