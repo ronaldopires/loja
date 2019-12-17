@@ -25,31 +25,22 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="dtnasc" name="cli_data_nasc" class="form-control input-md" type="text" maxlength="10" value="{$CLI_DATA_NASC}" required>
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control input-md" type="date" maxlength="10" value="{$CLI_DATA_NASC}" required>
                     </div>
 
                     <div class="input-group col-4 justify-content-center">
-                        Sexo: {if cli_sexo == f}
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="feminino" value="f" checked
-                                type="radio" required>
-                            Feminino
-                        </label>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="masculino" value="m" type="radio"
-                                required>
-                            Masculino
-                        </label> {else}
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="feminino" value="f" type="radio"
-                                required>
-                            Feminino
-                        </label>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="masculino" value="m" checked
-                                type="radio" required>
-                            Masculino
-                        </label> {/if}
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nascimento</span>
+                        </div>
+                        <select class="form-control" id="sexo" name="cli_sexo" value="{$CLI_SEXO}">
+                            {if {$CLI_SEXO} == 0 }
+                            <option value="0" selected>Masculino</option>
+                            <option value="1">Feminino</option>
+                            {else}
+                            <option value="0">Masculino</option>
+                            <option value="1" selected>Feminino</option>
+                            {/if}
+                        </select>
                     </div>
                 </div>
                 <div class="form-inline mb-3">
@@ -59,14 +50,14 @@
                             <span class="input-group-text">Celular</span>
                         </div>
                         <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="3" value="{$CLI_DDD_CELULAR}">
-                        <input id="celular" name="cli_celular" class="form-control " type="tel " maxlength="13 " value="{$CLI_CELULAR}" required>
+                        <input id="celular" name="cli_celular" class="form-control " type="tel " maxlength="10" value="{$CLI_CELULAR}" required>
                     </div>
                     <div class="input-group col-4 ">
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">Telefone</span>
                         </div>
                         <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3 " placeholder="DDD " type="tel " maxlength="3 " value="{$CLI_DDD_FONE} ">
-                        <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="12 " value="{$CLI_FONE}">
+                        <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="9" value="{$CLI_FONE}">
                     </div>
                 </div>
 
@@ -75,7 +66,7 @@
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">E-mail</span>
                         </div>
-                        <input type="email " id="email " name="cli_email" class="form-control " value="{$CLI_EMAIL}" readonly required disabled>
+                        <input type="email " id="email " name="cli_email" class="form-control " value="{$CLI_EMAIL}" readonly required>
                     </div>
                 </div>
                 <hr>
@@ -137,7 +128,9 @@
 
                             <div class="form-inline justify-content-center">
                                 <div class="input-group col-auto p-0">
-                                    <button type="submit" class="btn btn-success btn-sm"><i class="material-icons">done</i><span style="vertical-align: super;">Alterar dados</span></button>
+                                    <button type="submit" class="btn btn-success btn-sm"><i
+                                            class="material-icons">done</i><span style="vertical-align: super;">Alterar
+                                            dados</span></button>
                                 </div>
                             </div>
                         </div>

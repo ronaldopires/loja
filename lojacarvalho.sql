@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Dez-2019 às 04:53
+-- Tempo de geração: 17-Dez-2019 às 08:10
 -- Versão do servidor: 10.4.10-MariaDB
 -- versão do PHP: 7.3.12
 
@@ -58,13 +58,14 @@ CREATE TABLE `qc_clientes` (
   `cli_nome` varchar(80) NOT NULL,
   `cli_sobrenome` varchar(80) NOT NULL,
   `cli_cpf` varchar(12) NOT NULL,
+  `cli_sexo` varchar(20) NOT NULL,
   `cli_data_nasc` date NOT NULL,
-  `cli_sexo` char(1) NOT NULL,
-  `cli_celular` varchar(13) NOT NULL,
+  `cli_ddd_fone` int(3) NOT NULL,
   `cli_fone` varchar(12) NOT NULL,
+  `cli_ddd_celular` int(3) NOT NULL,
+  `cli_celular` varchar(13) NOT NULL,
   `cli_email` varchar(60) NOT NULL,
   `cli_senha` varchar(40) NOT NULL,
-  `cli_confirm_senha` varchar(40) NOT NULL,
   `cli_cep` varchar(10) NOT NULL,
   `cli_endereco` varchar(100) NOT NULL,
   `cli_bairro` varchar(80) NOT NULL,
@@ -79,8 +80,9 @@ CREATE TABLE `qc_clientes` (
 -- Extraindo dados da tabela `qc_clientes`
 --
 
-INSERT INTO `qc_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_cpf`, `cli_data_nasc`, `cli_sexo`, `cli_celular`, `cli_fone`, `cli_email`, `cli_senha`, `cli_confirm_senha`, `cli_cep`, `cli_endereco`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_numero`, `cli_data_cad`, `cli_hora_cad`) VALUES
-(42, 'Ronaldo', 'Pires de Carvalho', '39630231808', '0000-00-00', 'm', '11 95554-4918', '11 2057-5984', 'ronaldo@hotmail.com', '3c9909afec25354d551dae21590bb26e38d53f21', '3c9909afec25354d551dae21590bb26e38d53f21', '08040740', 'Rua das Nemésias', 'Jardim Casa Pintada', 'São Paulo', 'SP', '422', '2019-12-11', '04:47:53');
+INSERT INTO `qc_clientes` (`cli_id`, `cli_nome`, `cli_sobrenome`, `cli_cpf`, `cli_sexo`, `cli_data_nasc`, `cli_ddd_fone`, `cli_fone`, `cli_ddd_celular`, `cli_celular`, `cli_email`, `cli_senha`, `cli_cep`, `cli_endereco`, `cli_bairro`, `cli_cidade`, `cli_uf`, `cli_numero`, `cli_data_cad`, `cli_hora_cad`) VALUES
+(50, 'Ronaldo', 'Pires de Carvalho', '39630231808', '0', '0000-00-00', 11, '2057-5984', 11, '95554-4918', 'ronaldo.carvalho@hotmail.com', '202cb962ac59075b964b07152d234b70', '08040740', 'Rua das Nemésias', 'Jardim Casa Pintada', 'São Paulo', 'SP', '422', '2019-12-17', '05:21:35'),
+(51, 'Renata', 'Lopes', '33333333345', '1', '0000-00-00', 11, '2057-5984', 11, '95554-4918', 'renata@hotmail.com', '202cb962ac59075b964b07152d234b70', '08040740', 'Rua das Nemésias', 'Jardim Casa Pintada', 'São Paulo', 'SP', '422', '2019-12-17', '05:26:50');
 
 -- --------------------------------------------------------
 
@@ -130,12 +132,10 @@ CREATE TABLE `qc_pedidos` (
 --
 
 INSERT INTO `qc_pedidos` (`ped_id`, `ped_data`, `ped_hora`, `ped_cliente`, `ped_cod`, `ped_ref`, `ped_pag_status`, `ped_pag_forma`, `ped_pag_tipo`, `ped_pag_codigo`, `ped_frete_valor`, `ped_frete_tipo`) VALUES
-(1, '2019-11-17', '22:52:40', 1, '123654654', '054451ref', '', '', '', '', NULL, NULL),
-(2, '2019-11-17', '22:52:40', 1, '123654654', '054451ref', '', '', '', '', NULL, NULL),
-(3, '2019-11-17', '22:56:58', 1, '123654654', '054451ref', '', '', '', '', NULL, NULL),
-(4, '2019-11-17', '22:56:58', 1, '123654654', '054451ref', '', '', '', '', NULL, NULL),
-(5, '2019-11-17', '23:17:18', 1, 'a9d1dbc69b519c49f95a3b32fd923fb6', '054451ref', '', '', '', '', NULL, NULL),
-(6, '2019-11-17', '23:17:31', 1, 'c3b19c86ab4b059be2c9147b7d7a6f36', '054451ref', '', '', '', '', NULL, NULL);
+(8, '2019-12-17', '01:51:48', 50, '19121701124450', '19121701124450', '', '', '', '', 21.00, NULL),
+(9, '2019-12-17', '02:02:02', 51, '19121702125651', '19121702125651', '', '', '', '', 59.90, NULL),
+(10, '2019-12-17', '02:29:47', 51, '19121702124251', '19121702124251', '', '', '', '', 271.90, NULL),
+(11, '2019-12-17', '03:14:46', 50, '19121703124150', '19121703124150', '', '', '', '', 135.10, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +183,13 @@ INSERT INTO `qc_pedidos_itens` (`item_id`, `item_produto`, `item_valor`, `item_q
 (25, 18, 159.00, 1, 'a9d1dbc69b519c49f95a3b32fd923fb6'),
 (26, 16, 159.00, 1, 'a9d1dbc69b519c49f95a3b32fd923fb6'),
 (27, 14, 89.00, 1, 'a9d1dbc69b519c49f95a3b32fd923fb6'),
-(28, 14, 89.00, 1, 'c3b19c86ab4b059be2c9147b7d7a6f36');
+(28, 14, 89.00, 1, 'c3b19c86ab4b059be2c9147b7d7a6f36'),
+(29, 14, 89.00, 1, '19121518125243'),
+(30, 14, 89.00, 1, '19121701124450'),
+(31, 17, 199.00, 1, '19121702125651'),
+(32, 15, 290.00, 1, '19121702125651'),
+(33, 13, 199.00, 1, '19121702124251'),
+(34, 11, 352.00, 1, '19121703124150');
 
 -- --------------------------------------------------------
 
@@ -229,7 +235,7 @@ INSERT INTO `qc_produtos` (`pro_id`, `pro_categoria`, `pro_nome`, `pro_desc`, `p
 (11, 4, 'Tenis Masculino Sapatenis Masculino Promoção Top Roo Impaz', 'Principais Características\r\n\r\nEstilo: Casual\r\nCabedal (Parte Superior Externa): Em lona dublada para maior durabilidade.\r\nSolado: Em microexpandido para maior tração e aderência.\r\nLingueta: Macia e acolchoada\r\nPalmilha: Forrada e removível; conforto e facilidade na higienização\r\nPeso Aproximado: 475g - Tam 38 (O peso varia de acordo com a numeração)\r\nOrigem: Nacional\r\n\r\nTrocas por tamanho os custos de envio serão por conta do comprador, então caso tenha alguma duvida use campo de perguntas e só compre se estiver de acordo com o anúncio.\r\n\r\n\r\nDICAS PARA LAVAGEM: Utilizar pano úmido com sabão neutro e secar na sombra', 26.000, 352.00, 20, 20, 20, 'tenis04.jpg', 'tenis-masculino', 41, 'Impaxx', 'Ref-5465421', 1, '1', 'Não'),
 (12, 4, 'Tênis Vizzano Feminino Casual Branco', 'A super tendência que conquistou as mulheres nos últimos meses é o tênis Vizzano branco 1214.205 produzido nas cores branco, preto e bege. Como qualquer outro produto da marca Vizzano, o tênis possui muita qualidade, feito em material sintético na parte externa e têxtil na parte interna, com solado em borracha que proporciona mais conforto e segurança. Detalhes como o fechamento com cadarço com linda placa em metal chamam a atenção. Ideal para o uso no dia a dia, no trabalho, festas e também para o lazer. Compre o seu tênis casual Vizzano aqui na Modaze com o melhor preço do Brasil!', 12.000, 99.00, 10, 10, 10, 'tenis05.jpg', 'tenis-feminino', 10, 'Vizzano', 'Ref - 6545165', 1, '1', 'Não'),
 (13, 5, 'Sapato de Noiva e Festa Peep Toe – SS10 Off White', 'Sapato de Noiva e Festa SS10 - Off White Santa Scarpa\r\n\r\n\r\nSapato de Noiva e festa modelo peep toe plataforma, confeccionado em gazar especial;\r\nSapato que tem como característica o conforto proporcionando maior comodidade para aguentar horas em cima do salto;\r\nA palmilha é confeccionada em P.U com enchimento, melhorando a acomodação e o conforto dos pés;\r\nO modelo Ss10 – Off White da Santa Scarpa tem o salto alto, plataforma de 2,5cm e o solado laqueado antiderrapante que tem maior segurança e aderência.;\r\n\r\n\r\nCaracteristicas\r\n\r\n\r\nMarca: Santa Scarpa;\r\nModelo: Peep Toe;\r\nMaterial Externo: Gazar;\r\nMaterial Interno: Sintético / Têxtil;\r\nSolado: Borracha;\r\nPalminha: PU (Poliuretano);\r\nColeção: 2018.', 50.000, 199.00, 12, 12, 12, 'sapato01.jpg', 'sapato-feminino', 23, 'Santa Scarpa', 'Ref - 6546545', 1, '1', 'Não'),
-(14, 5, 'Sapatos Social Vr Verniz Masculino - Preto', 'Sapatos Social Vr Verniz Masculino.Confeccionado Sintético Solado Borracha Antiderrapante\r\n\r\nNome: Sapatos Social Vr Verniz Masculino\r\nGênero: Masculino\r\nIndicado para: Dia a Dia\r\nMaterial: Sintético\r\nAcabamento: Verniz\r\nGarantia do Fabricante: Garantia contra defeitos de fabricação\r\nOrigem: Nacional', 50.000, 89.00, 12, 12, 12, 'sapato02.jpg', 'sapato-masculino', 30, 'Vr Verniz', 'Ref - 65454444', 1, '1', 'Não'),
+(14, 5, 'Sapatos Social Vr Verniz Masculino - Preto', 'Sapatos Social Vr Verniz Masculino.Confeccionado Sintético Solado Borracha Antiderrapante\r\n\r\nNome: Sapatos Social Vr Verniz Masculino\r\nGênero: Masculino\r\nIndicado para: Dia a Dia\r\nMaterial: Sintético\r\nAcabamento: Verniz\r\nGarantia do Fabricante: Garantia contra defeitos de fabricação\r\nOrigem: Nacional', 0.200, 89.00, 12, 12, 12, 'sapato02.jpg', 'sapato-masculino', 30, 'Vr Verniz', 'Ref - 65454444', 1, '1', 'Não'),
 (15, 5, 'SAPATO DINA MIRTZ COUNTRY CROCO LINHAÇA', 'Sapato Dina Mirtz Country croco é um produto que você pode usar nas mais diversas estações do ano, torna seu look mais diferenciado. O sapato Dina Mirtz é produzido em couro com uma estampa croco, tem um vivo dourado em volta e um zíper de ferro que da mais sofisticação ao modelo. O sapato se encaixa muito bem ao pé, tem um belo conforto com um salto grosso e uma palmilha macia.', 2.000, 290.00, 12, 12, 12, 'sapato03.jpg', 'sapato-feminino', 2, 'DINA MIRTZ COUNTRY CROC', 'Ref - 899878777', 1, '1', 'Não'),
 (16, 5, 'Sapato Social Masculino Calvest Artesanal Preto com Textura', 'Descrição do Produto\r\nSapato Social Calvest é confeccionado em couro com detalhes em verniz, os elásticos em suas laterais facilitam o calce. Sua tecnologia exclusiva traz com o modelo uma malha texturizada. Acompanha uma palmilha acolchoada em P.U que permite ainda mais conforto ao modelo. O aplique da fivela com nome da marca deixam ele ainda mais exclusivo e sofisticado. As texturas, os pespontos e recortes trazem modernidade e beleza ao calçado. Sua estrutura com forro em P.U e a palmilha macia proporcionam aconchego aos pés, enquanto o solado em borracha dá estabilidade e segurança ao caminhar.\r\n\r\nDetalhes do Produto\r\nForro: PU. \r\nPalmilha: acolchoada em PU.\r\nSolado: em borracha.\r\nLargura: 10,5cm.\r\nSalto: 2,5cm.\r\nComprimento: 31cm.\r\n\r\nPeso: 1.024g (pode variar de acordo com a numeração).\r\nTodos os dados informados são aproximados, do peso às medidas.', 12.000, 159.00, 12, 12, 12, 'sapato04.jpg', 'sapato-masculino', 55, 'Calvest', 'Ref - 55546411', 1, '1', 'Não'),
 (17, 5, 'Sapato Feminino Salto Alto Bege Mixage', 'Detalhes do produto: Mixage: Sapato Feminino Salto Alto Bege Mixage - 3578933\r\nSapato Feminino Salto Alto Nude Mixage - 3578933\r\nCaracterísticas\r\nCaracterísticas GeraisMedida do Salto=9 cm aproximadamente\r\nMaterial da Palmilha=Macia\r\nMaterial da Sola=Emborrachado.\r\nMaterial do Sapato=Sintético/Verniz\r\nContem Brindes=Não\r\nModelo=5988933073\r\nReferencia=3578933\r\nGênero=Female\r\nGrupo de Idade=Adult', 12.000, 199.00, 12, 12, 12, 'sapato05.jpg', 'sapat-feminino', 10, 'Sapato Feminino Salto Alto Nude', 'Ref - 654441216', 1, '1', 'Não'),
@@ -249,7 +255,7 @@ ALTER TABLE `qc_categorias`
 -- Índices para tabela `qc_clientes`
 --
 ALTER TABLE `qc_clientes`
-  ADD PRIMARY KEY (`cli_id`);
+  ADD PRIMARY KEY (`cli_id`) USING BTREE;
 
 --
 -- Índices para tabela `qc_imagens`
@@ -289,7 +295,7 @@ ALTER TABLE `qc_categorias`
 -- AUTO_INCREMENT de tabela `qc_clientes`
 --
 ALTER TABLE `qc_clientes`
-  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `cli_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de tabela `qc_imagens`
@@ -301,13 +307,13 @@ ALTER TABLE `qc_imagens`
 -- AUTO_INCREMENT de tabela `qc_pedidos`
 --
 ALTER TABLE `qc_pedidos`
-  MODIFY `ped_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ped_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `qc_pedidos_itens`
 --
 ALTER TABLE `qc_pedidos_itens`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `qc_produtos`
