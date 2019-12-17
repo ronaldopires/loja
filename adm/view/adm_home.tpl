@@ -1,9 +1,7 @@
 <div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-sm">
-
-
-            adm
+            Painel administrativo
         </div>
     </div>
 </div>
