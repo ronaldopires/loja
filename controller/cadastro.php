@@ -6,7 +6,7 @@ if (isset($_POST['cli_email'])) {
     $cli_nome = $_POST['cli_nome'];
     $cli_sobrenome = $_POST['cli_sobrenome'];
     $cli_cpf = $_POST['cli_cpf'];
-    $cli_data_nasc = $_POST['cli_data_nasc'];
+    $cli_data_nasc = Sistema::DataAtualUS($_POST['cli_data_nasc']);
     $cli_sexo = $_POST['cli_sexo'];
     $cli_ddd_celular = $_POST['cli_ddd_celular'];
     $cli_celular = $_POST['cli_celular'];

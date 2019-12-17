@@ -133,7 +133,6 @@ class Clientes extends Conexao
 
         if ($this->ExecuteSQL($query, $params)):
             return true;
-            
         else:
             return false;
         endif;

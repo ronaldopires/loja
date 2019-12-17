@@ -8,7 +8,7 @@ class Sistema {
      */
     static function DataAtualBR(){
         
-        return date('d/m/Y') ;
+        return date('d/m/Y');
     }
     /**
      * 
@@ -16,7 +16,7 @@ class Sistema {
      */
     static function DataAtualUS(){
         
-        return date('Y-m-d') ;
+        return date('Y-m-d');
     }
     /**
      * 
