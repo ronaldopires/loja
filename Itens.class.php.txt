@@ -8,29 +8,29 @@ class Itens extends Conexao
         parent::__construct();
     }
 
-    //Select em itens do pedidos do cliente
     public function GetItensPedido($pedido, $cliente = null)
     {
-        $query = "SELECT * FROM {$this->prefix}pedidos p, {$this->prefix}pedidos_itens i, {$this->prefix}produtos d";
-        $query .= " WHERE p.ped_cod = i.item_ped_cod AND i.item_produto = d.pro_id";
-        $query .= " AND p.ped_cod = :pedido";
+        $query = "SELECT * FROM {$this->prefix}pedidos p, {$this->prefix}pedidos_itens i, {$this->prefix}produtos d ";
+        $query .= " WHERE pp.ped_cod = i.item_ped_cod AND i.item_produto = d.pro_id";
+        $query .= " AND p,ped_cod = :pedido";
 
         if ($cliente != null) {
-            $query .= " AND p.ped_cliente = {:cliente}";
+            $query .= " AND p.ped_cliente = :cliente";
             $params[':cliente'] = (int) $cliente;
         }
-        $params[':pedido'] = (int) $pedido;
-
+        $params[':cliente'] = $pedido;
         $this->ExecuteSQL($query, $params);
-        $this->GetLista();
-    }
 
+        $this->GetLista();
+
+    }
     private function GetLista()
     {
 
         $i = 1;
-        $sub = 0;
         while ($lista = $this->ListarDados()):
+            $sub = $lista['item_valor'] * $lista['item_qtd'];
+            $this->total_valor += $sub;
 
             // subtotal de cada item
             $sub = $lista['item_valor'] * $lista['item_qtd'];
@@ -63,9 +63,8 @@ class Itens extends Conexao
             $i++;
         endwhile;
     }
-
-    public function GetTotal()
-    {
+    function GetTotal(){
         return $this->total_valor;
     }
+
 }

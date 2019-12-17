@@ -64,7 +64,8 @@
             <form class="form-group p-3" action="" method="POST">
                 <h4 class="text-center">Cadastro de Cliente</h4>
                 <p class="text-right">
-                    <h11>*</h11> Campo Obrigatório </p>
+                    <h11>*</h11> Campo Obrigatório
+                </p>
 
                 <hr>
                 <h5 class="text-center">Dados Pessoais</h5>
@@ -91,21 +92,18 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento <h11> *</h11></span>
                         </div>
-                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="text" maxlength="10">
+                        <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="date" maxlength="10">
                     </div>
                     <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px; " id="newpost"></span>
 
                     <div class="input-group col-4 justify-content-end">
-                        Sexo:
-                        <h11> *</h11>
-                        <label class="form-check-label ml-3">
-                                <input class="form-check-input mr-2" name="cli_sexo" id="feminino" value="f" type="radio" required>
-                                Feminino
-                            </label>
-                        <label class="form-check-label ml-3">
-                                <input class="form-check-input mr-2" name="cli_sexo" id="masculino" value="m" type="radio" required>
-                                Masculino
-                            </label>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Sexo: <h11> *</h11></span>
+                        </div>
+                        <select class="form-control" id="sexo" name="cli_sexo">
+                            <option value="0">Masculino</option>
+                            <option value="1">Feminino</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-inline mb-3">

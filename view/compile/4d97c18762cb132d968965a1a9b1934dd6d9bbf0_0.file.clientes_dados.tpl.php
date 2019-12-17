@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-16 20:19:59
+/* Smarty version 3.1.34-dev-7, created on 2019-12-17 05:12:21
   from 'C:\xampp\htdocs\loja\view\clientes_dados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df7d8df7ed7a2_57830757',
+  'unifunc' => 'content_5df855a56bbca1_56302621',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d97c18762cb132d968965a1a9b1934dd6d9bbf0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_dados.tpl',
-      1 => 1576523997,
+      1 => 1576555937,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df855a56bbca1_56302621 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters justify-content-center">
         <div class="col-10 border my-4 rounded">
@@ -51,32 +51,27 @@ function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="dtnasc" name="cli_data_nasc" class="form-control input-md" type="text" maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DATA_NASC']->value;?>
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control input-md" type="date" maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DATA_NASC']->value;?>
 " required>
                     </div>
 
                     <div class="input-group col-4 justify-content-center">
-                        Sexo: <?php if ('cli_sexo' == 'f') {?>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="feminino" value="f" checked
-                                type="radio" required>
-                            Feminino
-                        </label>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="masculino" value="m" type="radio"
-                                required>
-                            Masculino
-                        </label> <?php } else { ?>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="feminino" value="f" type="radio"
-                                required>
-                            Feminino
-                        </label>
-                        <label class="form-check-label ml-3">
-                            <input class="form-check-input mr-2" name="cli_sexo" id="masculino" value="m" checked
-                                type="radio" required>
-                            Masculino
-                        </label> <?php }?>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Nascimento</span>
+                        </div>
+                        <select class="form-control" id="sexo" name="cli_sexo" value="<?php echo $_smarty_tpl->tpl_vars['CLI_SEXO']->value;?>
+">
+                            <?php ob_start();
+echo $_smarty_tpl->tpl_vars['CLI_SEXO']->value;
+$_prefixVariable1 = ob_get_clean();
+if ($_prefixVariable1 == 0) {?>
+                            <option value="0" selected>Masculino</option>
+                            <option value="1">Feminino</option>
+                            <?php } else { ?>
+                            <option value="0">Masculino</option>
+                            <option value="1" selected>Feminino</option>
+                            <?php }?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-inline mb-3">
@@ -87,7 +82,7 @@ function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="3" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_CELULAR']->value;?>
 ">
-                        <input id="celular" name="cli_celular" class="form-control " type="tel " maxlength="13 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_CELULAR']->value;?>
+                        <input id="celular" name="cli_celular" class="form-control " type="tel " maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_CELULAR']->value;?>
 " required>
                     </div>
                     <div class="input-group col-4 ">
@@ -96,7 +91,7 @@ function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3 " placeholder="DDD " type="tel " maxlength="3 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_FONE']->value;?>
  ">
-                        <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="12 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_FONE']->value;?>
+                        <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="9" value="<?php echo $_smarty_tpl->tpl_vars['CLI_FONE']->value;?>
 ">
                     </div>
                 </div>
@@ -107,7 +102,7 @@ function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl)
                             <span class="input-group-text ">E-mail</span>
                         </div>
                         <input type="email " id="email " name="cli_email" class="form-control " value="<?php echo $_smarty_tpl->tpl_vars['CLI_EMAIL']->value;?>
-" readonly required disabled>
+" readonly required>
                     </div>
                 </div>
                 <hr>
@@ -175,7 +170,9 @@ function content_5df7d8df7ed7a2_57830757 (Smarty_Internal_Template $_smarty_tpl)
 
                             <div class="form-inline justify-content-center">
                                 <div class="input-group col-auto p-0">
-                                    <button type="submit" class="btn btn-success btn-sm"><i class="material-icons">done</i><span style="vertical-align: super;">Alterar dados</span></button>
+                                    <button type="submit" class="btn btn-success btn-sm"><i
+                                            class="material-icons">done</i><span style="vertical-align: super;">Alterar
+                                            dados</span></button>
                                 </div>
                             </div>
                         </div>
