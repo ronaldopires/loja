@@ -10,16 +10,16 @@ class Config
     const SITE_NOME = "Loja Carvalho";
     const SITE_EMAIL_ADM = "ronaldo.carvalho@hotmail.com";
     const BD_LIMIT_PAG = 8;
+    const BD_LIMIT_PAG_2 = 6;
     const SITE_CEP = '08040740';
 
     //INFORMAÇÕES DO BANCO DE DADOS
     const
-        BD_HOST = "localhost",
-        BD_USER = "root",
-        BD_SENHA = "",
-        BD_BANCO = "lojacarvalho",
-        BD_PREFIX = "qc_";
-
+    BD_HOST = "localhost",
+    BD_USER = "root",
+    BD_SENHA = "",
+    BD_BANCO = "lojacarvalho",
+    BD_PREFIX = "qc_";
 
     //INFORMAÇÕES PARA O PHP MAILLER
     const EMAIL_HOST = "smtp.office365.com";

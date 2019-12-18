@@ -85,12 +85,31 @@ class Conexao extends Config
             return " ";
         }
     }
+    public function PaginacaoLinks2($campo, $tabela)
+    {
+        $pag = new Paginacao();
+        $pag->GetPaginacao2($campo, $tabela);
+        $this->paginacao_links = $pag->link;
+
+        $this->totalpags = $pag->totalpags;
+        $this->limite = $pag->limite;
+        $this->inicio = $pag->inicio;
+
+        $limite = $pag->limite;
+        $inicio = $pag->inicio;
+        if ($this->totalpags > 0) {
+            return " LIMIT {$inicio},{$limite}";
+        } else {
+            return " ";
+        }
+        
+    }
 
     protected function Paginacao($paginas = array())
     {
         $pag = '<ul class="pagination justify-content-center">';
         $pag .= '<li class="page-item"><a class="page-link" href="?p=1">Primeira</a></li>';
-        /*$pag .= '<li class="page-item"><a class="page-link" href=""><i class="fas fa-angle-double-left"></i></a></li>';*/
+        /* $pag .= '<li class="page-item"><a class="page-link" href="?p=' . $this->prev . '"><i class="fas fa-angle-double-left"></i></a></li>'; */
 
         foreach ($paginas as $p):
             $pag .= '<li class="page-item"><a class="page-link" href="?p=' . $p . '">' . $p . '</a></li>';

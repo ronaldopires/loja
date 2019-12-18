@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-17 16:51:35
+/* Smarty version 3.1.34-dev-7, created on 2019-12-18 05:01:10
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df931c7e1e311_96659889',
+  'unifunc' => 'content_5df9dcc68404c1_31309649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56ee9dbab1711ca502b7da58086071b9e944e44f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_index.tpl',
-      1 => 1576612294,
+      1 => 1576656070,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5df9dcc68404c1_31309649 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,12 +29,10 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!--JQuery-->
     <?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-
     <!--FavIcon-->
     <link rel="shortcut icon" href="#" />
     <!-- Bootstrap CSS -->
@@ -71,8 +69,8 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
     <header class="header">
         <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand p-0 mr-5" href="#"><img src="http://via.placeholder.com/61x14"></a>
             <div class="float-left"> <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a>
             </div>
@@ -227,7 +225,8 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                             <div class="float-left info">
                                 <p>Olá</p>
-                                <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i class="fa fa-circle text-success"></i></span> Online</a>
+                                <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i
+                                            class="fa fa-circle text-success"></i></span> Online</a>
                             </div>
                             <!-- Modal -->
                             <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -236,14 +235,18 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Alterar Status</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="col"><span id="ativo"><i class="fa fa-circle text-info"></i></span> Ativo</div>
-                                            <div class="col"><span id="inativo"><i class="fa fa-circle text-danger"></i></span> Inativo</div>
-                                            <div class="col"><span id="off"><i class="fa fa-circle text-warning"></i></span> Offline</div>
-                                            <div class="col"><span id="online"><i class="fa fa-circle text-success"></i></span> Online</div>
+                                            <div class="col"><span id="ativo"><i
+                                                        class="fa fa-circle text-info"></i></span> Ativo</div>
+                                            <div class="col"><span id="inativo"><i
+                                                        class="fa fa-circle text-danger"></i></span> Inativo</div>
+                                            <div class="col"><span id="off"><i
+                                                        class="fa fa-circle text-warning"></i></span> Offline</div>
+                                            <div class="col"><span id="online"><i
+                                                        class="fa fa-circle text-success"></i></span> Online</div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -255,11 +258,12 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <ul class="list-sidebar bg-defoult">
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['GET_SITE_ADM']->value;?>
-"><i class="fa fa-home" aria-hidden="true"></i> <span
-                                            class="nav-label">Home</span> </a></li>
+"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span> </a>
+                            </li>
                             <li>
                                 <a href="<?php echo $_smarty_tpl->tpl_vars['GET_SITE_ADM']->value;?>
-" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-down float-right"></span> </a>
+" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label">
+                                        Dashboards </span> <span class="fa fa-chevron-down float-right"></span> </a>
                                 <ul class="sub-menu collapse" id="dashboard">
                                     <li class="active"><a href="<?php echo $_smarty_tpl->tpl_vars['GET_SITE_ADM']->value;?>
 ">CSS3 Animation</a></li>
@@ -270,7 +274,7 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
                             </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_CLIENTE']->value;?>
 "><i class="fa fa-diamond"></i> <span
-                                            class="nav-label">Clientes</span></a> </li>
+                                        class="nav-label">Clientes</span></a> </li>
                             <li>
                                 <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active">
                                     <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Gráficos</span> <span class="fa fa-chevron-down float-right"></span> </a>
@@ -283,11 +287,11 @@ function content_5df931c7e1e311_96659889 (Smarty_Internal_Template $_smarty_tpl)
                             </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_PRODUTOS']->value;?>
 "><i class="fa fa-laptop"></i> <span
-                                            class="nav-label">Produtos</span></a> </li>
+                                        class="nav-label">Produtos</span></a> </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CATEGORIAS']->value;?>
 " data-toggle="collapse" data-target="#categories" class="collapsed active"><i class="fa fa-table"></i> <span
-                                            class="nav-label">Categorias</span><span
-                                            class="fa fa-chevron-down float-right"></span></a>
+                                        class="nav-label">Categorias</span><span
+                                        class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="categories">
                                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'C');
@@ -304,8 +308,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </ul>
                             </li>
                             <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><i class="fa fa-shopping-cart"></i> <span
-                                            class="nav-label">E-commerce</span><span
-                                            class="fa fa-chevron-down float-right"></span></a>
+                                        class="nav-label">E-commerce</span><span
+                                        class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="e-commerce">
                                     <li><a href=""> Products grid</a></li>
                                     <li><a href=""> Products list</a></li>
@@ -317,12 +321,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </ul>
                             </li>
                             <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>
-                                    </a></li>
+                                </a></li>
                             <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other
-                                            Pages</span></a> </li>
+                                        Pages</span></a> </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
 "><i class="fa fa-sign-out" aria-hidden="true"></i></i> <span
-                                            class="nav-label">Sair</span></a> </li>
+                                        class="nav-label">Sair</span></a> </li>
                         </ul>
                     </div>
                 </aside>
