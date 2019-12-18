@@ -27,7 +27,7 @@ class Produtos extends Conexao
     {
         //Query para buscar os produtos de uma categoria especifica.
         $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
-
+        
         $query .= " ORDER BY pro_id DESC";
 
         $query .= $this->PaginacaoLinks2("pro_id", $this->prefix . "produtos");
@@ -35,9 +35,20 @@ class Produtos extends Conexao
         $this->ExecuteSQL($query);
         $this->GetLista();
     }
+    public function GetProdutos3()
+    {
+        //Query para buscar os produtos da categoria novidades com limite de 4.
+        $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
+        
+        $query .= " WHERE cate_slug= 'categoria-novidades'";
+        $query .= " ORDER BY pro_id DESC LIMIT 4";
+
+        $this->ExecuteSQL($query);
+        $this->GetLista();
+    }
     public function GetProdutosID($id)
     {
-        //Query para buscar os produtos pelo ID.
+        //Query para buscar os pedidos pelo ID.
         $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
 
         $query .= " AND pro_id = :id";

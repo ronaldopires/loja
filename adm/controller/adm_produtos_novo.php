@@ -44,4 +44,5 @@ if (isset($_POST['pro_nome']) && isset($_POST['pro_nome'])) {
     }
 }
 
+
 $smarty->display('adm_produtos_novo.tpl');

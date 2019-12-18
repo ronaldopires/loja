@@ -3,5 +3,11 @@
         <div class="col-sm">
             Painel administrativo
         </div>
+        <div class="col-sm">
+            Painel administrativo
+        </div>
+        <div class="col-sm">
+            Painel administrativo
+        </div>
     </div>
 </div>

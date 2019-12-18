@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 02:51:46
+/* Smarty version 3.1.34-dev-7, created on 2019-12-18 17:01:04
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_novo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df9be72b66f63_51712480',
+  'unifunc' => 'content_5dfa8580ac54c7_68063958',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b93f268e5b701cd01eb4f6c8aab5520e210e2759' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_novo.tpl',
-      1 => 1576648303,
+      1 => 1576699263,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df9be72b66f63_51712480 (Smarty_Internal_Template $_smarty_tpl) {
-echo '<script'; ?>
+function content_5dfa8580ac54c7_68063958 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
->
+> -->
 
 <div class="container-fluid">
     <div class="row no-gutters">
@@ -40,7 +40,7 @@ echo '<script'; ?>
                         <input id="pro_nome" name="pro_nome" type="text" placeholder="Nome do produto" aria-label="nome produto" class="form-control" required>
                     </div>
 
-                    <div class="input-group col">
+                    <div class="input-group col-sm">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Categoria</span>
                         </div>
@@ -61,7 +61,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </select>
                     </div>
 
-                    <div class="input-group col">
+                    <div class="input-group col-sm">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Ativo</span>
                         </div>
@@ -74,26 +74,31 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
 
                 <div class="form-inline mb-3">
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Modelo</span>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Modelo</span>
+                            </div>
+                            <input id="pro_modelo" name="pro_modelo" placeholder="Modelo" class="form-control" required type="text" required>
                         </div>
-                        <input id="pro_modelo" name="pro_modelo" placeholder="Modelo" class="form-control" required type="text" required>
+                    </div>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Referencia</span>
+                            </div>
+                            <input id="pro_ref" name="pro_ref" class="form-control input-md" required type="text" required>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Valor</span>
+                            </div>
+                            <input id="pro_valor" name="pro_valor" class="form-control input-md" required type="text" required>
+                        </div>
                     </div>
 
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Referencia</span>
-                        </div>
-                        <input id="pro_ref" name="pro_ref" class="form-control input-md" required type="text" required>
-                    </div>
-
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Valor</span>
-                        </div>
-                        <input id="pro_valor" name="pro_valor" class="form-control input-md" required type="text" required>
-                    </div>
 
                     <div class="input-group col">
                         <div class="input-group-prepend">
@@ -101,58 +106,64 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </div>
                         <input id="pro_estoque" name="pro_estoque" class="form-control input-md" required type="text" required>
                     </div>
-
-                    <div class="input-group col">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Peso</span>
-                        </div>
-                        <input id="pro_peso" name="pro_peso" class="form-control input-md" required type="text" required>
-                    </div>
-
-
                 </div>
 
                 <div class="form-inline mb-3">
-                    <div class="input-group col-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Altura</span>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Peso</span>
+                            </div>
+                            <input id="pro_peso" name="pro_peso" class="form-control input-md" required type="text" required>
                         </div>
-                        <input id="pro_altura" name="pro_altura" class="form-control" required type="text" required>
                     </div>
-
-                    <div class="input-group col-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Largura</span>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Altura</span>
+                            </div>
+                            <input id="pro_altura" name="pro_altura" class="form-control" required type="text" required>
                         </div>
-                        <input id="pro_largura" name="pro_largura" class="form-control" type="text" required>
                     </div>
-
-                    <div class="input-group col-2">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Comprimento</span>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Largura</span>
+                            </div>
+                            <input id="pro_largura" name="pro_largura" class="form-control" type="text" required>
                         </div>
-                        <input id="pro_comprimento" name="pro_comprimento" class="form-control" type="text" required>
+                    </div>
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Comprimento</span>
+                            </div>
+                            <input id="pro_comprimento" name="pro_comprimento" class="form-control" type="text" required>
+                        </div>
                     </div>
                 </div>
                 <hr>
-                <div class="custom-file mb-3 col">
-                    <div class="input-group">
-                        <input type="file" name="pro_img" id="customFile" class="custom-file-input" required>
-                        <label class="custom-file-label text-left" for="customFile">Selecione a imagem principal</label>
+                <div class="col-sm mb-3">
+                    <div class="custom-file">
+                        <div class="input-group">
+                            <input type="file" name="pro_img" id="customFile" class="custom-file-input" required>
+                            <label class="custom-file-label text-left" for="customFile">Selecione a imagem principal</label>
+                        </div>
                     </div>
                 </div>
 
-
-                <div class="form-inline mb-3">
-                    <div class="input-group col-12">
-                        <textarea class="form-control" style="height: 300px;" id="pro_desc" name="pro_desc" placeholder="Descrição do produto" required></textarea>
-                        <?php echo '<script'; ?>
+                <div class="col-sm mb-3">
+                    <div class="form-inline">
+                        <div class="input-group col-12">
+                            <textarea class="form-control" id="pro_desc" name="pro_desc" placeholder="Descrição do produto" required></textarea>
+                            <?php echo '<script'; ?>
 >
-                            tinymce.init({
-                                selector: 'textarea'
-                            });
-                        <?php echo '</script'; ?>
+                                tinymce.init({
+                                    selector: 'textarea'
+                                });
+                            <?php echo '</script'; ?>
 >
+                        </div>
                     </div>
                 </div>
 
@@ -168,10 +179,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 <div class="form-inline mb-3 justify-content-center">
                     <div class="input-group col-2 p-0">
-                        <button type="submit" name="btn_gravar" class="btn btn-block btn-lg btn-success">Gravar</button>
+                        <button type="submit" name="btn_gravar" class="btn btn-block btn-success">Gravar</button>
                     </div>
                     <div class="input-group col-2 ml-3 p-0">
-                        <button type="reset" name="btn_reset" class="btn btn-block btn-lg btn-danger">Cancelar</button>
+                        <button type="reset" name="btn_reset" class="btn btn-block btn-danger">Cancelar</button>
                     </div>
                 </div>
 

@@ -4,21 +4,14 @@ body {
     list-style: 26px;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
-    overflow: hidden;
 }
-
-
-/** ======================  base css ==============================**/
 
 a:hover {
     text-decoration: none;
 }
 
-
-/** ======================  header ==============================**/
-
 .header {
-    background-color: #32a852
+    background-color: #32a852;
 }
 
 .header .dropdown-menu {
@@ -167,9 +160,30 @@ a.navbar-brand {
 
 /***********************  TOP Bar ********************/
 
+#conteudo {
+    height: 93vh;
+    overflow: auto;
+}
+
+#conteudo::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+#conteudo::-webkit-scrollbar-track {
+    background: #c1c1c1;
+}
+
+#conteudo::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#conteudo::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 .sidebar {
-    width: 220px;
-    height: 100vh;
+    width: 222px;
+    height: 93vh;
     background-color: #000;
     transition: all 0.5s ease-in-out;
 }
@@ -184,6 +198,10 @@ a.navbar-brand {
     padding: 0px;
 }
 
+.sidebar::-webkit-scrollbar {
+    width: 0vh;
+}
+
 .sidebar li a,
 .sidebar li a.collapsed.active {
     display: block;
@@ -196,7 +214,7 @@ a.navbar-brand {
 .sidebar li a.active {
     background-color: #000;
     border-left: 5px solid #dedede;
-    transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;
 }
 
 .sidebar li a:hover {
@@ -242,13 +260,13 @@ a.navbar-brand {
 
 .sidebar li a .nav-label,
 .sidebar li a .nav-label+span {
-    transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;
 }
 
 .sidebar.fliph li a .nav-label,
 .sidebar.fliph li a .nav-label+span {
     display: none;
-    transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;
 }
 
 .sidebar.fliph {
@@ -304,9 +322,7 @@ a.navbar-brand {
 .user-panel>.info {
     padding: 0px 0px 0px 15px;
     line-height: 1;
-    position: absolute;
-    left: 63px;
-    top: 28px;
+    position: relative;
 }
 
 .fliph .user-panel {

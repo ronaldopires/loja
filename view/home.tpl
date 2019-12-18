@@ -49,28 +49,28 @@
     </div>
 </div>
 <!-- Novidades-->
-<div class="container-fluid my-3 p-3">
+<div class="container-fluid my-5 p-3">
     <div class="row no-gutters">
         <div class="col text-center">
             <hr>
             <h3>Novidades</h3>
         </div>
     </div>
-    <div class="row no-gutters">
-
+    <div class="row no-gutters justify-content-center">
+        {foreach from=$PRO item=P}
         <div class="card-group">
             <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
-                <a class="card-link img-hover-zoom" href="">
-                    <img class="card-img-top img-fluid p-1" src="" alt="" title="Clique para visualizar">
+                <a class="card-link img-hover-zoom" href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
+                    <img class="card-img-top img-fluid p-1" src="{$P.pro_img_gg}" alt="{$P.pro_nome}" title="Clique para visualizar">
                     <div class="card-body">
-                        <h5 class="card-title text-dark"></h5>
+                        <h5 class="card-title text-dark">{$P.pro_nome}</h5>
                         <hr>
-                        <h4 class="card-subtitle" style="text-align: bottom;">R$ </h4>
+                        <h4 class="card-subtitle" style="text-align: bottom;">R$ {$P.pro_valor}</h4>
                 </a>
                 </div>
             </div>
         </div>
-
+        {/foreach}
     </div>
 </div>
 <hr>
