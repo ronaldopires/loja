@@ -51,4 +51,11 @@
             {/if}
         </div>
     </div>
+    <div class="row no-gutters">
+        <div class="col-12">
+            <nav aria-label="paginacao">
+                {$PAGINAS}
+            </nav>
+        </div>
+    </div>
 </div>

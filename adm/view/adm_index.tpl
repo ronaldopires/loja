@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
     <!--FavIcon-->
     <link rel="shortcut icon" href="#" />
     <!-- Bootstrap CSS -->
@@ -38,8 +36,8 @@
     <header class="header">
         <nav class="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <a class="navbar-brand p-0 mr-5" href="#"><img src="http://via.placeholder.com/61x14"></a>
             <div class="float-left"> <a href="#" class="button-left"><span class="fa fa-fw fa-bars "></span></a>
             </div>
@@ -193,7 +191,8 @@
                             </div>
                             <div class="float-left info">
                                 <p>Olá</p>
-                                <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i class="fa fa-circle text-success"></i></span> Online</a>
+                                <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i
+                                            class="fa fa-circle text-success"></i></span> Online</a>
                             </div>
                             <!-- Modal -->
                             <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -202,14 +201,18 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Alterar Status</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="col"><span id="ativo"><i class="fa fa-circle text-info"></i></span> Ativo</div>
-                                            <div class="col"><span id="inativo"><i class="fa fa-circle text-danger"></i></span> Inativo</div>
-                                            <div class="col"><span id="off"><i class="fa fa-circle text-warning"></i></span> Offline</div>
-                                            <div class="col"><span id="online"><i class="fa fa-circle text-success"></i></span> Online</div>
+                                            <div class="col"><span id="ativo"><i
+                                                        class="fa fa-circle text-info"></i></span> Ativo</div>
+                                            <div class="col"><span id="inativo"><i
+                                                        class="fa fa-circle text-danger"></i></span> Inativo</div>
+                                            <div class="col"><span id="off"><i
+                                                        class="fa fa-circle text-warning"></i></span> Offline</div>
+                                            <div class="col"><span id="online"><i
+                                                        class="fa fa-circle text-success"></i></span> Online</div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -220,10 +223,11 @@
                             </div>
                         </div>
                         <ul class="list-sidebar bg-defoult">
-                            <li> <a href="{$GET_SITE_ADM}"><i class="fa fa-home" aria-hidden="true"></i> <span
-                                            class="nav-label">Home</span> </a></li>
+                            <li> <a href="{$GET_SITE_ADM}"><i class="fa fa-home" aria-hidden="true"></i><span class="nav-label">Home</span> </a>
+                            </li>
                             <li>
-                                <a href="{$GET_SITE_ADM}" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-down float-right"></span> </a>
+                                <a href="{$GET_SITE_ADM}" data-toggle="collapse" data-target="#dashboard" class="collapsed active"> <i class="fa fa-th-large"></i> <span class="nav-label">
+                                        Dashboards </span> <span class="fa fa-chevron-down float-right"></span> </a>
                                 <ul class="sub-menu collapse" id="dashboard">
                                     <li class="active"><a href="{$GET_SITE_ADM}">CSS3 Animation</a></li>
                                     <li><a href="#">General</a></li>
@@ -232,7 +236,7 @@
                                 </ul>
                             </li>
                             <li> <a href="{$PAG_ADM_CLIENTE}"><i class="fa fa-diamond"></i> <span
-                                            class="nav-label">Clientes</span></a> </li>
+                                        class="nav-label">Clientes</span></a> </li>
                             <li>
                                 <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active">
                                     <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Gráficos</span> <span class="fa fa-chevron-down float-right"></span> </a>
@@ -244,10 +248,10 @@
                                 </ul>
                             </li>
                             <li> <a href="{$PAG_ADM_PRODUTOS}"><i class="fa fa-laptop"></i> <span
-                                            class="nav-label">Produtos</span></a> </li>
+                                        class="nav-label">Produtos</span></a> </li>
                             <li> <a href="{$PAG_CATEGORIAS}" data-toggle="collapse" data-target="#categories" class="collapsed active"><i class="fa fa-table"></i> <span
-                                            class="nav-label">Categorias</span><span
-                                            class="fa fa-chevron-down float-right"></span></a>
+                                        class="nav-label">Categorias</span><span
+                                        class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="categories">
                                     {foreach from=$CATEGORIAS item=C}
                                     <li><a href="{$C.cate_link}">{$C.cate_nome}</a></li>
@@ -255,8 +259,8 @@
                                 </ul>
                             </li>
                             <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><i class="fa fa-shopping-cart"></i> <span
-                                            class="nav-label">E-commerce</span><span
-                                            class="fa fa-chevron-down float-right"></span></a>
+                                        class="nav-label">E-commerce</span><span
+                                        class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="e-commerce">
                                     <li><a href=""> Products grid</a></li>
                                     <li><a href=""> Products list</a></li>
@@ -268,11 +272,11 @@
                                 </ul>
                             </li>
                             <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>
-                                    </a></li>
+                                </a></li>
                             <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other
-                                            Pages</span></a> </li>
+                                        Pages</span></a> </li>
                             <li> <a href="{$PAG_LOGOFF}"><i class="fa fa-sign-out" aria-hidden="true"></i></i> <span
-                                            class="nav-label">Sair</span></a> </li>
+                                        class="nav-label">Sair</span></a> </li>
                         </ul>
                     </div>
                 </aside>

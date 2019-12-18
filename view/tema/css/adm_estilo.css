@@ -3,6 +3,8 @@ body {
     color: #333;
     list-style: 26px;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -167,6 +169,7 @@ a.navbar-brand {
 
 .sidebar {
     width: 220px;
+    height: 100vh;
     background-color: #000;
     transition: all 0.5s ease-in-out;
 }
@@ -201,7 +204,7 @@ a.navbar-brand {
 }
 
 .sidebar li a i {
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 .sidebar ul li .sub-menu li a {
@@ -10132,3 +10135,26 @@ a.text-gray-dark:hover {
 
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+
+.alerta {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+    z-index: 999999;
+    transition-duration: 4s;
+    opacity: 0;
+    animation: test 3s ease;
+    text-align: center;
+}
+
+@keyframes test {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
