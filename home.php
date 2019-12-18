@@ -2,8 +2,23 @@
 
 
 $smarty = new Template();
-$smarty->display('home.tpl');
+
+$produtos = new Produtos();
+
+$categorias = new Categorias();
+$categorias->GetCategorias();
+
+if (isset(Rotas::$pag[1])) {
+    $produtos->GetProdutosCateID(Rotas::$pag[1]);
+} else {
+    $produtos->GetProdutos3();
+}
+$smarty->assign('PRO', $produtos->GetItens());
+$smarty->assign('PRO_INFO', Rotas::pag_ProdutosInfo());
+$smarty->assign('PRO_TOTAL', $produtos->TotalDados());
+$smarty->assign('CATEGORIAS', $categorias->GetItens());
 $smarty->assign('TEMA', Rotas::get_SiteTEMA());
+$smarty->display('home.tpl');
 
 
 
