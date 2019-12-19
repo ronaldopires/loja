@@ -35,10 +35,10 @@ if (isset($_POST['pro_nome']) && isset($_POST['pro_nome'])) {
     $gravar->Preparar($pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref, $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento, $pro_img, $pro_desc, $pro_slug);
 
     if ($gravar->Inserir()) {
-        echo '<h4 class="alert alert-success alerta"> Produto cadastrado com sucesso </h4>';
+        echo '<div class="alert alert-success alerta"> Produto cadastrado com sucesso </div>';
         Rotas::Redirecionar(2, Rotas::pag_ProdutosADM());
     } else {
-        echo '<h4 class="alert alert-danger alerta">Erro ao cadastrar o produto </h4>';
+        echo '<div class="alert alert-danger alerta">Erro ao cadastrar o produto </div>';
         Rotas::Redirecionar(2, Rotas::pag_ProdutosNovoADM());
 
     }

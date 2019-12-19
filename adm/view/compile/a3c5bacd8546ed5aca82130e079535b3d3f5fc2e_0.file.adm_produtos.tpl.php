@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 14:28:53
+/* Smarty version 3.1.34-dev-7, created on 2019-12-19 13:33:41
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfa61d5c04768_58919405',
+  'unifunc' => 'content_5dfba6653c9200_47602431',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1576690132,
+      1 => 1576773213,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfa61d5c04768_58919405 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfba6653c9200_47602431 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-0">
     <div class="row no-gutters justify-content-center">
         <div class="col-10">
@@ -61,7 +61,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                                 <td class="align-middle">R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['pro_valor'];?>
 </td>
                                 <td class="align-middle">
-                                    <form name="proeditar" method="post" action="">
+                                    <form name="proeditar" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_EDITAR']->value;?>
+">
                                         <input type="hidden" name="pro_id" id="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
 ">
                                         <button class="btn btn-success"> <i class="fa fa-pencil" aria-hidden="true"></i>

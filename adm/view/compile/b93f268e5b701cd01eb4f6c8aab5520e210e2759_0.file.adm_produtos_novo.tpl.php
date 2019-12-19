@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 17:01:04
+/* Smarty version 3.1.34-dev-7, created on 2019-12-19 17:19:15
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_novo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfa8580ac54c7_68063958',
+  'unifunc' => 'content_5dfbdb4307e730_23168063',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b93f268e5b701cd01eb4f6c8aab5520e210e2759' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_novo.tpl',
-      1 => 1576699263,
+      1 => 1576786753,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfa8580ac54c7_68063958 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfbdb4307e730_23168063 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -154,7 +154,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                 <div class="col-sm mb-3">
                     <div class="form-inline">
-                        <div class="input-group col-12">
+                        <div class="input-group col-12 p-0">
                             <textarea class="form-control" id="pro_desc" name="pro_desc" placeholder="Descrição do produto" required></textarea>
                             <?php echo '<script'; ?>
 >

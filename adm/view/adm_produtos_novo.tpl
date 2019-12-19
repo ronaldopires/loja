@@ -119,7 +119,7 @@
 
                 <div class="col-sm mb-3">
                     <div class="form-inline">
-                        <div class="input-group col-12">
+                        <div class="input-group col-12 p-0">
                             <textarea class="form-control" id="pro_desc" name="pro_desc" placeholder="Descrição do produto" required></textarea>
                             <script>
                                 tinymce.init({
