@@ -3,8 +3,8 @@ class Produtos extends Conexao
 {
 
     private $pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref,
-    $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
-    $pro_img, $pro_desc, $pro_slug;
+        $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
+        $pro_img, $pro_desc, $pro_slug;
 
     public function __construct()
     {
@@ -27,7 +27,7 @@ class Produtos extends Conexao
     {
         //Query para buscar os produtos de uma categoria especifica.
         $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
-        
+
         $query .= " ORDER BY pro_id DESC";
 
         $query .= $this->PaginacaoLinks2("pro_id", $this->prefix . "produtos");
@@ -39,7 +39,7 @@ class Produtos extends Conexao
     {
         //Query para buscar os produtos da categoria novidades com limite de 4.
         $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
-        
+
         $query .= " WHERE cate_slug= 'categoria-novidades'";
         $query .= " ORDER BY pro_id DESC LIMIT 4";
 
@@ -81,7 +81,7 @@ class Produtos extends Conexao
     private function GetLista()
     {
         $i = 1;
-        while ($lista = $this->ListarDados()):
+        while ($lista = $this->ListarDados()) :
             $this->itens[$i] = array(
                 'pro_id' => $lista['pro_id'],
                 'pro_nome' => $lista['pro_nome'],
@@ -100,6 +100,11 @@ class Produtos extends Conexao
                 'pro_ref' => $lista['pro_ref'],
                 'cate_nome' => $lista['cate_nome'],
                 'cate_id' => $lista['cate_id'],
+                'pro_modelo'   => $lista['pro_modelo'],
+                'pro_estoque'   => $lista['pro_estoque'],
+                'pro_ativo'   => $lista['pro_ativo'],
+                'pro_img_arquivo'   => Rotas::get_SiteRAIZ() . '/' . Rotas::get_ImagePasta() . $lista['pro_img'],
+                'pro_img_atual'     => $lista['pro_img'],
             );
             $i++;
         endwhile;
@@ -107,9 +112,22 @@ class Produtos extends Conexao
 
     //FUNÇÃO PREPARAR
 
-    public function Preparar($pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref,
-        $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
-        $pro_img, $pro_desc, $pro_slug = null) {
+    public function Preparar(
+        $pro_nome,
+        $pro_categoria,
+        $pro_ativo,
+        $pro_modelo,
+        $pro_ref,
+        $pro_valor,
+        $pro_estoque,
+        $pro_peso,
+        $pro_altura,
+        $pro_largura,
+        $pro_comprimento,
+        $pro_img,
+        $pro_desc,
+        $pro_slug = null
+    ) {
 
         $this->setPro_nome($pro_nome);
         $this->setPro_categoria($pro_categoria);
@@ -154,10 +172,60 @@ class Produtos extends Conexao
 
         );
 
-        if ($this->ExecuteSQL($query, $params)):
+        if ($this->ExecuteSQL($query, $params)) :
             return true;
-        else:
+        else :
             return false;
+        endif;
+    }
+
+    function Alterar($id)
+    {
+        $query = " UPDATE {$this->prefix}produtos SET pro_nome=:pro_nome, pro_categoria=:pro_categoria,";
+        $query .= " pro_ativo=:pro_ativo, pro_modelo=:pro_modelo, pro_ref=:pro_ref,";
+        $query .= " pro_valor=:pro_valor, pro_estoque=:pro_estoque, pro_peso=:pro_peso , ";
+        $query .= " pro_altura=:pro_altura, pro_largura=:pro_largura,";
+        $query .= " pro_comprimento=:pro_comprimento ,pro_img=:pro_img, pro_desc=:pro_desc, pro_slug=:pro_slug";
+        $query .= " WHERE pro_id = :pro_id";
+
+        $params = array(
+            ':pro_nome' => $this->getPro_nome(),
+            ':pro_categoria' => $this->getPro_categoria(),
+            ':pro_ativo' => $this->getPro_ativo(),
+            ':pro_modelo' => $this->getPro_modelo(),
+            ':pro_ref' => $this->getPro_ref(),
+            ':pro_valor' => $this->getPro_valor(),
+            ':pro_estoque' => $this->getPro_estoque(),
+            ':pro_peso' => $this->getPro_peso(),
+            ':pro_altura' => $this->getPro_altura(),
+            ':pro_largura' => $this->getPro_largura(),
+            ':pro_comprimento' => $this->getPro_comprimento(),
+            ':pro_img' => $this->getPro_img(),
+            ':pro_desc' => $this->getPro_desc(),
+            ':pro_slug' => $this->getPro_slug(),
+            ':pro_id' => (int) $id,
+
+        );
+
+
+        // executo a SQL
+        if ($this->ExecuteSQL($query, $params)) :
+            return TRUE;
+        else :
+            return FALSE;
+        endif;
+    }
+
+    function Apagar($id){
+        $query = "DELETE FROM {$this->prefix}produtos WHERE pro_id = :id";
+        $params = array(
+            ':id' => (int)$id
+        );
+
+        if ($this->ExecuteSQL($query, $params)) :
+            return TRUE;
+        else :
+            return FALSE;
         endif;
     }
 
@@ -282,7 +350,6 @@ class Produtos extends Conexao
 
         ///  1,600  => 1.600
         $this->pro_peso = str_replace(',', '.', $pro_peso);
-
     }
 
     public function setPro_altura($pro_altura)

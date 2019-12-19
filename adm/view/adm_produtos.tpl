@@ -30,7 +30,7 @@
                                 <td class="align-middle">{$P.cate_nome}</td>
                                 <td class="align-middle">R$ {$P.pro_valor}</td>
                                 <td class="align-middle">
-                                    <form name="proeditar" method="post" action="">
+                                    <form name="proeditar" method="post" action="{$PAG_PRODUTOS_EDITAR}">
                                         <input type="hidden" name="pro_id" id="pro_id" value="{$P.pro_id}">
                                         <button class="btn btn-success"> <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </button>
