@@ -10174,3 +10174,10 @@ a.text-gray-dark:hover {
         opacity: 0;
     }
 }
+
+
+/*Card Produtos */
+
+#divProduto:hover {
+    box-shadow: 6px 6px 10px #adadad;
+}

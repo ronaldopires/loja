@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 16:45:41
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 14:32:02
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfa81e57a70f8_97120712',
+  'unifunc' => 'content_5dfd059282c1d2_01774354',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56ee9dbab1711ca502b7da58086071b9e944e44f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_index.tpl',
-      1 => 1576698340,
+      1 => 1576863120,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfa81e57a70f8_97120712 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfd059282c1d2_01774354 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -296,6 +296,8 @@ function content_5dfa81e57a70f8_97120712 (Smarty_Internal_Template $_smarty_tpl)
                                         class="nav-label">Categorias</span><span
                                         class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="categories">
+                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CATEGORIAS']->value;?>
+">Inserir Categorias <span><i class="material-icons float-right">add</i></span></a></li>
                                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'C');
 if ($_from !== null) {

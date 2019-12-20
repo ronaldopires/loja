@@ -42,4 +42,15 @@ class ProdutosImages extends Conexao
         $this->ExecuteSQL($query, $params);
     }
 
+    public function Deletar($img_nome){
+        
+        $query = " DELETE FROM {$this->prefix}imagens ";
+        $query .= " WHERE img_nome = :img_nome ";
+        
+        $params = array(':img_nome'=>$img_nome);
+        
+        $this->ExecuteSQL($query, $params);
+        
+    }
+
 }

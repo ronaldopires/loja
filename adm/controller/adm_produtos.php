@@ -11,6 +11,9 @@ if (isset(Rotas::$pag[1])) {
 $categorias = new Categorias();
 $categorias->GetCategorias();
 
+$tamanho = new Tamanhos();
+$tamanho-> GetTamanhos();
+
 $smarty->assign('PRO', $produtos->GetItens());
 $smarty->assign('PRO_TOTAL', $produtos->TotalDados());
 $smarty->assign('PAGINAS', $produtos->ShowPaginacao());
@@ -20,3 +23,4 @@ $smarty->assign('PAG_PRODUTOS_EDITAR', Rotas::pag_ProdutosEditarADM());
 $smarty->assign('PAG_PRODUTOS_IMG', Rotas::pag_ProdutosImgADM());
 
 $smarty->display('adm_produtos.tpl');
+
