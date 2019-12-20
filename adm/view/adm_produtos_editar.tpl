@@ -172,9 +172,7 @@
                             <div class="modal-footer">
                                 <form name="frm_apagar" method="post" action="">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" name="btn_apagar" class="btn btn-danger"><span ><i style="font-size: 3vh;" class="material-icons mr-2">
-                                                delete
-                                            </i></span> Excluir Produto</button>
+                                    <button type="submit" name="btn_apagar" class="btn btn-danger"><span ><i style="font-size: 3vh;" class="material-icons mr-2">delete</i></span> Excluir Produto</button>
                                     <input type="hidden" name="pro_id_apagar" value="{$PRO.1.pro_id}">
                                     <input type="hidden" name="pro_apagar" value="apagar">
                                     <input type="hidden" name="pro_img_arquivo" id="pro_img_arquivo" value="{$PRO.1.pro_img_arquivo}">

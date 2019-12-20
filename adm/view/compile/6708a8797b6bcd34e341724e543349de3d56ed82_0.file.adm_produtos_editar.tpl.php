@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 16:25:13
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 02:39:31
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfbce99e240d0_52696844',
+  'unifunc' => 'content_5dfc5e93c0ac04_23438480',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6708a8797b6bcd34e341724e543349de3d56ed82' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_editar.tpl',
-      1 => 1576783508,
+      1 => 1576816708,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfbce99e240d0_52696844 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfc5e93c0ac04_23438480 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -229,9 +229,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="modal-footer">
                                 <form name="frm_apagar" method="post" action="">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" name="btn_apagar" class="btn btn-danger"><span ><i style="font-size: 3vh;" class="material-icons mr-2">
-                                                delete
-                                            </i></span> Excluir Produto</button>
+                                    <button type="submit" name="btn_apagar" class="btn btn-danger"><span ><i style="font-size: 3vh;" class="material-icons mr-2">delete</i></span> Excluir Produto</button>
                                     <input type="hidden" name="pro_id_apagar" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_id'];?>
 ">
                                     <input type="hidden" name="pro_apagar" value="apagar">

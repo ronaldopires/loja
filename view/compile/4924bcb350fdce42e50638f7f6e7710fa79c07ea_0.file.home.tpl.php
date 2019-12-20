@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 13:28:03
+/* Smarty version 3.1.34-dev-7, created on 2019-12-19 23:16:31
   from 'C:\xampp\htdocs\loja\view\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfa53939fed16_41201032',
+  'unifunc' => 'content_5dfc2effc7bb93_99899367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4924bcb350fdce42e50638f7f6e7710fa79c07ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\home.tpl',
-      1 => 1576686482,
+      1 => 1576794303,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfa53939fed16_41201032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfc2effc7bb93_99899367 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-sm">
@@ -66,8 +66,6 @@ function content_5dfa53939fed16_41201032 (Smarty_Internal_Template $_smarty_tpl)
                     <span class="sr-only">Próximo</span>
                 </a>
             </div>
-
-            <!--<img src="./media/images/banner1.png" alt="Banner" width="1366" height="350">-->
         </div>
     </div>
 </div>
@@ -109,6 +107,5 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
-</div>
-<hr><?php }
+    <hr><?php }
 }

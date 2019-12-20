@@ -17,5 +17,6 @@ $smarty->assign('PAGINAS', $produtos->ShowPaginacao());
 $smarty->assign('CATEGORIAS', $categorias->GetItens());
 $smarty->assign('PAG_PRODUTOS_NOVO', Rotas::pag_ProdutosNovoADM());
 $smarty->assign('PAG_PRODUTOS_EDITAR', Rotas::pag_ProdutosEditarADM());
+$smarty->assign('PAG_PRODUTOS_IMG', Rotas::pag_ProdutosImgADM());
 
 $smarty->display('adm_produtos.tpl');

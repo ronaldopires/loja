@@ -43,8 +43,6 @@
                     <span class="sr-only">Próximo</span>
                 </a>
             </div>
-
-            <!--<img src="./media/images/banner1.png" alt="Banner" width="1366" height="350">-->
         </div>
     </div>
 </div>
@@ -72,5 +70,4 @@
         </div>
         {/foreach}
     </div>
-</div>
-<hr>
+    <hr>
