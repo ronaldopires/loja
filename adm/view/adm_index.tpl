@@ -256,6 +256,7 @@
                                         class="nav-label">Categorias</span><span
                                         class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="categories">
+                                    <li><a href="{$PAG_CATEGORIAS}">Inserir Categorias <span><i class="material-icons float-right">add</i></span></a></li>
                                     {foreach from=$CATEGORIAS item=C}
                                     <li><a href="{$C.cate_link}">{$C.cate_nome}</a></li>
                                     {/foreach}

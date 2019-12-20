@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-20 02:39:31
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 15:35:24
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfc5e93c0ac04_23438480',
+  'unifunc' => 'content_5dfd146c602773_31861967',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6708a8797b6bcd34e341724e543349de3d56ed82' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_editar.tpl',
-      1 => 1576816708,
+      1 => 1576866921,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfc5e93c0ac04_23438480 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfd146c602773_31861967 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -173,6 +173,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <label class="custom-file-label text-left" for="pro_img">Selecione a imagem
                                 principal</label>
                         </div>
+                        <!-- <div class="form-group mb-3">
+                            <b>Tamanhos</b>
+                            
+                            <div class="form-check ml-3">
+                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="35" id="pro_tamanho">
+                                <label class="form-check-label" for="35">35</label>
+                            </div>
+                            
+                        </div> -->
                     </div>
                 </div>
 
