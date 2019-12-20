@@ -108,15 +108,21 @@
                     </div>
                 </div>
                 <hr>
-                <div class="col-sm mb-3">
-                    <div class="custom-file">
-                        <div class="input-group">
-                            <input type="file" name="pro_img" id="customFile" class="custom-file-input" required>
-                            <label class="custom-file-label text-left" for="customFile">Selecione a imagem principal</label>
+                <div class="row no-gutters justify-content-end">
+                    <div class="col-sm mb-3 pl-3 pr-3">
+                        <div class="form-group" id="containerphoto">
+                            <div class="custom-file">
+                                <div class="input-group">
+                                    <input type="file" name="pro_img" id="customFile[]" class="custom-file-input" required>
+                                    <label class="custom-file-label text-left" for="customFile[]">Selecione a imagem principal</label>
+                                </div>
+                            </div>
                         </div>
+                        <!-- <div class="form-group">
+                            <button type="button" id="photobutton" name="btn_gravar" class="btn btn-outline-info">Adicionar outra imagem</button>
+                        </div> -->
                     </div>
                 </div>
-
                 <div class="col-sm mb-3">
                     <div class="form-inline">
                         <div class="input-group col-12 p-0">

@@ -3,8 +3,8 @@ class Produtos extends Conexao
 {
 
     private $pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref,
-        $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
-        $pro_img, $pro_desc, $pro_slug;
+    $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
+    $pro_img, $pro_desc, $pro_slug;
 
     public function __construct()
     {
@@ -40,7 +40,7 @@ class Produtos extends Conexao
         //Query para buscar os produtos da categoria novidades com limite de 4.
         $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id";
 
-        $query .= " WHERE cate_slug= 'categoria-novidades'";
+        $query .= " WHERE cate_slug = 'categoria-novidades'";
         $query .= " ORDER BY pro_id DESC LIMIT 4";
 
         $this->ExecuteSQL($query);
@@ -55,6 +55,18 @@ class Produtos extends Conexao
         $query .= " ORDER BY pro_id DESC";
 
         $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos");
+
+        $params = array(':id' => (int) $id);
+
+        $this->ExecuteSQL($query, $params);
+        $this->GetLista();
+    }
+    public function GetProdutosID2($id)
+    {
+        //Query para buscar os produto pelo ID.
+        $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cate_id ";
+
+        $query .= " AND pro_id = :id";
 
         $params = array(':id' => (int) $id);
 
@@ -81,7 +93,7 @@ class Produtos extends Conexao
     private function GetLista()
     {
         $i = 1;
-        while ($lista = $this->ListarDados()) :
+        while ($lista = $this->ListarDados()):
             $this->itens[$i] = array(
                 'pro_id' => $lista['pro_id'],
                 'pro_nome' => $lista['pro_nome'],
@@ -100,11 +112,11 @@ class Produtos extends Conexao
                 'pro_ref' => $lista['pro_ref'],
                 'cate_nome' => $lista['cate_nome'],
                 'cate_id' => $lista['cate_id'],
-                'pro_modelo'   => $lista['pro_modelo'],
-                'pro_estoque'   => $lista['pro_estoque'],
-                'pro_ativo'   => $lista['pro_ativo'],
-                'pro_img_arquivo'   => Rotas::get_SiteRAIZ() . '/' . Rotas::get_ImagePasta() . $lista['pro_img'],
-                'pro_img_atual'     => $lista['pro_img'],
+                'pro_modelo' => $lista['pro_modelo'],
+                'pro_estoque' => $lista['pro_estoque'],
+                'pro_ativo' => $lista['pro_ativo'],
+                'pro_img_arquivo' => Rotas::get_SiteRAIZ() . '/' . Rotas::get_ImagePasta() . $lista['pro_img'],
+                'pro_img_atual' => $lista['pro_img'],
             );
             $i++;
         endwhile;
@@ -172,14 +184,14 @@ class Produtos extends Conexao
 
         );
 
-        if ($this->ExecuteSQL($query, $params)) :
+        if ($this->ExecuteSQL($query, $params)):
             return true;
-        else :
+        else:
             return false;
         endif;
     }
 
-    function Alterar($id)
+    public function Alterar($id)
     {
         $query = " UPDATE {$this->prefix}produtos SET pro_nome=:pro_nome, pro_categoria=:pro_categoria,";
         $query .= " pro_ativo=:pro_ativo, pro_modelo=:pro_modelo, pro_ref=:pro_ref,";
@@ -207,25 +219,25 @@ class Produtos extends Conexao
 
         );
 
-
         // executo a SQL
-        if ($this->ExecuteSQL($query, $params)) :
-            return TRUE;
-        else :
-            return FALSE;
+        if ($this->ExecuteSQL($query, $params)):
+            return true;
+        else:
+            return false;
         endif;
     }
 
-    function Apagar($id){
+    public function Apagar($id)
+    {
         $query = "DELETE FROM {$this->prefix}produtos WHERE pro_id = :id";
         $params = array(
-            ':id' => (int)$id
+            ':id' => (int) $id,
         );
 
-        if ($this->ExecuteSQL($query, $params)) :
-            return TRUE;
-        else :
-            return FALSE;
+        if ($this->ExecuteSQL($query, $params)):
+            return true;
+        else:
+            return false;
         endif;
     }
 

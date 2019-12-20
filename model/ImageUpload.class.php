@@ -81,7 +81,7 @@ class ImageUpload
             // define um novo nome // 137184087-1238921716-1-1-0536c34ec06798e5.jpg
 
             // minha foto da maçã.jpg  /  170517142050minha-foto-da-maca.jpg
-            $imagem = Sistema::GetSlug($time . $_FILES[$campo]['name']) . "." . $ext;
+            $imagem = md5($time . $_FILES[$campo]['name']) . "." . $ext;
             // alvo final da foto //  htdocs/media/images/137184087-1238921716-1-1-0536c34ec06798e5.jpg
             $destino = $this->pasta . $imagem;
 

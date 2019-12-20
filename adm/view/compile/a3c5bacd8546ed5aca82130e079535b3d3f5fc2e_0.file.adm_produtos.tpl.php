@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 13:33:41
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 04:33:56
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfba6653c9200_47602431',
+  'unifunc' => 'content_5dfc79646b71e5_49659715',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1576773213,
+      1 => 1576827193,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfba6653c9200_47602431 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfc79646b71e5_49659715 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-0">
     <div class="row no-gutters justify-content-center">
         <div class="col-10">
@@ -41,7 +41,6 @@ function content_5dfba6653c9200_47602431 (Smarty_Internal_Template $_smarty_tpl)
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">Editar</th>
-                                <!-- <th scope="col">Excluir</th> -->
                                 <th scope="col">Foto</th>
                             </tr>
                         </thead>
@@ -69,19 +68,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                                     </button>
                                     </form>
                                 </td>
-                                <!-- <td>
-                                    <form name="limpar" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO_ALTERAR']->value;?>
-">
-                                    <input type="hidden" name="acao" value="del">
-                                    <input type="hidden" name="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
-">
-                                    <button class="btn btn-outline-danger btn-sm"><i class="fas fa-times"></i></button>
-                                </form>
-                                </td> -->
                                 <td class="align-middle">
-                                    <form name="proimg" method="post" action="">
+                                    <form name="pro_img" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_IMG']->value;?>
+">
                                         <input type="hidden" name="pro_id" id="pro_id" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
 ">
+                                        <!-- <input type="hidden" name="pro_img" id="pro_img" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img_gg'];?>
+"> -->
                                         <input type="hidden" name="pro_nome" id="pro_nome" value="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
 ">
                                         <button class="btn btn-info"> <i class="fa fa-picture-o" aria-hidden="true"></i> </button>

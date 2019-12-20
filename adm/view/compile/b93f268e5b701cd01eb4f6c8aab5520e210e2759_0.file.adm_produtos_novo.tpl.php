@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 17:19:15
+/* Smarty version 3.1.34-dev-7, created on 2019-12-20 00:33:17
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_novo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfbdb4307e730_23168063',
+  'unifunc' => 'content_5dfc40fddaa6d4_04473422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b93f268e5b701cd01eb4f6c8aab5520e210e2759' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_novo.tpl',
-      1 => 1576786753,
+      1 => 1576812797,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfbdb4307e730_23168063 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfc40fddaa6d4_04473422 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -143,15 +143,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </div>
                 </div>
                 <hr>
-                <div class="col-sm mb-3">
-                    <div class="custom-file">
-                        <div class="input-group">
-                            <input type="file" name="pro_img" id="customFile" class="custom-file-input" required>
-                            <label class="custom-file-label text-left" for="customFile">Selecione a imagem principal</label>
+                <div class="row no-gutters justify-content-end">
+                    <div class="col-sm mb-3 pl-3 pr-3">
+                        <div class="form-group" id="containerphoto">
+                            <div class="custom-file">
+                                <div class="input-group">
+                                    <input type="file" name="pro_img" id="customFile[]" class="custom-file-input" required>
+                                    <label class="custom-file-label text-left" for="customFile[]">Selecione a imagem principal</label>
+                                </div>
+                            </div>
                         </div>
+                        <!-- <div class="form-group">
+                            <button type="button" id="photobutton" name="btn_gravar" class="btn btn-outline-info">Adicionar outra imagem</button>
+                        </div> -->
                     </div>
                 </div>
-
                 <div class="col-sm mb-3">
                     <div class="form-inline">
                         <div class="input-group col-12 p-0">

@@ -18,7 +18,6 @@
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">Editar</th>
-                                <!-- <th scope="col">Excluir</th> -->
                                 <th scope="col">Foto</th>
                             </tr>
                         </thead>
@@ -36,16 +35,10 @@
                                     </button>
                                     </form>
                                 </td>
-                                <!-- <td>
-                                    <form name="limpar" method="post" action="{$PAG_CARRINHO_ALTERAR}">
-                                    <input type="hidden" name="acao" value="del">
-                                    <input type="hidden" name="pro_id" value="{$P.pro_id}">
-                                    <button class="btn btn-outline-danger btn-sm"><i class="fas fa-times"></i></button>
-                                </form>
-                                </td> -->
                                 <td class="align-middle">
-                                    <form name="proimg" method="post" action="">
+                                    <form name="pro_img" method="post" action="{$PAG_PRODUTOS_IMG}">
                                         <input type="hidden" name="pro_id" id="pro_id" value="{$P.pro_id}">
+                                        <!-- <input type="hidden" name="pro_img" id="pro_img" value="{$P.pro_img_gg}"> -->
                                         <input type="hidden" name="pro_nome" id="pro_nome" value="{$P.pro_nome}">
                                         <button class="btn btn-info"> <i class="fa fa-picture-o" aria-hidden="true"></i> </button>
                                     </form>
