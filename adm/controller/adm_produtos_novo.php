@@ -13,7 +13,6 @@ if (isset($_POST['pro_nome']) && isset($_POST['pro_nome'])) {
     $pro_modelo = $_POST['pro_modelo'];
     $pro_ref = $_POST['pro_ref'];
     $pro_valor = $_POST['pro_valor'];
-    $pro_tamanho = $_POST['pro_tamanho']['0'];
     $pro_estoque = $_POST['pro_estoque'];
     $pro_peso = $_POST['pro_peso'];
     $pro_altura = $_POST['pro_altura'];
@@ -24,35 +23,27 @@ if (isset($_POST['pro_nome']) && isset($_POST['pro_nome'])) {
     $pro_slug = $_POST['pro_slug'];
 
     if (!empty($_FILES)) {
-        
-            $upload = new ImageUpload();
+
+        $upload = new ImageUpload();
         if ($upload->Upload(1200, 'pro_img')) {
             $pro_img = $upload->retorno;
         } else {
             exit('Erro ao enviar a imagem');
         }
-        
-    }   
-    $teste = $_POST['pro_tamanho'];
-    if(isset($_POST['pro_tamanho'])){
-        foreach($teste as $tamanho){
-            echo 'entrou no foreach';
-            var_dump($tamanho);
-        }
+
     }
 
     $gravar = new Produtos();
-    $gravar->Preparar($pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref, $pro_valor, $pro_tamanho, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento, $pro_img, $pro_desc, $pro_slug);
+    $gravar->Preparar($pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref, $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento, $pro_img, $pro_desc, $pro_slug);
 
     if ($gravar->Inserir()) {
         echo '<div class="alert alert-success alerta"> Produto cadastrado com sucesso </div>';
-        //Rotas::Redirecionar(2, Rotas::pag_ProdutosADM());
+        Rotas::Redirecionar(2, Rotas::pag_ProdutosADM());
     } else {
         echo '<div class="alert alert-danger alerta">Erro ao cadastrar o produto </div>';
-        //Rotas::Redirecionar(2, Rotas::pag_ProdutosNovoADM());
+        Rotas::Redirecionar(2, Rotas::pag_ProdutosNovoADM());
 
     }
 }
-
 
 $smarty->display('adm_produtos_novo.tpl');

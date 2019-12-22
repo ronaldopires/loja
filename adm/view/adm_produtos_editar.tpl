@@ -122,15 +122,6 @@
                             <label class="custom-file-label text-left" for="pro_img">Selecione a imagem
                                 principal</label>
                         </div>
-                        <!-- <div class="form-group mb-3">
-                            <b>Tamanhos</b>
-                            
-                            <div class="form-check ml-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="35" id="pro_tamanho">
-                                <label class="form-check-label" for="35">35</label>
-                            </div>
-                            
-                        </div> -->
                     </div>
                 </div>
 

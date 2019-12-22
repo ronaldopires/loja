@@ -1,4 +1,4 @@
-<div class="container containers">
+<div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
             <div class="col p-0 mt-2">
@@ -12,23 +12,24 @@
                 <table class="table table-bordered">
                     <thead class="">
                         <tr class="table-success text-success">
-                        <th scope="col">Produto </th>
-                        <th class="text-center" scope="col">Valor <i class="fas fa-dollar-sign"></i></th>
-                        <th class="text-center" scope="col">Quantidade</i></th>
-                        <th class="text-center" scope="col">Sub Total <i class="fas fa-dollar-sign"></i></th>
+                            <th scope="col">Produto </th>
+                            <th class="text-center" scope="col">Valor <i class="fas fa-dollar-sign"></i></th>
+                            <th class="text-center" scope="col">Quantidade</i>
+                            </th>
+                            <th class="text-center" scope="col">Sub Total <i class="fas fa-dollar-sign"></i></th>
                         </tr>
                     </thead>
                     <tbody>
-                    {foreach from=$PRO item=P}                   
+                        {foreach from=$PRO item=P}
                         <tr>
                             <td class="align-middle">{$P.pro_nome}</td>
                             <td class="text-center align-middle">R$ {$P.pro_valor}</td>
                             <td class="text-center align-middle">{$P.pro_qtd}</td>
-                            <td class="text-center align-middle">R$ {$P.pro_subTotal}</td> 
+                            <td class="text-center align-middle">R$ {$P.pro_subTotal}</td>
                         </tr>
-                    {/foreach}
+                        {/foreach}
                     </tbody>
-                    </table>
+                </table>
                 </table>
             </div>
             <hr>
@@ -44,12 +45,12 @@
                         Total do Pedido R$ {$TOTAL_FRETE}
                     </h4>
                 </div>
-                
+
             </div>
             <hr>
             <div class="col p-0">
                 <div class="col p-0 text-right">
-                    <h3 class="text-center">Formas de pagamento</h3>  
+                    <h3 class="text-center">Formas de pagamento</h3>
                 </div>
                 <div class="col p-0 text-right">
                 </div>

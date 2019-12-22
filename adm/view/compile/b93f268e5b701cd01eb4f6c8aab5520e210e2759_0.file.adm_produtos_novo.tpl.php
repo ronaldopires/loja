@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-20 15:30:53
+/* Smarty version 3.1.34-dev-7, created on 2019-12-21 15:31:02
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_novo.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfd135d4ce947_58703490',
+  'unifunc' => 'content_5dfe64e6421ad5_21159110',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b93f268e5b701cd01eb4f6c8aab5520e210e2759' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_novo.tpl',
-      1 => 1576866635,
+      1 => 1576952798,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfd135d4ce947_58703490 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfe64e6421ad5_21159110 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -145,29 +145,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <hr>
                 <div class="row no-gutters justify-content-end">
                     <div class="col-sm mb-3 pl-3 pr-3">
-                        <div class="form-inline mb-3">
-                            <b>Tamanhos</b>
-                            <div class="form-check ml-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="35" id="pro_tamanho">
-                                <label class="form-check-label" for="35">35</label>
-                            </div>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="36" id="pro_tamanho">
-                                <label class="form-check-label" for="36">36</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="37" id="pro_tamanho">
-                                <label class="form-check-label" for="37">37</label>
-                            </div>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="38" id="pro_tamanho">
-                                <label class="form-check-label" for="38">38</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="39" id="pro_tamanho">
-                                <label class="form-check-label" for="39">39</label>
-                            </div>
-                        </div>
                         <div class="form-group" id="containerphoto">
                             <div class="custom-file">
                                 <div class="input-group">

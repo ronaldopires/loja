@@ -2,7 +2,7 @@
 class Produtos extends Conexao
 {
 
-    private $pro_nome, $pro_categoria, $pro_ativo, $pro_tamanho, $pro_modelo, $pro_ref,
+    private $pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref,
     $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
     $pro_img, $pro_desc, $pro_slug;
 
@@ -78,21 +78,6 @@ class Produtos extends Conexao
         $this->ExecuteSQL($query, $params);
         $this->GetLista();
     }
-    //Busca o tamanho do pedido
-    public function GetProdutosCateID2($id)
-    {
-        $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
-        //Query para buscar os produtos de uma categoria especifica.
-        $query = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}tamanho t ON p.pro_tamanho = t.tamanho_id ";
-
-        $query .= "AND tamanho_id = :id";
-
-        $params = array(':id' => (int) $id);
-
-        $this->ExecuteSQL($query, $params);
-        $this->GetLista();
-        echo $query;
-    }
 
     private function GetLista()
     {
@@ -105,7 +90,6 @@ class Produtos extends Conexao
                 'pro_peso' => $lista['pro_peso'],
                 'pro_valor' => Sistema::MoedaBR($lista['pro_valor']),
                 'pro_valor_us' => $lista['pro_valor'],
-                'pro_tamanho' => $lista['pro_tamanho'],
                 'pro_altura' => $lista['pro_altura'],
                 'pro_largura' => $lista['pro_largura'],
                 'pro_comprimento' => $lista['pro_comprimento'],
@@ -136,7 +120,6 @@ class Produtos extends Conexao
         $pro_modelo,
         $pro_ref,
         $pro_valor,
-        $pro_tamanho,
         $pro_estoque,
         $pro_peso,
         $pro_altura,
@@ -153,7 +136,6 @@ class Produtos extends Conexao
         $this->setPro_modelo($pro_modelo);
         $this->setPro_ref($pro_ref);
         $this->setPro_valor($pro_valor);
-        $this->setPro_tamanho($pro_tamanho);
         $this->setPro_estoque($pro_estoque);
         $this->setPro_peso($pro_peso);
         $this->setPro_altura($pro_altura);
@@ -167,10 +149,10 @@ class Produtos extends Conexao
     public function Inserir()
     {
 
-        $query = "INSERT INTO {$this->prefix}produtos (pro_nome, pro_categoria, pro_ativo, pro_modelo, pro_ref, pro_tamanho,";
+        $query = "INSERT INTO {$this->prefix}produtos (pro_nome, pro_categoria, pro_ativo, pro_modelo, pro_ref,";
         $query .= " pro_valor, pro_estoque, pro_peso , pro_altura, pro_largura, pro_comprimento ,pro_img, pro_desc, pro_slug)";
         $query .= " VALUES ";
-        $query .= " ( :pro_nome, :pro_categoria, :pro_ativo, :pro_modelo, :pro_ref, :pro_tamanho, :pro_valor, :pro_estoque, :pro_peso ,";
+        $query .= " ( :pro_nome, :pro_categoria, :pro_ativo, :pro_modelo, :pro_ref, :pro_valor, :pro_estoque, :pro_peso ,";
         $query .= " :pro_altura, :pro_largura, :pro_comprimento ,:pro_img, :pro_desc, :pro_slug)";
 
         $params = array(
@@ -180,7 +162,6 @@ class Produtos extends Conexao
             ':pro_modelo' => $this->getPro_modelo(),
             ':pro_ref' => $this->getPro_ref(),
             ':pro_valor' => $this->getPro_valor(),
-            ':pro_tamanho' => $this->getPro_tamanho(),
             ':pro_estoque' => $this->getPro_estoque(),
             ':pro_peso' => $this->getPro_peso(),
             ':pro_altura' => $this->getPro_altura(),
@@ -203,7 +184,7 @@ class Produtos extends Conexao
     {
         $query = " UPDATE {$this->prefix}produtos SET pro_nome=:pro_nome, pro_categoria=:pro_categoria,";
         $query .= " pro_ativo=:pro_ativo, pro_modelo=:pro_modelo, pro_ref=:pro_ref,";
-        $query .= " pro_valor=:pro_valor, pro_tamanho=:pro_tamanho, pro_estoque=:pro_estoque, pro_peso=:pro_peso , ";
+        $query .= " pro_valor=:pro_valor, pro_estoque=:pro_estoque, pro_peso=:pro_peso , ";
         $query .= " pro_altura=:pro_altura, pro_largura=:pro_largura,";
         $query .= " pro_comprimento=:pro_comprimento ,pro_img=:pro_img, pro_desc=:pro_desc, pro_slug=:pro_slug";
         $query .= " WHERE pro_id = :pro_id";
@@ -215,7 +196,6 @@ class Produtos extends Conexao
             ':pro_modelo' => $this->getPro_modelo(),
             ':pro_ref' => $this->getPro_ref(),
             ':pro_valor' => $this->getPro_valor(),
-            ':pro_tamanho' => $this->getPro_tamanho(),
             ':pro_estoque' => $this->getPro_estoque(),
             ':pro_peso' => $this->getPro_peso(),
             ':pro_altura' => $this->getPro_altura(),
@@ -281,10 +261,7 @@ class Produtos extends Conexao
     {
         return $this->pro_valor;
     }
-    public function getPro_tamanho()
-    {
-        return $this->pro_tamanho;
-    }
+    
     public function getPro_estoque()
     {
         return $this->pro_estoque;
@@ -365,10 +342,6 @@ class Produtos extends Conexao
 
     }
 
-    public function setPro_tamanho($pro_tamanho)
-    {
-        $this->pro_tamanho = $pro_tamanho;
-    }
     
     public function setPro_estoque($pro_estoque)
     {

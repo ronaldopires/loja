@@ -1,10 +1,10 @@
 <!-- Alerta -->
 {if $PRO_TOTAL
-< 1} <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado</h4>
+< 1} <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
+    </h4>
     {/if}
     <div class="container-fluid">
         <div class="row no-gutters">
-
             <!--Menu lateral -->
             <div class="col p-3 border-right">
                 <nav class="nav flex-column">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-11-24 23:46:46
+/* Smarty version 3.1.34-dev-7, created on 2019-12-21 17:12:22
   from 'C:\xampp\htdocs\loja\view\pedido_confirmar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ddb08563ebed1_21558493',
+  'unifunc' => 'content_5dfe7ca68287a4_34208190',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2d143155fe9d1b11e00496eb5c9a94a14a4e03c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_confirmar.tpl',
-      1 => 1574635605,
+      1 => 1576959141,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ddb08563ebed1_21558493 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="container containers">
+function content_5dfe7ca68287a4_34208190 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
             <div class="col p-0 mt-2">
@@ -36,19 +36,20 @@ function content_5ddb08563ebed1_21558493 (Smarty_Internal_Template $_smarty_tpl)
                 <table class="table">
                     <thead class="">
                         <tr class="table-success text-success">
-                        <th scope="col"></th>
-                        <th scope="col">Produto </th>
-                        <th class="text-center" scope="col">Valor <i class="fas fa-dollar-sign"></i></th>
-                        <th class="text-center" scope="col">Quantidade</i></th>
-                        <th class="text-center" scope="col">Sub Total <i class="fas fa-dollar-sign"></i></th>
+                            <th scope="col"></th>
+                            <th scope="col">Produto </th>
+                            <th class="text-center" scope="col">Valor <i class="fas fa-dollar-sign"></i></th>
+                            <th class="text-center" scope="col">Quantidade</i>
+                            </th>
+                            <th class="text-center" scope="col">Sub Total <i class="fas fa-dollar-sign"></i></th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
+                        <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
-?>                   
+?>
                         <tr>
                             <td><img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
@@ -61,14 +62,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 </td>
                             <td class="text-center align-middle">R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['pro_subTotal'];?>
 </td>
-                            
+
                         </tr>
-                    <?php
+                        <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </tbody>
-                    </table>
+                </table>
                 </table>
             </div>
             <hr>
@@ -81,7 +82,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <h5>Valor Total R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL_FRETE']->value;?>
 </h5>
                 </div>
-                
+
             </div>
             <hr>
             <div class="col p-0">
@@ -95,6 +96,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
         </div>
     </div>
-</div>
-<?php }
+</div><?php }
 }
