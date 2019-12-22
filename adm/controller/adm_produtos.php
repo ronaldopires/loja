@@ -11,9 +11,6 @@ if (isset(Rotas::$pag[1])) {
 $categorias = new Categorias();
 $categorias->GetCategorias();
 
-$tamanho = new Tamanhos();
-$tamanho-> GetTamanhos();
-
 $smarty->assign('PRO', $produtos->GetItens());
 $smarty->assign('PRO_TOTAL', $produtos->TotalDados());
 $smarty->assign('PAGINAS', $produtos->ShowPaginacao());

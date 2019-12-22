@@ -55,8 +55,8 @@
         </div>
     </div>
     <div class="row no-gutters justify-content-center">
-        {foreach from=$PRO item=P}
         <div class="card-group">
+            {foreach from=$PRO item=P}
             <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
                 <a class="card-link img-hover-zoom" href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
                     <img class="card-img-top img-fluid p-1" src="{$P.pro_img_gg}" alt="{$P.pro_nome}" title="Clique para visualizar">
@@ -64,10 +64,11 @@
                         <h5 class="card-title text-dark">{$P.pro_nome}</h5>
                         <hr>
                         <h4 class="card-subtitle" style="text-align: bottom;">R$ {$P.pro_valor}</h4>
+                    </div>
                 </a>
-                </div>
             </div>
         </div>
         {/foreach}
     </div>
-    <hr>
+</div>
+<hr>

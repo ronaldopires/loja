@@ -110,29 +110,6 @@
                 <hr>
                 <div class="row no-gutters justify-content-end">
                     <div class="col-sm mb-3 pl-3 pr-3">
-                        <div class="form-inline mb-3">
-                            <b>Tamanhos</b>
-                            <div class="form-check ml-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="35" id="pro_tamanho">
-                                <label class="form-check-label" for="35">35</label>
-                            </div>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="36" id="pro_tamanho">
-                                <label class="form-check-label" for="36">36</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="37" id="pro_tamanho">
-                                <label class="form-check-label" for="37">37</label>
-                            </div>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="38" id="pro_tamanho">
-                                <label class="form-check-label" for="38">38</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="pro_tamanho[]" value="39" id="pro_tamanho">
-                                <label class="form-check-label" for="39">39</label>
-                            </div>
-                        </div>
                         <div class="form-group" id="containerphoto">
                             <div class="custom-file">
                                 <div class="input-group">

@@ -17,7 +17,7 @@ if (isset($_POST['pro_id'])) {
 
     if (isset($_POST['fotos_apagar'])) {
         $apagar = new ProdutosImages();
-        
+
         foreach ($_POST['fotos_apagar'] as $foto) {
             $apagar->Deletar($foto);
             $filename = Rotas::get_SiteRAIZ() . '/' . Rotas::get_ImagePasta() . $foto;
@@ -26,7 +26,6 @@ if (isset($_POST['pro_id'])) {
         echo '<div class="alert alert-success alerta">Foto deletada com sucesso.</div>';
 
     }
-
 
     $img = new ProdutosImages($pro_id);
     $img->GetImagesPRO($_POST['pro_id']);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-19 23:16:31
+/* Smarty version 3.1.34-dev-7, created on 2019-12-21 14:42:45
   from 'C:\xampp\htdocs\loja\view\home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfc2effc7bb93_99899367',
+  'unifunc' => 'content_5dfe5995c2e492_37061329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4924bcb350fdce42e50638f7f6e7710fa79c07ea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\home.tpl',
-      1 => 1576794303,
+      1 => 1576950164,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfc2effc7bb93_99899367 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfe5995c2e492_37061329 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-sm">
@@ -78,12 +78,12 @@ function content_5dfc2effc7bb93_99899367 (Smarty_Internal_Template $_smarty_tpl)
         </div>
     </div>
     <div class="row no-gutters justify-content-center">
-        <?php
+        <div class="card-group">
+            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ?>
-        <div class="card-group">
             <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
                 <a class="card-link img-hover-zoom" href="<?php echo $_smarty_tpl->tpl_vars['PRO_INFO']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_id'];?>
@@ -98,8 +98,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                         <hr>
                         <h4 class="card-subtitle" style="text-align: bottom;">R$ <?php echo $_smarty_tpl->tpl_vars['P']->value['pro_valor'];?>
 </h4>
+                    </div>
                 </a>
-                </div>
             </div>
         </div>
         <?php
@@ -107,5 +107,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
-    <hr><?php }
+</div>
+<hr><?php }
 }

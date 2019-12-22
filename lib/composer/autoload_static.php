@@ -210,6 +210,7 @@ class ComposerStaticInitaceffb5e422464ab4dc6099b2c812676
         'Smarty_Variable' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_variable.php',
         'TPC_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_configfileparser.php',
         'TP_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_templateparser.php',
+        'Tamanhos' => __DIR__ . '/../..' . '/model/Tamanho.class.php',
         'Template' => __DIR__ . '/../..' . '/model/Template.class.php',
     );
 

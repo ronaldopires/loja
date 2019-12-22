@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-16 15:21:54
+/* Smarty version 3.1.34-dev-7, created on 2019-12-21 14:40:43
   from 'C:\xampp\htdocs\loja\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df79302846653_45702847',
+  'unifunc' => 'content_5dfe591b051c54_18510069',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70e43319338037d61ae19a0944e2375360bbb269' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\produtos.tpl',
-      1 => 1576506108,
+      1 => 1576949831,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df79302846653_45702847 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dfe591b051c54_18510069 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Alerta -->
-<?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado</h4>
+<?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
+    </h4>
     <?php }?>
     <div class="container-fluid">
         <div class="row no-gutters">
-
             <!--Menu lateral -->
             <div class="col p-3 border-right">
                 <nav class="nav flex-column">
