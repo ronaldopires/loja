@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-20 04:33:56
+/* Smarty version 3.1.34-dev-7, created on 2019-12-26 15:35:18
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfc79646b71e5_49659715',
+  'unifunc' => 'content_5e04fd66403d50_67136707',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1576827193,
+      1 => 1577385316,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfc79646b71e5_49659715 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="container-fluid p-0">
+function content_5e04fd66403d50_67136707 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="container-fluid p-3">
     <div class="row no-gutters justify-content-center">
-        <div class="col-10">
+        <div class="col-sm-12">
             <h5 class="text-center mt-2">Gerenciar Produtos</h5>
             <div class="row no-gutters my-3 justify-content-end">
                 <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_NOVO']->value;?>
@@ -33,7 +33,7 @@ function content_5dfc79646b71e5_49659715 (Smarty_Internal_Template $_smarty_tpl)
             <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
                 <?php }?>
                 <div class="table-responsive">
-                    <table class="table table-sm">
+                    <table class="table">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col"></th>

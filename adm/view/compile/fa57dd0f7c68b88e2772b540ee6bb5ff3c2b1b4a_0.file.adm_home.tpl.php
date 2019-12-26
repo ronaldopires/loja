@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 14:59:40
+/* Smarty version 3.1.34-dev-7, created on 2019-12-26 16:09:18
   from 'C:\xampp\htdocs\loja\adm\view\adm_home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfa690cae9ca2_26824937',
+  'unifunc' => 'content_5e05055eb85664_81574380',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa57dd0f7c68b88e2772b540ee6bb5ff3c2b1b4a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_home.tpl',
-      1 => 1576691979,
+      1 => 1577387356,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfa690cae9ca2_26824937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e05055eb85664_81574380 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-sm">
-            Painel administrativo
+            Teste de Gráfico
+            <canvas id="myChart"></canvas>
         </div>
         <div class="col-sm">
             Painel administrativo
@@ -33,5 +34,47 @@ function content_5dfa690cae9ca2_26824937 (Smarty_Internal_Template $_smarty_tpl)
             Painel administrativo
         </div>
     </div>
-</div><?php }
+</div>
+
+<?php echo '<script'; ?>
+>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+<?php echo '</script'; ?>
+><?php }
 }
