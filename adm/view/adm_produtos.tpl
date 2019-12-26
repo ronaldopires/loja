@@ -1,6 +1,6 @@
-<div class="container-fluid p-0">
+<div class="container-fluid p-3">
     <div class="row no-gutters justify-content-center">
-        <div class="col-10">
+        <div class="col-sm-12">
             <h5 class="text-center mt-2">Gerenciar Produtos</h5>
             <div class="row no-gutters my-3 justify-content-end">
                 <a href="{$PAG_PRODUTOS_NOVO}" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto
@@ -10,7 +10,7 @@
             < 1} <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
                 {/if}
                 <div class="table-responsive">
-                    <table class="table table-sm">
+                    <table class="table">
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col"></th>

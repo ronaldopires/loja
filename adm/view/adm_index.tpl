@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
     <!--JQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <!--FavIcon-->
@@ -238,7 +240,7 @@
                                     <li><a href="#">Tabs & Accordions</a></li>
                                 </ul>
                             </li>
-                            <li> <a href="{$PAG_ADM_CLIENTE}"><i class="fa fa-diamond"></i> <span
+                            <li> <a href="{$PAG_ADM_CLIENTE}"><i class="fa fa-user" aria-hidden="true"></i> <span
                                         class="nav-label">Clientes</span></a> </li>
                             <li>
                                 <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active">
@@ -257,8 +259,9 @@
                                         class="fa fa-chevron-down float-right"></span></a>
                                 <ul class="sub-menu collapse" id="categories">
                                     <li><a href="{$PAG_CATEGORIAS}">Inserir Categorias <span><i class="material-icons float-right">add</i></span></a></li>
+                                    <li><a href="{$PAG_ADM_PRODUTOS}">Todos</a></li>
                                     {foreach from=$CATEGORIAS item=C}
-                                    <li><a href="{$C.cate_link}">{$C.cate_nome}</a></li>
+                                    <li><a href="{$C.cate_link_adm}">{$C.cate_nome}</a></li>
                                     {/foreach}
                                 </ul>
                             </li>

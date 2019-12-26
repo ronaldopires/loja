@@ -25,12 +25,12 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control input-md" type="date" maxlength="10" value="{$CLI_DATA_NASC}" required>
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control" type="date" maxlength="10" value="{$CLI_DATA_NASC}" required>
                     </div>
 
                     <div class="input-group col-4 justify-content-center">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Nascimento</span>
+                            <span class="input-group-text">Sexo</span>
                         </div>
                         <select class="form-control" id="sexo" name="cli_sexo" value="{$CLI_SEXO}">
                             {if {$CLI_SEXO} == 0 }
@@ -56,7 +56,7 @@
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">Telefone</span>
                         </div>
-                        <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3 " placeholder="DDD " type="tel " maxlength="3 " value="{$CLI_DDD_FONE} ">
+                        <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3" placeholder="DDD " type="tel " maxlength="3 " value="{$CLI_DDD_FONE} ">
                         <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="9" value="{$CLI_FONE}">
                     </div>
                 </div>
@@ -66,7 +66,8 @@
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">E-mail</span>
                         </div>
-                        <input type="email " id="email " name="cli_email" class="form-control " value="{$CLI_EMAIL}" readonly required>
+                        <input type="email " id="email " name="cli_email" class="form-control" value="{$CLI_EMAIL}" readonly required>
+                        <div id="mostrar_erro"></div>
                     </div>
                 </div>
                 <hr>

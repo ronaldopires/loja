@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-26 16:55:31
-  from 'C:\xampp\htdocs\loja\view\clientes_dados.tpl' */
+/* Smarty version 3.1.34-dev-7, created on 2019-12-26 17:00:20
+  from 'C:\xampp\htdocs\loja\adm\view\adm_clientes_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e051033e836c5_87134268',
+  'unifunc' => 'content_5e05115410de42_13061644',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4d97c18762cb132d968965a1a9b1934dd6d9bbf0' => 
+    'dd2833ea2e5e345f19454b44b4fe894bc391e14f' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_dados.tpl',
-      1 => 1577390124,
+      0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_clientes_editar.tpl',
+      1 => 1577390407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e051033e836c5_87134268 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e05115410de42_13061644 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters justify-content-center">
         <div class="col-10 border my-4 rounded">
@@ -51,7 +51,7 @@ function content_5e051033e836c5_87134268 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control" type="text" maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DATA_NASC']->value;?>
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control input-md" type="date" maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DATA_NASC']->value;?>
 " required>
                     </div>
 
@@ -89,7 +89,7 @@ if ($_prefixVariable1 == 0) {?>
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">Telefone</span>
                         </div>
-                        <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3" placeholder="DDD " type="tel " maxlength="3 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_FONE']->value;?>
+                        <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3 " placeholder="DDD " type="tel " maxlength="3 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_FONE']->value;?>
  ">
                         <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="9" value="<?php echo $_smarty_tpl->tpl_vars['CLI_FONE']->value;?>
 ">
@@ -101,9 +101,8 @@ if ($_prefixVariable1 == 0) {?>
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">E-mail</span>
                         </div>
-                        <input type="email " id="email " name="cli_email" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['CLI_EMAIL']->value;?>
+                        <input type="email " id="email " name="cli_email" class="form-control " value="<?php echo $_smarty_tpl->tpl_vars['CLI_EMAIL']->value;?>
 " readonly required>
-                        <div id="mostrar_erro"></div>
                     </div>
                 </div>
                 <hr>
@@ -162,15 +161,10 @@ if ($_prefixVariable1 == 0) {?>
                 <div class="container mt-3 ">
                     <div class="row no-gutters justify-content-center ">
                         <div class="col-4">
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <label for="password"><strong>Senha para confirmar as alterações</strong></label>
-                                </div>
-                                <input id="cli_senha_atual" name="cli_senha_atual" class="form-control " type="password" required>
-                            </div>
-
                             <div class="form-inline justify-content-center">
                                 <div class="input-group col-auto p-0">
+                                    <input name="cli_id" value="<?php echo $_smarty_tpl->tpl_vars['CLI_ID']->value;?>
+" class="form-control " type="hidden">
                                     <button type="submit" class="btn btn-success btn-sm"><i
                                             class="material-icons">done</i><span style="vertical-align: super;">Alterar
                                             dados</span></button>
