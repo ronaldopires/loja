@@ -25,7 +25,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control input-md" type="date" maxlength="10" value="{$CLI_DATA_NASC}" required>
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control" type="date" value="{$CLI_DATA_NASC}" required>
                     </div>
 
                     <div class="input-group col-4 justify-content-center">

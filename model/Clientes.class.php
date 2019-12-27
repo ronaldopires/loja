@@ -108,7 +108,7 @@ class Clientes extends Conexao
                 'cli_fone'          => $lista['cli_fone'],
                 'cli_email'         => $lista['cli_email'],
                 'cli_senha'         => $lista['cli_senha'],
-                'cli_data_nasc'     => $lista['cli_data_nasc'],
+                'cli_data_nasc'     => Sistema::Fdata($lista['cli_data_nasc']),
                 'cli_hora_cad'      => $lista['cli_hora_cad'],
                 'cli_data_cad'      => Sistema::Fdata($lista['cli_data_cad']),
 
@@ -226,7 +226,7 @@ class Clientes extends Conexao
         // caso passou na verificação grava no banco
 
         $query = " UPDATE {$this->prefix}clientes SET cli_nome=:cli_nome, cli_sobrenome=:cli_sobrenome,cli_data_nasc=:cli_data_nasc,cli_sexo=:cli_sexo,";
-        $query .= " cli_cpf=:cli_cpf, cli_ddd_celular=:cli_ddd_celular,cli_ddd_fone=:cli_ddd_fone,cli_fone=:cli_fone,cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro ,";
+        $query .= " cli_ddd_celular=:cli_ddd_celular,cli_ddd_fone=:cli_ddd_fone,cli_fone=:cli_fone,cli_celular=:cli_celular ,cli_endereco=:cli_endereco ,cli_numero=:cli_numero,cli_bairro=:cli_bairro ,";
         $query .= " cli_cidade=:cli_cidade ,cli_uf=:cli_uf ,cli_cep=:cli_cep ,cli_email=:cli_email  ";
         $query .= " WHERE  cli_id = :cli_id";
         //  $query .=" (:cli_nome, :cli_sobrenome,:cli_data_nasc,:cli_rg,";
@@ -238,7 +238,6 @@ class Clientes extends Conexao
             ':cli_sobrenome'    => $this->getCli_sobrenome(),
             ':cli_data_nasc'    => $this->getCli_data_nasc(),
             ':cli_sexo'         => $this->getCli_sexo(),
-            ':cli_cpf'          => $this->getCli_cpf(),
             ':cli_ddd_celular'  => $this->getCli_ddd_celular(),
             ':cli_celular'      => $this->getCli_celular(),
             ':cli_ddd_fone'     => $this->getCli_ddd_fone(),
@@ -254,15 +253,9 @@ class Clientes extends Conexao
 
         );
 
-        //  echo $query;
-
-
         if ($this->ExecuteSQL($query, $params)) :
-
             return true;
-
         else :
-
             return false;
         endif;
     }

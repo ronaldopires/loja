@@ -242,7 +242,7 @@
                             </li>
                             <li> <a href="{$PAG_ADM_CLIENTE}"><i class="fa fa-user" aria-hidden="true"></i> <span
                                         class="nav-label">Clientes</span></a> </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active">
                                     <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Gráficos</span> <span class="fa fa-chevron-down float-right"></span> </a>
                                 <ul class="sub-menu collapse" id="products">
@@ -251,7 +251,9 @@
                                     <li><a href="#">Buttons</a></li>
                                     <li><a href="#">Tabs & Accordions</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
+                            <li> <a href="{$PAG_ADM_PEDIDOS}"><i class="fas fa-tag"></i> <span
+                                        class="nav-label">Pedidos</span></a> </li>
                             <li> <a href="{$PAG_ADM_PRODUTOS}"><i class="fas fa-tag"></i> <span
                                         class="nav-label">Produtos</span></a> </li>
                             <li> <a href="{$PAG_CATEGORIAS}" data-toggle="collapse" data-target="#categories" class="collapsed active"><i class="fa fa-table"></i> <span
