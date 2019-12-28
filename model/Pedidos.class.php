@@ -41,6 +41,8 @@ class Pedidos extends Conexao
             $cli = (int) $cliente;
             $query .= " WHERE ped_cliente = {$cli}";
             $query .= " ORDER BY ped_id DESC";
+            $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_cliente=" . (int) $cli);
+        } else {
             $query .= $this->PaginacaoLinks("ped_id", $this->prefix . "pedidos");
         }
         $this->ExecuteSQL($query);
@@ -50,7 +52,7 @@ class Pedidos extends Conexao
     private function GetLista()
     {
         $i = 1;
-        while ($lista = $this->ListarDados()):
+        while ($lista = $this->ListarDados()) :
 
             $this->itens[$i] = array(
                 'ped_id' => $lista['ped_id'],
@@ -91,6 +93,64 @@ class Pedidos extends Conexao
 
             $this->ExecuteSQL($query, $params);
         }
+    }
+
+    function  Apagar($ped_cod)
+    {
+        // apagando o PEDIDO  
+        // monto a minha SQL de apagar o pedido 
+        $query =  " DELETE FROM {$this->prefix}pedidos WHERE ped_cod = :ped_cod";
+        // parametros
+        $params = array(':ped_cod' => $ped_cod);
+        // executo a minha SQL
+        $this->ExecuteSQL($query, $params);
+
+        /// apos apagar o pedido apaga ITENS DO PEDIDO  
+
+        // monto a minha SQL de apagar os items 
+        $query =  " DELETE FROM {$this->prefix}pedidos_itens WHERE item_ped_cod = :ped_cod";
+
+        // parametros
+        $params = array(':ped_cod' => $ped_cod);
+        // executo a minha SQL
+        if ($this->ExecuteSQL($query, $params)) :
+            return TRUE;
+        endif;
+    }
+
+    function GetPedidosREF($ref)
+    {
+        // monto a SQL
+        $query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";
+        $query .= " ON p.ped_cliente = c.cli_id";
+        $query .= " WHERE ped_ref = :ref";
+        $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_ref = " .$ref);
+
+        // passando parametros
+        $params = array(':ref' => $ref);
+        // executando a SQL                      
+        $this->ExecuteSQL($query, $params);
+        // trazendo a listagem 
+        $this->GetLista();
+    }
+
+    function GetPedidosDATA($data_ini, $data_fim)
+    {
+
+        // montando a SQL
+        $query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";
+        $query .= " ON p.ped_cliente = c.cli_id";
+
+        $query .= " WHERE ped_data between :data_ini AND :data_fim";
+        $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_data between " . $data_ini . " AND " . $data_fim);
+
+        // passando os parametros  
+        $params = array(':data_ini' => $data_ini, ':data_fim' => $data_fim);
+
+        // executando a SQL
+        $this->ExecuteSQL($query, $params);
+
+        $this->GetLista();
     }
 
     public function LimparSessoes()

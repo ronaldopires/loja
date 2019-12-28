@@ -48,6 +48,45 @@ class Login extends Conexao
             echo '<h4 class="alert alert-danger alertDel">E-mail e/ou senha incorretos</h4>';
         }
     }
+
+    function GetLoginADM($user, $senha)
+    {
+
+        $this->setUser($user);
+        $this->setSenha($senha);
+
+        $query = "SELECT * FROM {$this->prefix}user_adm WHERE user_email = :email AND user_senha = :senha";
+
+        $params = array(
+            ':email' =>  $this->getUser(),
+            ':senha' =>  $this->getSenha()
+        );
+
+        $this->ExecuteSQL($query, $params);
+
+        // caso o login seja efetivado com exito 
+        if ($this->TotalDados() > 0) :
+
+            $lista = $this->ListarDados();
+
+            $_SESSION['ADM']['user_id']     =  $lista['user_id'];
+            $_SESSION['ADM']['user_nome']   =  $lista['user_nome'];
+            $_SESSION['ADM']['user_email']  =  $lista['user_email'];
+            $_SESSION['ADM']['user_senha']     =  $lista['user_senha'];
+            $_SESSION['ADM']['user_data']     = Sistema::DataAtualBR();
+            $_SESSION['ADM']['user_hora']     = Sistema::HoraAtual();
+
+            return TRUE;
+        // caso o login seja incorreto 
+        else :
+
+            echo '<h4 class="alert alert-danger alerta"> O login incorreto </h4>';
+            //  Rotas::Redirecionar(1,  Rotas::pag_ClienteLogin() );
+
+            return FALSE;
+        endif;
+    }
+
     // Verifica se está logado
     public static function Logado()
     {
@@ -70,7 +109,7 @@ class Login extends Conexao
     {
 
         // verifo se não esta logado
-        if (!self::Logado()):
+        if (!self::Logado()) :
 
             //self::AcessoNegado();
             Rotas::Redirecionar(0, Rotas::pag_Login());
@@ -78,8 +117,8 @@ class Login extends Conexao
             // caso nao redirecione  saiu  do bloco
             exit();
 
-            // caso esteja mostra a tela minha conta
-        else:
+        // caso esteja mostra a tela minha conta
+        else :
 
             $smarty = new Template();
 

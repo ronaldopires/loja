@@ -55,7 +55,7 @@ if (isset($_POST['cli_nome']) and isset($_POST['cli_email']) and isset($_POST['c
         exit();
     } else {
         echo '<script> alert("Dados alterados com sucesso!");</script>';
-        Rotas::Redirecionar(2, Rotas::pag_ClientesADM());
+        Rotas::Redirecionar(0, Rotas::pag_ClientesADM());
     }
 
 } else {

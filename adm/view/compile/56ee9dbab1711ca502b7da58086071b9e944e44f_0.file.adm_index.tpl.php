@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-26 16:05:53
+/* Smarty version 3.1.34-dev-7, created on 2019-12-27 13:02:33
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e050491675905_14008800',
+  'unifunc' => 'content_5e062b191cca34_57229261',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56ee9dbab1711ca502b7da58086071b9e944e44f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_index.tpl',
-      1 => 1577387150,
+      1 => 1577462551,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e050491675905_14008800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e062b191cca34_57229261 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -282,7 +282,7 @@ function content_5e050491675905_14008800 (Smarty_Internal_Template $_smarty_tpl)
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_CLIENTE']->value;?>
 "><i class="fa fa-user" aria-hidden="true"></i> <span
                                         class="nav-label">Clientes</span></a> </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active">
                                     <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Gráficos</span> <span class="fa fa-chevron-down float-right"></span> </a>
                                 <ul class="sub-menu collapse" id="products">
@@ -291,7 +291,10 @@ function content_5e050491675905_14008800 (Smarty_Internal_Template $_smarty_tpl)
                                     <li><a href="#">Buttons</a></li>
                                     <li><a href="#">Tabs & Accordions</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
+                            <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_PEDIDOS']->value;?>
+"><i class="fas fa-tag"></i> <span
+                                        class="nav-label">Pedidos</span></a> </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_PRODUTOS']->value;?>
 "><i class="fas fa-tag"></i> <span
                                         class="nav-label">Produtos</span></a> </li>
