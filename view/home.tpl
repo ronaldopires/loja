@@ -47,6 +47,7 @@
     </div>
 </div>
 <!-- Novidades-->
+{if $PRO_TOTAL > 0}
 <div class="container-fluid my-5 p-3">
     <div class="row no-gutters">
         <div class="col text-center">
@@ -71,4 +72,5 @@
         {/foreach}
     </div>
 </div>
+{/if}
 <hr>

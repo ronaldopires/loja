@@ -70,7 +70,7 @@
                                     <td class="text-center">
                                         <form name="deletar" method="POST" action="">
                                             <input type="hidden" name="cod_pedido" id="cod_pedido" value="{$P.ped_cod}">
-                                            <button name="ped_apagar" value="ped_apagar" class="btn btn-danger"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+                                            <button name="ped_apagar" value="ped_apagar" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
                                         </form>
                                     </td>
                                 </tr>

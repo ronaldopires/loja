@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-21 14:35:26
+/* Smarty version 3.1.34-dev-7, created on 2019-12-28 23:07:23
   from 'C:\xampp\htdocs\loja\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfe57de641a49_93016841',
+  'unifunc' => 'content_5e080a5b6f0b16_14502325',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88a1285121fb32d2e24d6766738b0f2210382789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\index.tpl',
-      1 => 1576949725,
+      1 => 1577585242,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfe57de641a49_93016841 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e080a5b6f0b16_14502325 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -84,11 +84,9 @@ function content_5dfe57de641a49_93016841 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="row no-gutters text-right">
             <div class="col d-flex py-3 justify-content-end">
-                <form class="form-inline">
-                    <input class="form-control" type="search" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
-                    <span id="iconPesquisar">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                    </span>
+                <form class="form-inline" method="post" action="">
+                    <input class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                    <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
 

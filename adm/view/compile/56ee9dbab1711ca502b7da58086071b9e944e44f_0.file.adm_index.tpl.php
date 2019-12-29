@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-27 13:02:33
+/* Smarty version 3.1.34-dev-7, created on 2019-12-28 22:07:51
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e062b191cca34_57229261',
+  'unifunc' => 'content_5e07fc675d9e77_40124268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56ee9dbab1711ca502b7da58086071b9e944e44f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_index.tpl',
-      1 => 1577462551,
+      1 => 1577581669,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e062b191cca34_57229261 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e07fc675d9e77_40124268 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -208,13 +208,17 @@ function content_5e062b191cca34_57229261 (Smarty_Internal_Template $_smarty_tpl)
                             <li class="nav-item dropdown  user-menu">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="http://via.placeholder.com/160x160" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Bem Vindo <?php echo $_smarty_tpl->tpl_vars['LOGADO']->value;?>
+                                    <span class="hidden-xs">Bem Vindo <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
  <span style="padding-top: .8vh;" class="fa fa-chevron-down float-right ml-3"></span></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Meu Perfil</a>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_CLIENTE_EDITAR']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['ID']->value;?>
+">Meu Perfil</a>
                                     <a class="dropdown-item" href="#">Configurações</a>
-                                    <a class="dropdown-item" href="#">Sair</a>
+                                    <a class="dropdown-item" href="#">Alterar Senha</a>
+                                    <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['PAG_LOGOFF']->value;?>
+">Sair</a>
                                 </div>
                             </li>
                         </ul>
@@ -230,11 +234,20 @@ function content_5e062b191cca34_57229261 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="float-left image">
                                 <img src="http://via.placeholder.com/160x160" class="rounded-circle" alt="User Image">
                             </div>
-                            <div class="float-left info">
-                                <p>Olá</p>
+                            <div class="col info ml-5">
+                                <p>Olá <?php echo $_smarty_tpl->tpl_vars['USER']->value;?>
+</p>
                                 <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i
-                                            class="fa fa-circle text-success"></i></span> Online</a>
+                                            class="fa fa-circle text-success"></i></span> Online</a><br>
                             </div>
+                            <div class="row no-gutters mt-3">
+                                <div class="col info">
+                                    <p style="font-size: 10px; color: #fff;">Último login <?php echo $_smarty_tpl->tpl_vars['DATA']->value;?>
+ às <?php echo $_smarty_tpl->tpl_vars['HORA']->value;?>
+</p>
+                                </div>
+                            </div>
+
                             <!-- Modal -->
                             <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -293,7 +306,7 @@ function content_5e062b191cca34_57229261 (Smarty_Internal_Template $_smarty_tpl)
                                 </ul>
                             </li> -->
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_PEDIDOS']->value;?>
-"><i class="fas fa-tag"></i> <span
+"><i class="fas fa-box"></i> <span
                                         class="nav-label">Pedidos</span></a> </li>
                             <li> <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_ADM_PRODUTOS']->value;?>
 "><i class="fas fa-tag"></i> <span

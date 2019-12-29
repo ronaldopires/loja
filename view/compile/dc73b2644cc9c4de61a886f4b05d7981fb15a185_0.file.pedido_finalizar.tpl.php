@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-22 13:35:57
+/* Smarty version 3.1.34-dev-7, created on 2019-12-28 21:56:08
   from 'C:\xampp\htdocs\loja\view\pedido_finalizar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dff9b6db7f632_45872731',
+  'unifunc' => 'content_5e07f9a8caf886_74769568',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc73b2644cc9c4de61a886f4b05d7981fb15a185' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_finalizar.tpl',
-      1 => 1576959241,
+      1 => 1577580698,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dff9b6db7f632_45872731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e07f9a8caf886_74769568 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">

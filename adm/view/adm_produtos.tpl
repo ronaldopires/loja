@@ -18,6 +18,7 @@
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
                                 <th scope="col">Foto</th>
                             </tr>
                         </thead>
@@ -33,6 +34,14 @@
                                         <input type="hidden" name="pro_id" id="pro_id" value="{$P.pro_id}">
                                         <button class="btn btn-success"> <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </button>
+                                    </form>
+                                </td>
+                                <td class="align-middle">
+                                    <form name="frm_apagar" method="post" action="">
+                                        <button type="submit" name="btn_apagar" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
+                                        <input type="hidden" name="pro_id_apagar" value="{$PRO.1.pro_id}">
+                                        <input type="hidden" name="pro_apagar" value="apagar">
+                                        <input type="hidden" name="pro_img_arquivo" id="pro_img_arquivo" value="{$PRO.1.pro_img_arquivo}">
                                     </form>
                                 </td>
                                 <td class="align-middle">

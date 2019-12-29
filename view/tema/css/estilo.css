@@ -11,11 +11,9 @@ body {
 
 #iconPesquisar {
     position: relative;
-    left: -25px;
-}
-
-span a i {
-    color: black;
+    left: -35px;
+    background: transparent;
+    border: none;
 }
 
 #menu .nav-link {

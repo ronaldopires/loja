@@ -51,11 +51,9 @@
         </div>
         <div class="row no-gutters text-right">
             <div class="col d-flex py-3 justify-content-end">
-                <form class="form-inline">
-                    <input class="form-control" type="search" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
-                    <span id="iconPesquisar">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                    </span>
+                <form class="form-inline" method="post" action="">
+                    <input class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                    <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
 

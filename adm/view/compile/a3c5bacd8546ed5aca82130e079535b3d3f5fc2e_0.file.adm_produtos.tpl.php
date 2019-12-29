@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-26 15:35:18
+/* Smarty version 3.1.34-dev-7, created on 2019-12-28 20:58:48
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e04fd66403d50_67136707',
+  'unifunc' => 'content_5e07ec384f25c7_40990450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1577385316,
+      1 => 1577577527,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e04fd66403d50_67136707 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e07ec384f25c7_40990450 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-3">
     <div class="row no-gutters justify-content-center">
         <div class="col-sm-12">
@@ -41,6 +41,7 @@ function content_5e04fd66403d50_67136707 (Smarty_Internal_Template $_smarty_tpl)
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Preço</th>
                                 <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
                                 <th scope="col">Foto</th>
                             </tr>
                         </thead>
@@ -66,6 +67,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ">
                                         <button class="btn btn-success"> <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </button>
+                                    </form>
+                                </td>
+                                <td class="align-middle">
+                                    <form name="frm_apagar" method="post" action="">
+                                        <button type="submit" name="btn_apagar" class="btn btn-danger btn-sm"><i class="material-icons">delete</i></button>
+                                        <input type="hidden" name="pro_id_apagar" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_id'];?>
+">
+                                        <input type="hidden" name="pro_apagar" value="apagar">
+                                        <input type="hidden" name="pro_img_arquivo" id="pro_img_arquivo" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_img_arquivo'];?>
+">
                                     </form>
                                 </td>
                                 <td class="align-middle">

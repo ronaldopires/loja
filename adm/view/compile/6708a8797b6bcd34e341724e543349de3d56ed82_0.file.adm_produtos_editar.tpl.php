@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-21 15:27:46
+/* Smarty version 3.1.34-dev-7, created on 2019-12-28 20:54:13
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfe6422eaf6b4_78566243',
+  'unifunc' => 'content_5e07eb259bef29_86657890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6708a8797b6bcd34e341724e543349de3d56ed82' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_editar.tpl',
-      1 => 1576952768,
+      1 => 1577577251,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfe6422eaf6b4_78566243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e07eb259bef29_86657890 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -226,10 +226,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             <div class="modal-body text-center">
                                 <h5>Você deseja realmente excluir esse produto?</h5>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer justify-content-center">
                                 <form name="frm_apagar" method="post" action="">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="submit" name="btn_apagar" class="btn btn-danger"><span ><i style="font-size: 3vh;" class="material-icons mr-2">delete</i></span> Excluir Produto</button>
+                                    <button type="submit" name="btn_apagar" class="btn btn-danger">Excluir Produto</button>
                                     <input type="hidden" name="pro_id_apagar" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_id'];?>
 ">
                                     <input type="hidden" name="pro_apagar" value="apagar">

@@ -173,12 +173,13 @@
                             <li class="nav-item dropdown  user-menu">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <img src="http://via.placeholder.com/160x160" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">Bem Vindo {$LOGADO} <span style="padding-top: .8vh;" class="fa fa-chevron-down float-right ml-3"></span></span>
+                                    <span class="hidden-xs">Bem Vindo {$USER} <span style="padding-top: .8vh;" class="fa fa-chevron-down float-right ml-3"></span></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Meu Perfil</a>
+                                    <a class="dropdown-item" href="{$PAG_ADM_CLIENTE_EDITAR}/{$ID}">Meu Perfil</a>
                                     <a class="dropdown-item" href="#">Configurações</a>
-                                    <a class="dropdown-item" href="#">Sair</a>
+                                    <a class="dropdown-item" href="#">Alterar Senha</a>
+                                    <a class="dropdown-item" href="{$PAG_LOGOFF}">Sair</a>
                                 </div>
                             </li>
                         </ul>
@@ -194,11 +195,17 @@
                             <div class="float-left image">
                                 <img src="http://via.placeholder.com/160x160" class="rounded-circle" alt="User Image">
                             </div>
-                            <div class="float-left info">
-                                <p>Olá</p>
+                            <div class="col info ml-5">
+                                <p>Olá {$USER}</p>
                                 <a href="#" class="nav-link p-0" role="button" data-toggle="modal" data-target="#modalExemplo"><span id="online"><i
-                                            class="fa fa-circle text-success"></i></span> Online</a>
+                                            class="fa fa-circle text-success"></i></span> Online</a><br>
                             </div>
+                            <div class="row no-gutters mt-3">
+                                <div class="col info">
+                                    <p style="font-size: 10px; color: #fff;">Último login {$DATA} às {$HORA}</p>
+                                </div>
+                            </div>
+
                             <!-- Modal -->
                             <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -252,7 +259,7 @@
                                     <li><a href="#">Tabs & Accordions</a></li>
                                 </ul>
                             </li> -->
-                            <li> <a href="{$PAG_ADM_PEDIDOS}"><i class="fas fa-tag"></i> <span
+                            <li> <a href="{$PAG_ADM_PEDIDOS}"><i class="fas fa-box"></i> <span
                                         class="nav-label">Pedidos</span></a> </li>
                             <li> <a href="{$PAG_ADM_PRODUTOS}"><i class="fas fa-tag"></i> <span
                                         class="nav-label">Produtos</span></a> </li>

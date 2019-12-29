@@ -49,7 +49,7 @@ class Login extends Conexao
         }
     }
 
-    function GetLoginADM($user, $senha)
+    public function GetLoginADM($user, $senha)
     {
 
         $this->setUser($user);
@@ -58,32 +58,32 @@ class Login extends Conexao
         $query = "SELECT * FROM {$this->prefix}user_adm WHERE user_email = :email AND user_senha = :senha";
 
         $params = array(
-            ':email' =>  $this->getUser(),
-            ':senha' =>  $this->getSenha()
+            ':email' => $this->getUser(),
+            ':senha' => $this->getSenha(),
         );
 
         $this->ExecuteSQL($query, $params);
 
-        // caso o login seja efetivado com exito 
-        if ($this->TotalDados() > 0) :
+        // caso o login seja efetivado com exito
+        if ($this->TotalDados() > 0):
 
             $lista = $this->ListarDados();
 
-            $_SESSION['ADM']['user_id']     =  $lista['user_id'];
-            $_SESSION['ADM']['user_nome']   =  $lista['user_nome'];
-            $_SESSION['ADM']['user_email']  =  $lista['user_email'];
-            $_SESSION['ADM']['user_senha']     =  $lista['user_senha'];
-            $_SESSION['ADM']['user_data']     = Sistema::DataAtualBR();
-            $_SESSION['ADM']['user_hora']     = Sistema::HoraAtual();
+            $_SESSION['ADM']['user_id'] = $lista['user_id'];
+            $_SESSION['ADM']['user_nome'] = $lista['user_nome'];
+            $_SESSION['ADM']['user_email'] = $lista['user_email'];
+            $_SESSION['ADM']['user_senha'] = $lista['user_senha'];
+            $_SESSION['ADM']['user_data'] = Sistema::DataAtualBR();
+            $_SESSION['ADM']['user_hora'] = Sistema::HoraAtual();
 
-            return TRUE;
-        // caso o login seja incorreto 
-        else :
+            return true;
+            // caso o login seja incorreto
+        else:
 
-            echo '<h4 class="alert alert-danger alerta"> O login incorreto </h4>';
+            echo '<h4 class="alert alert-danger alerta">Login e/ou senha incorreto.</h4>';
             //  Rotas::Redirecionar(1,  Rotas::pag_ClienteLogin() );
 
-            return FALSE;
+            return false;
         endif;
     }
 
@@ -96,10 +96,24 @@ class Login extends Conexao
             return false;
         }
     }
+    public static function LogadoADM()
+    {
+        if (isset($_SESSION['ADM']['user_nome']) && ($_SESSION['ADM']['user_id'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     // Função de Logoff
     public static function Logoff()
     {
         unset($_SESSION['CLI']);
+        Rotas::Redirecionar(2, Rotas::get_SiteHOME());
+        exit('<h4 class="alert alert-success alertAdd">Efetuando o Logoff...</h4>');
+    }
+    public static function LogoffADM()
+    {
+        unset($_SESSION['ADM']);
         Rotas::Redirecionar(2, Rotas::get_SiteHOME());
         exit('<h4 class="alert alert-success alertAdd">Efetuando o Logoff...</h4>');
     }
@@ -109,7 +123,7 @@ class Login extends Conexao
     {
 
         // verifo se não esta logado
-        if (!self::Logado()) :
+        if (!self::Logado()):
 
             //self::AcessoNegado();
             Rotas::Redirecionar(0, Rotas::pag_Login());
@@ -117,8 +131,8 @@ class Login extends Conexao
             // caso nao redirecione  saiu  do bloco
             exit();
 
-        // caso esteja mostra a tela minha conta
-        else :
+            // caso esteja mostra a tela minha conta
+        else:
 
             $smarty = new Template();
 
