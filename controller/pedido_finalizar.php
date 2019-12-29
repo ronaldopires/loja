@@ -48,6 +48,18 @@ if (!Login::Logado()) {
         $email->Enviar($assunto, $msg, $destinatarios);
 
         if ($pedido->PedidoGravar($cliente, $cod, $ref, $frete)) {
+            $pag = new PagamentoPS();
+
+            $pag->Pagamento($_SESSION['CLI'], $_SESSION['PED'], $carrinho->GetCarrinho());
+
+            // passando para o template dados do PS
+            $smarty->assign('PS_URL', $pag->psURL);
+            $smarty->assign('PS_COD', $pag->psCod);
+            $smarty->assign('PS_SCRIPT', $pag->psURL_Script);
+            $smarty->assign('PAG_RETORNO', Rotas::pag_PedidoRetorno());
+            $smarty->assign('PAG_ERRO', Rotas::pag_PedidoRetornoERRO());
+            $smarty->assign('REF', $ref);
+
             $pedido->LimparSessoes();
         }
 

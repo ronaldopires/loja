@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-18 03:04:23
+/* Smarty version 3.1.34-dev-7, created on 2019-12-29 18:24:20
   from 'C:\xampp\htdocs\loja\view\clientes_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df9c167edf587_01236269',
+  'unifunc' => 'content_5e091984912f30_01487163',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0c9520b0050e338ea87a989f8596a2f42b74e52' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_pedidos.tpl',
-      1 => 1576649060,
+      1 => 1577654647,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df9c167edf587_01236269 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e091984912f30_01487163 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters">
         <div class="col-12">
@@ -48,10 +48,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 </td>
                         <td class="align-middle"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_cod'];?>
 </td>
-                        <?php if ($_smarty_tpl->tpl_vars['P']->value['ped_pag_status'] == 'AGUARDANDO PAGAMENTO') {?>
+                        <?php if ($_smarty_tpl->tpl_vars['P']->value['ped_pag_status'] == 'Aguardando pagamento') {?>
                         <td class="text-warning align-middle"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pag_status'];?>
 </td>
-                        <?php } elseif ($_smarty_tpl->tpl_vars['P']->value['ped_pag_status'] == 'PAGAMENTO CONCLUIDO') {?>
+                        <?php } elseif ($_smarty_tpl->tpl_vars['P']->value['ped_pag_status'] == 'Analise') {?>
+                        <td class="text-info align-middle"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pag_status'];?>
+</td>
+                        <?php } elseif ($_smarty_tpl->tpl_vars['P']->value['ped_pag_status'] == 'Pago') {?>
                         <td class="text-success align-middle"><?php echo $_smarty_tpl->tpl_vars['P']->value['ped_pag_status'];?>
 </td>
                         <?php } else { ?>

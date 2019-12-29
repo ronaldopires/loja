@@ -87,6 +87,15 @@ class Rotas
     {
         return self::get_SiteHOME() . '/pedido_finalizar';
     }
+    //ROTAS PARA RETORNO DO PEDIDO
+    public static function pag_PedidoRetorno()
+    {
+        return self::get_SiteHOME() . '/pedido_retorno';
+    }
+    public static function pag_PedidoRetornoERRO()
+    {
+        return self::get_SiteHOME() . '/pedido_retorno_erro';
+    }
     public static function pag_Sobre()
     {
         return self::get_SiteHOME() . '/sobre';

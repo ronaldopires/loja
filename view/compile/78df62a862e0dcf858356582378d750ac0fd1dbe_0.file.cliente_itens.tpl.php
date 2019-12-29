@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-17 03:12:59
+/* Smarty version 3.1.34-dev-7, created on 2019-12-29 20:03:29
   from 'C:\xampp\htdocs\loja\view\cliente_itens.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df871eb1836d8_27591031',
+  'unifunc' => 'content_5e0930c19ced27_91994304',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '78df62a862e0dcf858356582378d750ac0fd1dbe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\cliente_itens.tpl',
-      1 => 1576563177,
+      1 => 1577660582,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df871eb1836d8_27591031 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0930c19ced27_91994304 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters justify-content-center">
         <div class="col my-3">
@@ -28,28 +28,32 @@ function content_5df871eb1836d8_27591031 (Smarty_Internal_Template $_smarty_tpl)
             <!-- informações sobre o pedido -->
             <section class="row no-gutters">
                 <table class="table table-bordered rounded">
-                    <tr class="bg-success">
-                        <td><b>Data:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_data'];?>
-</td>
-                        <td><b>Hora:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_hora'];?>
-</td>
-                        <td><b>Ref:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_ref'];?>
-</td>
-                        <td><b>Status:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_pag_status'];?>
-</td>
-                    </tr>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col"><b>Data:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_data'];?>
+</th>
+                            <th scope="col"><b>Hora:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_hora'];?>
+</th>
+                            <th scope="col"><b>Ref:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_ref'];?>
+</th>
+                            <th scope="col"><b>Status:</b> <?php echo $_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_pag_status'];?>
+</th>
+                        </tr>
+                    </thead>
                 </table>
             </section>
             <!-- listagem dos itens -->
             <section class="row no-gutters" id="listaitens">
-                <table class="table table-bordered table-hover">
-                    <tr class="font-weight-bold">
-                        <td></td>
-                        <td>Item</td>
-                        <td class="text-center">Valor Unitário</td>
-                        <td class="text-center">X</td>
-                        <td class="text-center">Sub</td>
-                    </tr>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr class="font-weight-bold">
+                            <th scope="col"></th>
+                            <th scope="col">Item</th>
+                            <th scope="col" class="text-center">Valor Unitário</th>
+                            <th scope="col" class="text-center">X</th>
+                            <th scope="col" class="text-center">Sub</th>
+                        </tr>
+                    </thead>
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ITENS']->value, 'P');
 if ($_from !== null) {
@@ -85,27 +89,45 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </tr>
                 </table>
             </section>
-
-            <?php if ($_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_pag_status'] == 'NAO') {?>
-            <!--  modos de pagamento e outras informações -->
-            <section class="row">
-                <h3 class="text-center"> Formas de pagamento </h3>
-                <div class="col-md-4">
-                </div>
-                <!-- botao de pagamento  -->
-                <div class="col-md-4">
-                    BOTÃO DE PAGAMENTO
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
-/images/logo-pagseguro.png" alt="">
-                    <?php echo '<script'; ?>
- type="text/javascript" src=""><?php echo '</script'; ?>
->
-                </div>
-                <div class="col-md-4">
-                </div>
-            </section>
-            <?php }?>
         </div>
     </div>
+    <?php if ($_smarty_tpl->tpl_vars['ITENS']->value[1]['ped_pag_status'] == 'Não concluido') {?>
+    <!--  modos de pagamento e outras informações -->
+    <div class="row no-gutters mb-4 justify-content-center">
+        <div class="col-12">
+            <h3 class="text-center"> Formas de pagamento </h3>
+            <hr>
+            <div class="container col-5">
+                <img class="img-fluid" width="400rem;" src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
+/tema/images/Logo_PagSeguro.png" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="container col-5">
+                <button class="btn btn-success btn-lg btn-block" onclick="PagSeguroLightbox({
+                    code: '<?php echo $_smarty_tpl->tpl_vars['PS_COD']->value;?>
+'
+                    }, {
+                    success : function(transactionCode) {
+                      alert('Transação efetuada com sucesso! - ' + transactionCode);
+                        window.location ='<?php echo $_smarty_tpl->tpl_vars['PAG_RETORNO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REF']->value;?>
+';
+                    },
+                    abort : function() {
+                       alert('Erro no processo de pagamento, tente novamente.');
+                         window.location ='<?php echo $_smarty_tpl->tpl_vars['PAG_ERRO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REF']->value;?>
+';
+                    }
+                });">Pague com PagSeguro</button>
+                <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PS_SCRIPT']->value;?>
+"><?php echo '</script'; ?>
+>
+            </div>
+        </div>
+    </div>
+    <?php }?>
 </div><?php }
 }

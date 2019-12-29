@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 22:46:21
+/* Smarty version 3.1.34-dev-7, created on 2019-12-29 12:58:39
   from 'C:\xampp\htdocs\loja\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e08056d12f845_77726319',
+  'unifunc' => 'content_5e08cd2fe57155_49600929',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70e43319338037d61ae19a0944e2375360bbb269' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\produtos.tpl',
-      1 => 1577583977,
+      1 => 1577635112,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e08056d12f845_77726319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e08cd2fe57155_49600929 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Alerta -->
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
     </h4>
-    <?php }?>
+    <meta http-equiv="refresh" content="1;url=<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
+"> <?php }?>
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--Menu lateral -->

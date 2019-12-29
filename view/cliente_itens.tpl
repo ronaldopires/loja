@@ -5,24 +5,28 @@
             <!-- informações sobre o pedido -->
             <section class="row no-gutters">
                 <table class="table table-bordered rounded">
-                    <tr class="bg-success">
-                        <td><b>Data:</b> {$ITENS.1.ped_data}</td>
-                        <td><b>Hora:</b> {$ITENS.1.ped_hora}</td>
-                        <td><b>Ref:</b> {$ITENS.1.ped_ref}</td>
-                        <td><b>Status:</b> {$ITENS.1.ped_pag_status}</td>
-                    </tr>
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col"><b>Data:</b> {$ITENS.1.ped_data}</th>
+                            <th scope="col"><b>Hora:</b> {$ITENS.1.ped_hora}</th>
+                            <th scope="col"><b>Ref:</b> {$ITENS.1.ped_ref}</th>
+                            <th scope="col"><b>Status:</b> {$ITENS.1.ped_pag_status}</th>
+                        </tr>
+                    </thead>
                 </table>
             </section>
             <!-- listagem dos itens -->
             <section class="row no-gutters" id="listaitens">
-                <table class="table table-bordered table-hover">
-                    <tr class="font-weight-bold">
-                        <td></td>
-                        <td>Item</td>
-                        <td class="text-center">Valor Unitário</td>
-                        <td class="text-center">X</td>
-                        <td class="text-center">Sub</td>
-                    </tr>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr class="font-weight-bold">
+                            <th scope="col"></th>
+                            <th scope="col">Item</th>
+                            <th scope="col" class="text-center">Valor Unitário</th>
+                            <th scope="col" class="text-center">X</th>
+                            <th scope="col" class="text-center">Sub</th>
+                        </tr>
+                    </thead>
                     {foreach from=$ITENS item=P}
                     <tr>
                         <td><img src="{$P.item_img}" alt=""> </td>
@@ -43,23 +47,35 @@
                     </tr>
                 </table>
             </section>
-
-            {if $ITENS.1.ped_pag_status =='NAO'}
-            <!--  modos de pagamento e outras informações -->
-            <section class="row">
-                <h3 class="text-center"> Formas de pagamento </h3>
-                <div class="col-md-4">
-                </div>
-                <!-- botao de pagamento  -->
-                <div class="col-md-4">
-                    BOTÃO DE PAGAMENTO
-                    <img src="{$TEMA}/images/logo-pagseguro.png" alt="">
-                    <script type="text/javascript" src=""></script>
-                </div>
-                <div class="col-md-4">
-                </div>
-            </section>
-            {/if}
         </div>
     </div>
+    {if $ITENS.1.ped_pag_status =='Não concluido'}
+    <!--  modos de pagamento e outras informações -->
+    <div class="row no-gutters mb-4 justify-content-center">
+        <div class="col-12">
+            <h3 class="text-center"> Formas de pagamento </h3>
+            <hr>
+            <div class="container col-5">
+                <img class="img-fluid" width="400rem;" src="{$TEMA}/tema/images/Logo_PagSeguro.png" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="container col-5">
+                <button class="btn btn-success btn-lg btn-block" onclick="PagSeguroLightbox({
+                    code: '{$PS_COD}'
+                    }, {
+                    success : function(transactionCode) {
+                      alert('Transação efetuada com sucesso! - ' + transactionCode);
+                        window.location ='{$PAG_RETORNO}/{$REF}';
+                    },
+                    abort : function() {
+                       alert('Erro no processo de pagamento, tente novamente.');
+                         window.location ='{$PAG_ERRO}/{$REF}';
+                    }
+                });">Pague com PagSeguro</button>
+                <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+            </div>
+        </div>
+    </div>
+    {/if}
 </div>

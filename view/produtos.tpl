@@ -2,7 +2,7 @@
 {if $PRO_TOTAL
 < 1} <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
     </h4>
-    {/if}
+    <meta http-equiv="refresh" content="1;url={$PAG_PRODUTOS}"> {/if}
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--Menu lateral -->

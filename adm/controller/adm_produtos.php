@@ -4,7 +4,7 @@ $gravar = new Produtos();
 $produtos = new Produtos();
 
 if (isset(Rotas::$pag[1])) {
-    $produtos->GetProdutosID(Rotas::$pag[1]);
+    $produtos->GetProdutosCateID(Rotas::$pag[1]);
 } else {
     $produtos->GetProdutos2();
 }

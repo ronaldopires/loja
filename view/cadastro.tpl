@@ -94,7 +94,7 @@
                         </div>
                         <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="date" maxlength="10">
                     </div>
-                    <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px; " id="newpost"></span>
+                    <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px;" id="newpost"></span>
 
                     <div class="input-group col-4 justify-content-end">
                         <div class="input-group-prepend">
