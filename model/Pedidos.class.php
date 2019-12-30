@@ -11,9 +11,9 @@ class Pedidos extends Conexao
     {
         $retorno = false;
         $query = "INSERT INTO " . $this->prefix . "pedidos ";
-        $query .= "(ped_data, ped_hora, ped_cliente, ped_cod, ped_ref, ped_frete_valor, ped_frete_tipo)";
+        $query .= "(ped_data, ped_hora, ped_cliente, ped_cod, ped_ref, ped_frete_valor, ped_frete_tipo, ped_pag_status)";
         $query .= " VALUES ";
-        $query .= "(:data, :hora, :cliente, :cod, :ref, :frete_valor, :frete_tipo)";
+        $query .= "(:data, :hora, :cliente, :cod, :ref, :frete_valor, :frete_tipo, :ped_pag_status)";
 
         $params = array(
             ':data' => Sistema::DataAtualUS(),
@@ -23,6 +23,7 @@ class Pedidos extends Conexao
             ':ref' => $ref,
             ':frete_valor' => $freteValor,
             ':frete_tipo' => $freteTipo,
+            ':ped_pag_status' => 'Não concluido',
         );
 
         $this->ExecuteSQL($query, $params);
@@ -52,7 +53,7 @@ class Pedidos extends Conexao
     private function GetLista()
     {
         $i = 1;
-        while ($lista = $this->ListarDados()) :
+        while ($lista = $this->ListarDados()):
 
             $this->itens[$i] = array(
                 'ped_id' => $lista['ped_id'],
@@ -95,46 +96,46 @@ class Pedidos extends Conexao
         }
     }
 
-    function  Apagar($ped_cod)
+    public function Apagar($ped_cod)
     {
-        // apagando o PEDIDO  
-        // monto a minha SQL de apagar o pedido 
-        $query =  " DELETE FROM {$this->prefix}pedidos WHERE ped_cod = :ped_cod";
+        // apagando o PEDIDO
+        // monto a minha SQL de apagar o pedido
+        $query = " DELETE FROM {$this->prefix}pedidos WHERE ped_cod = :ped_cod";
         // parametros
         $params = array(':ped_cod' => $ped_cod);
         // executo a minha SQL
         $this->ExecuteSQL($query, $params);
 
-        /// apos apagar o pedido apaga ITENS DO PEDIDO  
+        /// apos apagar o pedido apaga ITENS DO PEDIDO
 
-        // monto a minha SQL de apagar os items 
-        $query =  " DELETE FROM {$this->prefix}pedidos_itens WHERE item_ped_cod = :ped_cod";
+        // monto a minha SQL de apagar os items
+        $query = " DELETE FROM {$this->prefix}pedidos_itens WHERE item_ped_cod = :ped_cod";
 
         // parametros
         $params = array(':ped_cod' => $ped_cod);
         // executo a minha SQL
-        if ($this->ExecuteSQL($query, $params)) :
-            return TRUE;
+        if ($this->ExecuteSQL($query, $params)):
+            return true;
         endif;
     }
 
-    function GetPedidosREF($ref)
+    public function GetPedidosREF($ref)
     {
         // monto a SQL
         $query = "SELECT * FROM {$this->prefix}pedidos p INNER JOIN {$this->prefix}clientes c";
         $query .= " ON p.ped_cliente = c.cli_id";
         $query .= " WHERE ped_ref = :ref";
-        $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_ref = " .$ref);
+        $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_ref = " . $ref);
 
         // passando parametros
         $params = array(':ref' => $ref);
-        // executando a SQL                      
+        // executando a SQL
         $this->ExecuteSQL($query, $params);
-        // trazendo a listagem 
+        // trazendo a listagem
         $this->GetLista();
     }
 
-    function GetPedidosDATA($data_ini, $data_fim)
+    public function GetPedidosDATA($data_ini, $data_fim)
     {
 
         // montando a SQL
@@ -144,7 +145,7 @@ class Pedidos extends Conexao
         $query .= " WHERE ped_data between :data_ini AND :data_fim";
         $query .= $this->PaginacaoLinks2("ped_id", $this->prefix . "pedidos WHERE ped_data between " . $data_ini . " AND " . $data_fim);
 
-        // passando os parametros  
+        // passando os parametros
         $params = array(':data_ini' => $data_ini, ':data_fim' => $data_fim);
 
         // executando a SQL

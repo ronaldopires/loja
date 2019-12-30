@@ -49,10 +49,21 @@
             </div>
             <hr>
             <div class="col p-0">
-                <div class="col p-0 text-right">
-                    <h3 class="text-center">Formas de pagamento</h3>
-                </div>
-                <div class="col p-0 text-right">
+                <h3 class="text-center">Formas de pagamento</h3>
+                <div class="col text-center">
+                    <button class="btn btn-success btn-lg" onclick="PagSeguroLightbox({
+                        code: '{$PS_COD}'
+                        }, {
+                        success : function(transactionCode) {
+                          alert('Transação efetuada com sucesso! - ' + transactionCode);
+                            window.location ='{$PAG_RETORNO}/{$REF}';
+                        },
+                        abort : function() {
+                           alert('Erro no processo de pagamento, tente novamente.');
+                             window.location ='{$PAG_ERRO}/{$REF}';
+                        }
+                    });">Pague com PagSeguro</button>
+                    <script type="text/javascript" src="{$PS_SCRIPT}"></script>
                 </div>
                 <div class="col p-0 text-center">
                     <img class="img-fluid" width="400" height="400" src="{$TEMA}/tema/images/Logo_PagSeguro.png" alt="Logo Pag Seguro">

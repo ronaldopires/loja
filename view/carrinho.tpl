@@ -83,7 +83,7 @@
             
             <!--Frete do Cliente -->
             <div class="row no-gutters p-0 justify-content-end">
-                <input type="hidden" name="peso_frete" id="peso_frete" value="{$PESO}" class="form-control " readonly>
+                <input type="hidden" name="peso_frete" id="peso_frete" value="{$PESO}" class="form-control" readonly>
                 <input style="width: 150px !important;" autofocus="true" required type="text" name="cep_frete" class="form-control" id="cep_frete" value="" placeholder="Digite seu CEP" >
                 <input type="hidden" name="frete_valor" id="frete_valor" value="0">
                 <button class="ml-3 btn btn-outline-warning" id="buscar_frete"><i class="far fa-paper-plane"></i> Calcular Frete </button>

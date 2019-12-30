@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-27 10:13:58
+/* Smarty version 3.1.34-dev-7, created on 2019-12-29 20:15:50
   from 'C:\xampp\htdocs\loja\view\clientes_dados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e0603967a30d4_01226668',
+  'unifunc' => 'content_5e0933a6236e80_09905344',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4d97c18762cb132d968965a1a9b1934dd6d9bbf0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_dados.tpl',
-      1 => 1577452290,
+      1 => 1577661174,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e0603967a30d4_01226668 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0933a6236e80_09905344 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row no-gutters justify-content-center">
         <div class="col-10 border my-4 rounded">
@@ -80,18 +80,18 @@ if ($_prefixVariable1 == 0) {?>
                         <div class="input-group-prepend">
                             <span class="input-group-text">Celular</span>
                         </div>
-                        <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="3" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_CELULAR']->value;?>
+                        <input id="ddd_celular" name="cli_ddd_celular" class="form-control col-3" required placeholder="DDD" type="tel" maxlength="2" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_CELULAR']->value;?>
 ">
-                        <input id="celular" name="cli_celular" class="form-control " type="tel " maxlength="10" value="<?php echo $_smarty_tpl->tpl_vars['CLI_CELULAR']->value;?>
+                        <input id="celular" name="cli_celular" class="form-control " type="tel" placeholder="Somente números" maxlength="9" value="<?php echo $_smarty_tpl->tpl_vars['CLI_CELULAR']->value;?>
 " required>
                     </div>
-                    <div class="input-group col-4 ">
-                        <div class="input-group-prepend ">
+                    <div class="input-group col-4">
+                        <div class="input-group-prepend">
                             <span class="input-group-text ">Telefone</span>
                         </div>
-                        <input id="ddd_fone " name="cli_ddd_fone" class="form-control col-3" placeholder="DDD " type="tel " maxlength="3 " value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_FONE']->value;?>
+                        <input id="ddd_fone" name="cli_ddd_fone" class="form-control col-3" placeholder="DDD" type="tel" maxlength="2" value="<?php echo $_smarty_tpl->tpl_vars['CLI_DDD_FONE']->value;?>
  ">
-                        <input id="telefone " name="cli_fone" class="form-control " type="tel " maxlength="9" value="<?php echo $_smarty_tpl->tpl_vars['CLI_FONE']->value;?>
+                        <input id="telefone" name="cli_fone" class="form-control" type="tel" placeholder="Somente números" maxlength="8" value="<?php echo $_smarty_tpl->tpl_vars['CLI_FONE']->value;?>
 ">
                     </div>
                 </div>
@@ -115,14 +115,14 @@ if ($_prefixVariable1 == 0) {?>
                             <span class="input-group-text ">CEP</span>
                         </div>
                         <input name="cli_cep" class="form-control input-md" value="<?php echo $_smarty_tpl->tpl_vars['CLI_CEP']->value;?>
- " type="text " maxlength="8 " required>
+" type="text " maxlength="8" required>
                     </div>
                     <div class="input-group col ">
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">Rua</span>
                         </div>
                         <input id="rua " name="cli_endereco" class="form-control " type="text " value="<?php echo $_smarty_tpl->tpl_vars['CLI_ENDERECO']->value;?>
- " required>
+" required>
                     </div>
                 </div>
 
@@ -132,14 +132,14 @@ if ($_prefixVariable1 == 0) {?>
                             <span class="input-group-text ">Número</span>
                         </div>
                         <input id="numero " name="cli_numero" class="form-control " type="text " value="<?php echo $_smarty_tpl->tpl_vars['CLI_NUMERO']->value;?>
- " required>
+" required>
                     </div>
                     <div class="input-group col ">
                         <div class="input-group-prepend ">
                             <span class="input-group-text ">Bairro</span>
                         </div>
                         <input id="bairro " name="cli_bairro" class="form-control " type="text " value="<?php echo $_smarty_tpl->tpl_vars['CLI_BAIRRO']->value;?>
- " required>
+" required>
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@ if ($_prefixVariable1 == 0) {?>
                                 <div class="input-group">
                                     <label for="password"><strong>Senha para confirmar as alterações</strong></label>
                                 </div>
-                                <input id="cli_senha_atual" name="cli_senha_atual" class="form-control " type="password" required>
+                                <input id="cli_senha_atual" name="cli_senha_atual" class="form-control" type="password" required>
                             </div>
 
                             <div class="form-inline justify-content-center">

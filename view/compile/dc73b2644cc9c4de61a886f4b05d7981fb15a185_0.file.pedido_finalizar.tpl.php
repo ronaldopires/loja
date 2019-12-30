@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 21:56:08
+/* Smarty version 3.1.34-dev-7, created on 2019-12-29 18:26:19
   from 'C:\xampp\htdocs\loja\view\pedido_finalizar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e07f9a8caf886_74769568',
+  'unifunc' => 'content_5e0919fbd34a98_37792056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc73b2644cc9c4de61a886f4b05d7981fb15a185' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_finalizar.tpl',
-      1 => 1577580698,
+      1 => 1577653894,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e07f9a8caf886_74769568 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e0919fbd34a98_37792056 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
@@ -86,10 +86,29 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <hr>
             <div class="col p-0">
-                <div class="col p-0 text-right">
-                    <h3 class="text-center">Formas de pagamento</h3>
-                </div>
-                <div class="col p-0 text-right">
+                <h3 class="text-center">Formas de pagamento</h3>
+                <div class="col text-center">
+                    <button class="btn btn-success btn-lg" onclick="PagSeguroLightbox({
+                        code: '<?php echo $_smarty_tpl->tpl_vars['PS_COD']->value;?>
+'
+                        }, {
+                        success : function(transactionCode) {
+                          alert('Transação efetuada com sucesso! - ' + transactionCode);
+                            window.location ='<?php echo $_smarty_tpl->tpl_vars['PAG_RETORNO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REF']->value;?>
+';
+                        },
+                        abort : function() {
+                           alert('Erro no processo de pagamento, tente novamente.');
+                             window.location ='<?php echo $_smarty_tpl->tpl_vars['PAG_ERRO']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['REF']->value;?>
+';
+                        }
+                    });">Pague com PagSeguro</button>
+                    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo $_smarty_tpl->tpl_vars['PS_SCRIPT']->value;?>
+"><?php echo '</script'; ?>
+>
                 </div>
                 <div class="col p-0 text-center">
                     <img class="img-fluid" width="400" height="400" src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>

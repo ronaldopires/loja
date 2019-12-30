@@ -18,9 +18,11 @@
                         <th class="align-middle" scope="row">{$P.ped_data}</th>
                         <td class="align-middle">{$P.ped_hora}</td>
                         <td class="align-middle">{$P.ped_cod}</td>
-                        {if $P.ped_pag_status == 'AGUARDANDO PAGAMENTO'}
+                        {if $P.ped_pag_status == 'Aguardando pagamento'}
                         <td class="text-warning align-middle">{$P.ped_pag_status}</td>
-                        {elseif $P.ped_pag_status == 'PAGAMENTO CONCLUIDO'}
+                        {elseif $P.ped_pag_status == 'Analise'}
+                        <td class="text-info align-middle">{$P.ped_pag_status}</td>
+                        {else if $P.ped_pag_status == 'Pago'}
                         <td class="text-success align-middle">{$P.ped_pag_status}</td>
                         {else}
                         <td class="text-danger align-middle">{$P.ped_pag_status}</td>
