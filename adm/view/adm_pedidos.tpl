@@ -2,6 +2,7 @@
     <div class="row no-gutters">
         <h4 class="text-center col-12"> Gerenciar Pedidos </h4>
         <hr>
+        {if $PESQUISAR == false}
         <div class="col">
             <label> Buscar entre datas</label>
             <form class="form-group row" name="buscardata" method="post" action="">
@@ -27,6 +28,7 @@
                 </div>
             </form>
         </div>
+        {/if}
     </div>
     <hr>
     <div class="row no-gutters">

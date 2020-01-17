@@ -10,6 +10,11 @@ if (isset($_POST['inputemail']) && isset($_POST['inputsenha'])) {
         Rotas::Redirecionar(0, Rotas::get_SiteADM());
     } else {
         $login->GetLogin($user, $senha);
+        if (isset($_SESSION['PRO'])) {
+            Rotas::Redirecionar(0, Rotas::pag_Carrinho());
+        } else {
+            Rotas::Redirecionar(0, Rotas::pag_MeuPerfil());
+        }
     }
 }
 

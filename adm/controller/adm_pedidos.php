@@ -8,9 +8,11 @@ if (isset($_POST['ped_apagar'])) {
         echo '<div class="alert alert-danger alerta">Pedido excluído</div>';
     }
 }
-
+    $smarty->assign('PESQUISAR', '');
 if (isset(Rotas::$pag[1])) {
     $id = Rotas::$pag[1];
+    $smarty->assign('PESQUISAR', $id);
+
     $pedidos->GetPedidosCliente($id);
 } else if (isset($_POST['data_inicio']) and isset($_POST['data_fim'])) {
     $pedidos->GetPedidosData($_POST['data_inicio'], $_POST['data_fim']);

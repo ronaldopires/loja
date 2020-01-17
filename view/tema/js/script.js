@@ -93,4 +93,5 @@ $(document).ready(function () {
 
     });
 
+    /* $("#overlay").hide(); */
 }); // fim do ready

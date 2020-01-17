@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-29 12:58:39
+/* Smarty version 3.1.34-dev-7, created on 2020-01-08 17:50:59
   from 'C:\xampp\htdocs\loja\view\produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e08cd2fe57155_49600929',
+  'unifunc' => 'content_5e1640b3019608_17458899',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '70e43319338037d61ae19a0944e2375360bbb269' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\produtos.tpl',
-      1 => 1577635112,
+      1 => 1578516657,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e08cd2fe57155_49600929 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e1640b3019608_17458899 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Alerta -->
 <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
     </h4>
@@ -29,7 +29,7 @@ function content_5e08cd2fe57155_49600929 (Smarty_Internal_Template $_smarty_tpl)
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--Menu lateral -->
-            <div class="col p-3 border-right">
+            <div class="col-2 p-3 border-right">
                 <nav class="nav flex-column">
                     <li class="nav-item disabled">Categorias</li>
                     <a class="nav-link active" href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
@@ -48,8 +48,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
 
             <!-- Conteudos de Produtos -->
-            <div class="col-10 p-3">
-                <div class="row no-gutters">
+            <div class="col p-3">
+                <div class="row no-gutters" >
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
 if ($_from !== null) {
@@ -63,7 +63,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ">
                                 <img class="card-img-top img-fluid p-1" src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img_gg'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
-" title="Clique para visualizar">
+" title="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
+">
                                 <div class="card-body">
                                     <h5 class="card-title text-dark"><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
 </h5>

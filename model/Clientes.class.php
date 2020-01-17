@@ -58,6 +58,14 @@ class Clientes extends Conexao
         $query = " SELECT * FROM {$this->prefix}clientes ";
 
         $this->ExecuteSQL($query);
+        $this->GetLista();
+    }
+    function GetClientesMonth()
+    {
+
+        $query = " SELECT * FROM {$this->prefix}clientes WHERE MONTH(cli_data_cad) BETWEEN 1 AND 12";
+
+        $this->ExecuteSQL($query);
 
         $this->GetLista();
     }

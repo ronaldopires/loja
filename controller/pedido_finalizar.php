@@ -23,6 +23,8 @@ if (!Login::Logado()) {
             $_SESSION['PED']['ref'] = $ref_cod_pedido;
         }
 
+        $_SESSION['PED']['total_com_frete'] = ($_SESSION['PED']['frete']);
+
         $smarty->assign('PRO', $carrinho->GetCarrinho());
         $smarty->assign('NOME_CLIENTE', $_SESSION['CLI']['cli_nome']);
         $smarty->assign('SITE_NOME', Config::SITE_NOME);
@@ -38,8 +40,7 @@ if (!Login::Logado()) {
         $cod = $_SESSION['PED']['pedido'];
         $ref = $_SESSION['PED']['ref'];
         $frete = $_SESSION['PED']['frete'];
-
-        $email = new EnviarEmail();
+        /* $email = new EnviarEmail();
 
         $destinatarios = array(Config::SITE_EMAIL_ADM, $_SESSION['CLI']['cli_email'], 'ronaldobondezica@gmail.com');
         $assunto = 'Pedido da Loja Carvalho - ' . Sistema::DataAtualBR();
@@ -61,7 +62,7 @@ if (!Login::Logado()) {
             $smarty->assign('REF', $ref);
 
             $pedido->LimparSessoes();
-        }
+        } */
 
         $smarty->display('pedido_finalizar.tpl');
     } else {

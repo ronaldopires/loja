@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 23:07:23
+/* Smarty version 3.1.34-dev-7, created on 2020-01-08 18:17:53
   from 'C:\xampp\htdocs\loja\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e080a5b6f0b16_14502325',
+  'unifunc' => 'content_5e1647018e99c2_30493671',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88a1285121fb32d2e24d6766738b0f2210382789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\index.tpl',
-      1 => 1577585242,
+      1 => 1578518272,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e080a5b6f0b16_14502325 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e1647018e99c2_30493671 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -84,8 +84,9 @@ function content_5e080a5b6f0b16_14502325 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <div class="row no-gutters text-right">
             <div class="col d-flex py-3 justify-content-end">
-                <form class="form-inline" method="post" action="">
-                    <input class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                <form class="form-inline mb-0" method="post" action="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS']->value;?>
+">
+                    <input style="width: 550px;" id="pesquisar" class="form-control pl-4" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
                     <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -103,10 +104,10 @@ function content_5e080a5b6f0b16_14502325 (Smarty_Internal_Template $_smarty_tpl)
                 <?php }?>
             </div>
         </div>
-        <div class="row no-gutters">
+        <div class="row no-gutters bg-dark">
             <div class="col p-0">
                 <!--Menu-->
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center" id="menu">
+                <nav class="navbar navbar-expand-lg navbar-dark " id="menu">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
@@ -122,7 +123,7 @@ function content_5e080a5b6f0b16_14502325 (Smarty_Internal_Template $_smarty_tpl)
                         </li>
                         <?php if ($_smarty_tpl->tpl_vars['LOGADO']->value == true) {?>
                         <li class="nav-item active">
-                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHA_CONTA']->value;?>
+                            <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['PAG_MEU_PERFIL']->value;?>
 "><i class="fas fa-user-edit mr-2"></i>Minha Conta</a>
                         </li>
                         <?php }?>
@@ -169,9 +170,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
                 </nav>
             </div>
+            <?php if ($_smarty_tpl->tpl_vars['QTD']->value == true) {?>
+            <div class="col text-light d-flex justify-content-end align-items-center">
+                <a role="button" href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
+" class="btn btn-light btn-sm mr-4">
+                    <i class="fas fa-shopping-cart p-2 pr-4"></i> <span class="badge badge-success"><?php echo $_smarty_tpl->tpl_vars['QTD']->value;?>
+</span>
+                    <span class="sr-only">Itens no Carrinho</span>
+                </a>
+            </div>
+            <?php }?>
+            
         </div>
-        <!--Spinner--
-            <div id="overlay">
+        <!-- <div id="overlay">
             <div class="spinner"></div>
         </div> -->
         <div class="container-fluid">
@@ -187,8 +198,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="col-12 text-center" style="padding-top: 30px; background-color: #B6FFA9;">
                 <span class="h3"><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value;?>
 </span>
-                <p> &copy; Todos os Direitos Reservados - Ronaldo Carvalho</p>
-                <p>2019</p>
+                <p class="mt-3"> &copy; Todos os Direitos Reservados - Ronaldo Carvalho | 2019</p>
             </div>
         </div>
 
@@ -198,6 +208,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <!-- Popper.js, Bootstrap JS -->
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+<?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"><?php echo '</script'; ?>

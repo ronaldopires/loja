@@ -35,5 +35,5 @@ class Config
     const PS_EMAIL = "ronaldo.carvalho@hotmail.com"; // email pagseguro
     const PS_TOKEN = "320871c2-084a-4999-aeb5-eeceb36d4a320f033246477995f11fd84a36320ce18d71ae-ed23-4249-bb40-1f8326fc1b89"; // token produção
     const PS_TOKEN_SBX = "855A56CC16944D71ABDA90C2D45827CD"; // token do sandbox
-    const PS_AMBIENTE = "sandbox"; // production   /  sandbox
+    const PS_AMBIENTE = "production"; // production   /  sandbox
 }

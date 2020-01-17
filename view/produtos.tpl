@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--Menu lateral -->
-            <div class="col p-3 border-right">
+            <div class="col-2 p-3 border-right">
                 <nav class="nav flex-column">
                     <li class="nav-item disabled">Categorias</li>
                     <a class="nav-link active" href="{$PAG_PRODUTOS}">Todos</a> {foreach from=$CATEGORIAS item=C}
@@ -15,13 +15,13 @@
             </div>
 
             <!-- Conteudos de Produtos -->
-            <div class="col-10 p-3">
-                <div class="row no-gutters">
+            <div class="col p-3">
+                <div class="row no-gutters" >
                     {foreach from=$PRO item=P}
                     <div class="card-group">
                         <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
                             <a class="card-link img-hover-zoom" href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
-                                <img class="card-img-top img-fluid p-1" src="{$P.pro_img_gg}" alt="{$P.pro_nome}" title="Clique para visualizar">
+                                <img class="card-img-top img-fluid p-1" src="{$P.pro_img_gg}" alt="{$P.pro_nome}" title="{$P.pro_nome}">
                                 <div class="card-body">
                                     <h5 class="card-title text-dark">{$P.pro_nome}</h5>
                                     <hr>

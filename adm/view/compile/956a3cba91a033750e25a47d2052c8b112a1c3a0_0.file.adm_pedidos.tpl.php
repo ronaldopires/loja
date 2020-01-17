@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 23:11:07
+/* Smarty version 3.1.34-dev-7, created on 2020-01-07 12:51:18
   from 'C:\xampp\htdocs\loja\adm\view\adm_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e080b3b14a9c5_64771430',
+  'unifunc' => 'content_5e14a8f6648ab1_25829972',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '956a3cba91a033750e25a47d2052c8b112a1c3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_pedidos.tpl',
-      1 => 1577585466,
+      1 => 1578412277,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e080b3b14a9c5_64771430 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e14a8f6648ab1_25829972 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-3">
     <div class="row no-gutters">
         <h4 class="text-center col-12"> Gerenciar Pedidos </h4>
         <hr>
+        <?php if ($_smarty_tpl->tpl_vars['PESQUISAR']->value == false) {?>
         <div class="col">
             <label> Buscar entre datas</label>
             <form class="form-group row" name="buscardata" method="post" action="">
@@ -50,6 +51,7 @@ function content_5e080b3b14a9c5_64771430 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </form>
         </div>
+        <?php }?>
     </div>
     <hr>
     <div class="row no-gutters">

@@ -12,7 +12,7 @@ if (isset(Rotas::$pag[1]) && !isset($_POST['pesquisar'])) {
 } else if (isset($_POST['pesquisar']) && isset(Rotas::$pag[1])) {
     $nome = filter_var($_POST['pesquisar'], FILTER_SANITIZE_STRING);
     $produtos->GetProdutosNome($nome);
-    
+
 } else {
     $produtos->GetProdutos();
 }

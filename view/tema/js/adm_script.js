@@ -3,6 +3,20 @@ $(document).ready(function() {
         $('.sidebar').toggleClass('fliph');
     });
 
+    $('#mostrar').click(function(){
+        $('#editar').slideDown();
+        $('#ocultar').show();
+        $('#mostrar').hide();
+    });
+    $('#ocultar').click(function(){
+        $('#editar').slideUp();
+        $('#ocultar').hide();
+        $('#mostrar').show();
+    });
+
+    
+    
+
     /* var max_fields = 10;
     var wrapper = $('#containerphoto');
     var add_button = $('#photobutton');
