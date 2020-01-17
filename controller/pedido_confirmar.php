@@ -2,8 +2,8 @@
 
 if (isset($_SESSION['PRO'])) {
 
-    if(!isset($_POST['frete_radio'])){
-        Rotas::Redirecionar(2,Rotas::pag_Carrinho().'#cep_frete');
+    if (!isset($_POST['frete_radio'])) {
+        Rotas::Redirecionar(2, Rotas::pag_Carrinho() . '#cep_frete');
         exit('<h4 class="alert alert-danger alertDel">Selecione uma opção de frete</h4>');
     }
 
@@ -12,7 +12,6 @@ if (isset($_SESSION['PRO'])) {
     $carrinho = new Carrinho();
 
     $smarty->assign('PRO', $carrinho->GetCarrinho());
-    
 
     $_SESSION['PED']['frete'] = $_POST['frete_radio'];
     $_SESSION['PED']['total_com_frete'] = ($_POST['frete_radio'] + $carrinho->GetTotal());
@@ -24,7 +23,7 @@ if (isset($_SESSION['PRO'])) {
     $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
     $smarty->assign('PAG_FINALIZAR', Rotas::pag_PedidoFinalizar());
     
-
+    unset($_SESSION['CUPOM']);
 
     $smarty->display('pedido_confirmar.tpl');
 } else {

@@ -79,8 +79,26 @@
                         <button class="btn btn-outline-danger"><i class="fas fa-trash mr-3"></i>Limpar Tudo</button>
                     </form>    
                 </div>
-            </div
-            
+            </div>
+            <div class="row no-gutters">
+                <div class="col-9 p-2 text-left">
+                    <form class="form-inline mb-0" id="cupom" name="cupom" action="" method="POST">
+                        <input class="form-control" type="text" name="cupom_nome" id="desconto" placeholder="Digite seu cupom de desconto" style="width: 20vw;">
+                        <input type="hidden" name="data_atual">
+                        <button type="submit" class="btn btn-outline-success ml-3">Aplicar Cupom</button>
+                    </form>
+                </div>
+                {if $SALE == true}
+                <div class="col text-right">
+                    <div class="col">
+                        Cupom aplicado: R$ {$CUPOM}
+                    </div>
+                    <div class="col">
+                        Valor Total: R$ {$DESCONTO}
+                    </div>
+                </div>
+                {/if}
+            </div>
             <!--Frete do Cliente -->
             <div class="row no-gutters p-0 justify-content-end">
                 <input type="hidden" name="peso_frete" id="peso_frete" value="{$PESO}" class="form-control" readonly>

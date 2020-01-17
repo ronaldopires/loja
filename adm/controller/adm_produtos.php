@@ -3,11 +3,26 @@ $smarty = new Template();
 $gravar = new Produtos();
 $produtos = new Produtos();
 
-if (isset(Rotas::$pag[1])) {
+/* if (isset(Rotas::$pag[1])) {
     $produtos->GetProdutosCateID(Rotas::$pag[1]);
 } else {
     $produtos->GetProdutos2();
+} */
+
+if (isset(Rotas::$pag[1]) && !isset($_POST['pesquisar'])) {
+    $produtos->GetProdutosCateID(Rotas::$pag[1]);
+} else if (isset($_POST['pesquisar'])) {
+    $nome = filter_var($_POST['pesquisar'], FILTER_SANITIZE_STRING);
+    $produtos->GetProdutosNome($nome);
+
+} else if (isset($_POST['pesquisar']) && isset(Rotas::$pag[1])) {
+    $nome = filter_var($_POST['pesquisar'], FILTER_SANITIZE_STRING);
+    $produtos->GetProdutosNome($nome);
+
+} else {
+    $produtos->GetProdutos2();
 }
+
 $categorias = new Categorias();
 $categorias->GetCategorias();
 

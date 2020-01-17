@@ -15,6 +15,10 @@ body {
     background: transparent;
     border: none;
 }
+#pesquisar{
+    border-radius: 20px;
+    height: 40px;
+}
 
 #menu .nav-link {
     font-family: 'Quicksand', sans-serif;

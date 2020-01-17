@@ -2,13 +2,21 @@
     <div class="row no-gutters justify-content-center">
         <div class="col-sm-12">
             <h5 class="text-center mt-2">Gerenciar Produtos</h5>
-            <div class="row no-gutters my-3 justify-content-end">
-                <a href="{$PAG_PRODUTOS_NOVO}" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto
-                </a>
+            
+            <div class="row no-gutters my-3">
+                <div class="col">
+                    <form class="form-inline mb-0" method="post" action="">
+                        <input style="width: 550px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                        <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col text-right">
+                    <a href="{$PAG_PRODUTOS_NOVO}" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto</a>
+                </div>
             </div>
-            {if $PRO_TOTAL
-            < 1} <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
-                {/if}
+            {if $PRO_TOTAL < 1}
+            <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
+            {else}
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="thead-light">
@@ -57,6 +65,7 @@
                         </tbody>
                     </table>
                 </div>
+                {/if}
                 <!--  paginação inferior   -->
                 <section id="pagincao" class="row no-gutters justify-content-center">
                     {$PAGINAS}

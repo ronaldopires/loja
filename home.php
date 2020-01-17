@@ -6,7 +6,7 @@ $smarty = new Template();
 $produtos = new Produtos();
 
 $categorias = new Categorias();
-$categorias->GetCategorias();
+$categorias->GetCategoriasHome();
 
 if (isset(Rotas::$pag[1])) {
     $produtos->GetProdutosCateID(Rotas::$pag[1]);

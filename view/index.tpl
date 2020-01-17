@@ -51,8 +51,8 @@
         </div>
         <div class="row no-gutters text-right">
             <div class="col d-flex py-3 justify-content-end">
-                <form class="form-inline" method="post" action="">
-                    <input class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                <form class="form-inline mb-0" method="post" action="{$PAG_PRODUTOS}">
+                    <input style="width: 550px;" id="pesquisar" class="form-control pl-4" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
                     <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -67,10 +67,10 @@
                 {/if}
             </div>
         </div>
-        <div class="row no-gutters">
+        <div class="row no-gutters bg-dark">
             <div class="col p-0">
                 <!--Menu-->
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center" id="menu">
+                <nav class="navbar navbar-expand-lg navbar-dark " id="menu">
                     <a class="navbar-brand" href="#"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado"
@@ -85,7 +85,7 @@
                         </li>
                         {if $LOGADO == true}
                         <li class="nav-item active">
-                            <a class="nav-link" href="{$PAG_MINHA_CONTA}"><i class="fas fa-user-edit mr-2"></i>Minha Conta</a>
+                            <a class="nav-link" href="{$PAG_MEU_PERFIL}"><i class="fas fa-user-edit mr-2"></i>Minha Conta</a>
                         </li>
                         {/if}
                         <li class="nav-item">
@@ -117,9 +117,17 @@
                 </div>
                 </nav>
             </div>
+            {if $QTD == true}
+            <div class="col text-light d-flex justify-content-end align-items-center">
+                <a role="button" href="{$PAG_CARRINHO}" class="btn btn-light btn-sm mr-4">
+                    <i class="fas fa-shopping-cart p-2 pr-4"></i> <span class="badge badge-success">{$QTD}</span>
+                    <span class="sr-only">Itens no Carrinho</span>
+                </a>
+            </div>
+            {/if}
+            
         </div>
-        <!--Spinner--
-            <div id="overlay">
+        <!-- <div id="overlay">
             <div class="spinner"></div>
         </div> -->
         <div class="container-fluid">
@@ -134,8 +142,7 @@
         <div class="row no-gutters align-items-center">
             <div class="col-12 text-center" style="padding-top: 30px; background-color: #B6FFA9;">
                 <span class="h3">{$TITULO_SITE}</span>
-                <p> &copy; Todos os Direitos Reservados - Ronaldo Carvalho</p>
-                <p>2019</p>
+                <p class="mt-3"> &copy; Todos os Direitos Reservados - Ronaldo Carvalho | 2019</p>
             </div>
         </div>
 
@@ -144,6 +151,7 @@
 
     <!-- Popper.js, Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+</script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 

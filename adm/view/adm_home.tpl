@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row no-gutters">
-        <div class="col-sm">
-            Teste de Gráfico
+        <div class="col-sm p-3 my-4" style="border-radius: 10px; background-color: rgba(210, 214, 208, 0.2); border: 1px solid black;">
+            <h5>Clientes Cadastrados em {$ANO_ATUAL}</h5>
             <canvas id="myChart"></canvas>
         </div>
         <div class="col-sm">
@@ -16,27 +16,29 @@
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 30],
+                label: 'Clientes',
+                data: [{$CLIENTES},1,2,3,4,3,5,10,50,10,20,2],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'green',
+                    'silver',
+                    'red',
+                    'blue',
+                    'yellow',
+                    'pink',
+                    'brown',
+                    'black',
+                    'rgb(252, 186, 3)',
+                    'rgb(5, 252, 63)',
+                    'rgb(50, 168, 82)',
+                    'rgb(190, 5, 252)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
+                    
+                    'rgba(54, 162, 235, 1)'
                 ],
                 borderWidth: 1
             }]

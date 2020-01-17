@@ -9,7 +9,7 @@ require '../lib/autoload.php';
 
 if (!Login::LogadoADM()) {
     Rotas::Redirecionar(2, Rotas::pag_Login());
-    exit('<h2>Erro! Acesso negado.</h2>');
+    exit('<body style="background-color: #ff2222"><div style="color: #fff; text-align: center; paddinng-top: 400px;"><h1 style="padding-top: 50vh;">Erro! Acesso negado </h1></div></body>');
 }
 
 $smarty = new Template();
@@ -27,6 +27,8 @@ $smarty->assign('PAG_ADM_PEDIDOS', Rotas::pag_PedidosADM());
 $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 $smarty->assign('PAG_CATEGORIAS', Rotas::pag_CategoriasADM());
 $smarty->assign('PAG_ADM_PRODUTOS', Rotas::pag_ProdutosADM());
+$smarty->assign('PAG_ADM_ESTOQUE', Rotas::pag_EstoqueADM());
+$smarty->assign('PAG_CUPONS', Rotas::pag_CuponsADM());
 $smarty->assign('CATEGORIAS', $categorias->GetItens());
 $smarty->assign('DATA', Sistema::DataAtualBR());
 $smarty->assign('LOGADO', Login::LogadoADM());

@@ -134,6 +134,14 @@ class Rotas
     {
         return self::get_SiteADM() . '/adm_produtos';
     }
+    public static function pag_EstoqueADM()
+    {
+        return self::get_SiteADM() . '/adm_estoque';
+    }
+    public static function pag_CuponsADM()
+    {
+        return self::get_SiteADM() . '/adm_cupons';
+    }
     public static function pag_ProdutosNovoADM()
     {
         return self::get_SiteADM() . '/adm_produtos_novo';

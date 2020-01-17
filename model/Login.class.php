@@ -43,7 +43,7 @@ class Login extends Conexao
             $_SESSION['CLI']['cli_numero'] = $lista['cli_numero'];
             $_SESSION['CLI']['cli_hora_cad'] = $lista['cli_hora_cad'];
             $_SESSION['CLI']['cli_data_cad'] = $lista['cli_data_cad'];
-            Rotas::Redirecionar(0, Rotas::pag_MeuPerfil());
+            $_SESSION['time_last'] = time();
         } else {
             echo '<h4 class="alert alert-danger alertDel">E-mail e/ou senha incorretos</h4>';
         }

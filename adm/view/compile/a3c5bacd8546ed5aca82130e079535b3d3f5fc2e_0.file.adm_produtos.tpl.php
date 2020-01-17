@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 20:58:48
+/* Smarty version 3.1.34-dev-7, created on 2020-01-08 13:29:23
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e07ec384f25c7_40990450',
+  'unifunc' => 'content_5e160363f34764_48764140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1577577527,
+      1 => 1578500963,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,27 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e07ec384f25c7_40990450 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e160363f34764_48764140 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-3">
     <div class="row no-gutters justify-content-center">
         <div class="col-sm-12">
             <h5 class="text-center mt-2">Gerenciar Produtos</h5>
-            <div class="row no-gutters my-3 justify-content-end">
-                <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_NOVO']->value;?>
-" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto
-                </a>
+            
+            <div class="row no-gutters my-3">
+                <div class="col">
+                    <form class="form-inline mb-0" method="post" action="">
+                        <input style="width: 550px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                        <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="col text-right">
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_NOVO']->value;?>
+" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto</a>
+                </div>
             </div>
-            <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?> <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
-                <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['PRO_TOTAL']->value < 1) {?>
+            <h4 class="alert alert-danger">Ops... Nada foi encontrado </h4>
+            <?php } else { ?>
                 <div class="table-responsive">
                     <table class="table">
                         <thead class="thead-light">
@@ -99,6 +108,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         </tbody>
                     </table>
                 </div>
+                <?php }?>
                 <!--  paginação inferior   -->
                 <section id="pagincao" class="row no-gutters justify-content-center">
                     <?php echo $_smarty_tpl->tpl_vars['PAGINAS']->value;?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-21 17:12:22
+/* Smarty version 3.1.34-dev-7, created on 2020-01-08 14:38:19
   from 'C:\xampp\htdocs\loja\view\pedido_confirmar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5dfe7ca68287a4_34208190',
+  'unifunc' => 'content_5e16138b915684_63276298',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2d143155fe9d1b11e00496eb5c9a94a14a4e03c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_confirmar.tpl',
-      1 => 1576959141,
+      1 => 1578505097,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dfe7ca68287a4_34208190 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e16138b915684_63276298 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
@@ -77,6 +77,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="col p-2 text-right">
                     <h6>Pedido R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL']->value;?>
 </h6>
+                    <!-- <?php if ($_smarty_tpl->tpl_vars['CUPOM']->value == true) {?>
+                    <h6>Cupom R$ -<?php echo $_smarty_tpl->tpl_vars['CUPOM']->value;?>
+</h6>
+                    <?php }?> -->
                     <h6>Frete R$ <?php echo $_smarty_tpl->tpl_vars['FRETE']->value;?>
 </h6>
                     <h5>Valor Total R$ <?php echo $_smarty_tpl->tpl_vars['TOTAL_FRETE']->value;?>

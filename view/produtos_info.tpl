@@ -21,8 +21,9 @@
         <div class="col">
             <div class="col border">
                 <p>Detalhes do produto</p>
-                <h3 class="text-center"> {$P.pro_nome}{* - {$P.pro_ref} *}</h3>
+                <h3 class="text-center"> {$P.pro_nome}</h3>
                 <hr>
+                <h4>Estoque {$P.pro_estoque}</h4>
                 <div class="row no-gutters">
                     <div class="col p-2">
                         <!-- Tamanho -->

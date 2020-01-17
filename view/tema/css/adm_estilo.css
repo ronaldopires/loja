@@ -12,6 +12,8 @@ a:hover {
 
 .header {
     background-color: #32a852;
+    z-index: 100;
+    position: relative;
 }
 
 .header .dropdown-menu {
@@ -183,7 +185,9 @@ a.navbar-brand {
 
 .sidebar {
     width: 222px;
-    height: 93vh;
+    height: 100vh;
+    margin-top: -4.7vh;
+    padding-top: 4.7vh;
     background-color: #000;
     transition: all 0.5s ease-in-out;
 }
@@ -10340,4 +10344,75 @@ a.text-gray-dark:hover {
 .btn-customized:active {
     color: #ffffff;
     border-color: #08ad95;
+}
+
+
+#editar{
+    display: none;
+}
+#ocultar{
+    display: none;
+}
+#cupom-container{
+    overflow: auto;
+    height: 31vh;
+}
+
+#cupom-container::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+#cupom-container::-webkit-scrollbar-track {
+    background: #c1c1c1;
+}
+
+#cupom-container::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#cupom-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.list-group{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.list-group-item{
+    background-color: #ccc;
+    color: #000;
+    font-weight: 500;
+    
+}
+.list-group-item:hover{
+    background-color: #00796b;
+    color: #fff;
+    font-weight: 500;
+}
+
+#list_estoque{
+    height: 45vh;
+    overflow: auto;
+}
+
+#list_estoque::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+#list_estoque::-webkit-scrollbar-track {
+    background: #c1c1c1;
+}
+
+#list_estoque::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#list_estoque::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#iconPesquisar {
+    position: relative;
+    left: -35px;
+    background: transparent;
+    border: none;
 }
