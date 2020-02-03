@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-08 13:49:52
+/* Smarty version 3.1.34-dev-7, created on 2020-02-03 11:40:43
   from 'C:\xampp\htdocs\loja\adm\view\adm_clientes_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e1608307cd971_94122587',
+  'unifunc' => 'content_5e3830eb454dd0_70350493',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dd2833ea2e5e345f19454b44b4fe894bc391e14f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_clientes_editar.tpl',
-      1 => 1578502188,
+      1 => 1580740842,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e1608307cd971_94122587 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e3830eb454dd0_70350493 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters justify-content-center">
         <div class="col-10 border my-4 rounded">
@@ -51,7 +51,7 @@ function content_5e1608307cd971_94122587 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="input-group-prepend">
                             <span class="input-group-text">Nascimento</span>
                         </div>
-                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control" type="date" maxlength="10"
+                        <input id="cli_data_nasc" name="cli_data_nasc" class="form-control" type="text"
                             value="<?php echo $_smarty_tpl->tpl_vars['CLI_DATA_NASC']->value;?>
 " required>
                     </div>

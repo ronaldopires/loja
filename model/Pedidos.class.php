@@ -33,6 +33,19 @@ class Pedidos extends Conexao
         return $retorno;
     }
 
+    function GetPedidos()
+    {
+        $query = " SELECT * FROM {$this->prefix}pedidos ";
+        $this->ExecuteSQL($query);
+    }
+    function GetPedidosConcluidos()
+    {
+        $status = "concluido";
+        $query = " SELECT ped_pag_status FROM {$this->prefix}pedidos WHERE ped_pag_status = '$status' ";
+        
+        $this->ExecuteSQL($query);
+    }
+
     //Select em pedidos do cliente
     public function GetPedidosCliente($cliente = null)
     {

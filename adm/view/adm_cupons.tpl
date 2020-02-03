@@ -30,34 +30,34 @@
             <form class="form-group" name="inserircupom" id="editar-cupom" method="post" action=""
                 enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Nome</span>
                     </div>
                     <input type="text" name="cupom_nome_novo" class="form-control" placeholder="Nome do cupom"
                         aria-label="Nome Cupom" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Desconto</span>
                     </div>
                     <input type="text" name="cupom_desconto_novo" class="form-control" placeholder="Valor do desconto"
                         aria-label="Valor do cupom" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Data Inicio</span>
                     </div>
                     <input type="datetime-local" name="cupom_inicial_novo" class="col" aria-label="Data Inicial"
                         required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Data Fim</span>
                     </div>
                     <input type="datetime-local" name="cupom_final_novo" class="col" aria-label="Data Final" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <label class="input-group-text" for="inputGroupSelect01">Tipo do Cupom</label>
                     </div>
                     <select name="cupom_tipo_novo" class="custom-select" required>
@@ -67,7 +67,7 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Quantidade</span>
                     </div>
                     <input type="text" name="cupom_qtd_novo" class="form-control" placeholder="Quantidade de cupons"

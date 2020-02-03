@@ -1,27 +1,47 @@
 <div class="container-fluid">
     <div class="row no-gutters">
-        <div class="col-sm p-3 my-4" style="border-radius: 10px; background-color: rgba(210, 214, 208, 0.2); border: 1px solid black;">
+        <div class="col-sm-6 p-3 my-4" style="border-radius: 10px; background-color: rgba(210, 214, 208, 0.2); border: 1px solid black;">
             <h5>Clientes Cadastrados em {$ANO_ATUAL}</h5>
-            <canvas id="myChart"></canvas>
+            <canvas id="clientes"></canvas>
         </div>
-        <div class="col-sm">
-            Painel administrativo
+        <div class="col m-3">
+            {if {$PEDIDOS} >= 10}
+            <div class="col-sm m-3 p-3" style="border-radius: 10px; border: 1px solid #000;">
+                <h6 class="text-center">Pedidos Efetuados</h6>
+                <div class="col text-danger">
+                    <h3>{$PEDIDOS}</h3>
+                </div>
+            </div>
+            {else if {$PEDIDOS} == 6}
+            <div class="col-sm m-3 p-3" style="border-radius: 10px; border: 1px solid #000; background-color: rgb(195, 245, 154)">
+                <h6 class="text-center">Pedidos Efetuados</h6>
+                <div class="col text-success text-center">
+                    <h3>{$PEDIDOS}</h3>
+                </div>
+            </div>
+            {/if}
         </div>
-        <div class="col-sm">
-            Painel administrativo
+        <div class="col m-3">
+            <div class="col-sm m-3 p-3" style="border-radius: 10px; border: 1px solid #000;">
+                <h6 class="text-center">Pedidos Concluídos</h6>
+                <div class="col text-danger text-center">
+                    <h3>{$PEDIDOS_CONCLUIDOS}</h3>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
+    //Clientes
+    var ctx = document.getElementById('clientes').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
             datasets: [{
                 label: 'Clientes',
-                data: [{$CLIENTES},1,2,3,4,3,5,10,50,10,20,2],
+                data: [{$CLIENTES}],
                 backgroundColor: [
                     'green',
                     'silver',

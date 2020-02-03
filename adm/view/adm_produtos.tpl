@@ -5,12 +5,14 @@
             
             <div class="row no-gutters my-3">
                 <div class="col">
-                    <form class="form-inline mb-0" method="post" action="">
-                        <input style="width: 550px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
-                        <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    <div class="col">
+                        <form class="form-inline mb-0" method="post" action="">
+                            <input style="width: 550px; border-radius: 20px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                            <!-- <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button> -->
+                        </form>
+                    </div>
                 </div>
-                <div class="col text-right">
+                <div class="col d-block text-right">
                     <a href="{$PAG_PRODUTOS_NOVO}" class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto</a>
                 </div>
             </div>

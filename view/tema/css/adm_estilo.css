@@ -165,6 +165,7 @@ a.navbar-brand {
 #conteudo {
     height: 93vh;
     overflow: auto;
+    background-color: #EAEFF9;
 }
 
 #conteudo::-webkit-scrollbar {
@@ -10412,7 +10413,8 @@ a.text-gray-dark:hover {
 
 #iconPesquisar {
     position: relative;
-    left: -35px;
+    float: left;
     background: transparent;
     border: none;
+    color: #c5c5c5;
 }

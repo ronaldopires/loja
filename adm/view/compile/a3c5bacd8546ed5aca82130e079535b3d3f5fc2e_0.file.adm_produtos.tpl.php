@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-08 13:29:23
+/* Smarty version 3.1.34-dev-7, created on 2020-02-03 12:48:34
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e160363f34764_48764140',
+  'unifunc' => 'content_5e3840d2e64105_57787862',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a3c5bacd8546ed5aca82130e079535b3d3f5fc2e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos.tpl',
-      1 => 1578500963,
+      1 => 1580744910,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e160363f34764_48764140 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e3840d2e64105_57787862 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-3">
     <div class="row no-gutters justify-content-center">
         <div class="col-sm-12">
@@ -28,12 +28,14 @@ function content_5e160363f34764_48764140 (Smarty_Internal_Template $_smarty_tpl)
             
             <div class="row no-gutters my-3">
                 <div class="col">
-                    <form class="form-inline mb-0" method="post" action="">
-                        <input style="width: 550px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
-                        <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    <div class="col">
+                        <form class="form-inline mb-0" method="post" action="">
+                            <input style="width: 550px; border-radius: 20px;" class="form-control" type="text" name="pesquisar" placeholder="Pesquisar produtos" aria-label="Pesquisar produtos">
+                            <!-- <button id="iconPesquisar" type="submit"><i class="fas fa-search"></i></button> -->
+                        </form>
+                    </div>
                 </div>
-                <div class="col text-right">
+                <div class="col d-block text-right">
                     <a href="<?php echo $_smarty_tpl->tpl_vars['PAG_PRODUTOS_NOVO']->value;?>
 " class="btn btn-success btn-sm"><i class="fa fa-plus mr-2" aria-hidden="true"></i> Novo Produto</a>
                 </div>

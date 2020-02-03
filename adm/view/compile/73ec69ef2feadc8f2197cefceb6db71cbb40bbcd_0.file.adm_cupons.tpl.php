@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-08 00:30:52
+/* Smarty version 3.1.34-dev-7, created on 2020-02-03 13:31:32
   from 'C:\xampp\htdocs\loja\adm\view\adm_cupons.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e154cec0f2436_13552687',
+  'unifunc' => 'content_5e384ae4bbf761_99599674',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '73ec69ef2feadc8f2197cefceb6db71cbb40bbcd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_cupons.tpl',
-      1 => 1578454251,
+      1 => 1580747492,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e154cec0f2436_13552687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e384ae4bbf761_99599674 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters justify-content-center my-3">
         <div class="col p-3">
@@ -62,34 +62,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <form class="form-group" name="inserircupom" id="editar-cupom" method="post" action=""
                 enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Nome</span>
                     </div>
                     <input type="text" name="cupom_nome_novo" class="form-control" placeholder="Nome do cupom"
                         aria-label="Nome Cupom" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Desconto</span>
                     </div>
                     <input type="text" name="cupom_desconto_novo" class="form-control" placeholder="Valor do desconto"
                         aria-label="Valor do cupom" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Data Inicio</span>
                     </div>
                     <input type="datetime-local" name="cupom_inicial_novo" class="col" aria-label="Data Inicial"
                         required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Data Fim</span>
                     </div>
                     <input type="datetime-local" name="cupom_final_novo" class="col" aria-label="Data Final" required>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <label class="input-group-text" for="inputGroupSelect01">Tipo do Cupom</label>
                     </div>
                     <select name="cupom_tipo_novo" class="custom-select" required>
@@ -99,7 +99,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend col-2 d-block p-0">
+                    <div class="input-group-prepend col-3 d-block p-0">
                         <span class="input-group-text" id="inputGroup-sizing-sm">Quantidade</span>
                     </div>
                     <input type="text" name="cupom_qtd_novo" class="form-control" placeholder="Quantidade de cupons"
