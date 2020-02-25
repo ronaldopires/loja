@@ -314,7 +314,7 @@
                                     <li><a href=""> Credit Card form</a> </li>
                                 </ul>
                             </li>
-                            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>
+                            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Views</span>
                                 </a></li>
                             <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other
                                         Pages</span></a> </li>

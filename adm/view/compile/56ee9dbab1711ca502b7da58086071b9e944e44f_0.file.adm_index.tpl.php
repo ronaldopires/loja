@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-07 23:13:05
+/* Smarty version 3.1.34-dev-7, created on 2020-02-03 21:09:30
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e153ab1b858e3_40114323',
+  'unifunc' => 'content_5e38b63a5165f7_04769860',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '56ee9dbab1711ca502b7da58086071b9e944e44f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_index.tpl',
-      1 => 1578449374,
+      1 => 1580774969,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e153ab1b858e3_40114323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e38b63a5165f7_04769860 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -376,7 +376,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                     <li><a href=""> Credit Card form</a> </li>
                                 </ul>
                             </li>
-                            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>
+                            <li> <a href=""><i class="fa fa-pie-chart"></i> <span class="nav-label">Views</span>
                                 </a></li>
                             <li> <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other
                                         Pages</span></a> </li>

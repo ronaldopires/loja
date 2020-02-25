@@ -136,6 +136,32 @@ class Cupons extends Conexao
 
         endif;
     }
+    public function GetQtd($cupom_nome, $cupom_qtd){
+        // trato os campos
+        $this->setCupom_nome($cupom_nome);
+        $this->setCupom_qtd($cupom_qtd);
+
+        // monto a SQL
+        $query = " UPDATE {$this->prefix}cupons ";
+        $query .= " SET cupom_qtd = :cupom_qtd ";
+        $query .= " WHERE cupom_nome = :cupom_nome ";
+
+        // passo so parametros
+        $params = array(
+            ':cupom_nome' => $this->getCupom_nome(),
+            ':cupom_qtd' => $this->getCupom_qtd(),
+        );
+
+        // executo a minha SQL
+        if ($this->ExecuteSQL($query, $params)):
+            unset($_SESSION['CUPOM']);
+            return true;
+
+        else:
+            return false;
+
+        endif;
+    }
 
     //FUNÇÃO APAGAR CUPOM
     public function Apagar($cupom_id)

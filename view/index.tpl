@@ -119,10 +119,11 @@
             </div>
             {if $QTD == true}
             <div class="col text-light d-flex justify-content-end align-items-center">
-                <a role="button" href="{$PAG_CARRINHO}" class="btn btn-light btn-sm mr-4">
+                <a id="teste" role="button" href="#" class="btn btn-light btn-sm mr-4">
                     <i class="fas fa-shopping-cart p-2 pr-4"></i> <span class="badge badge-success">{$QTD}</span>
                     <span class="sr-only">Itens no Carrinho</span>
                 </a>
+                
             </div>
             {/if}
             
@@ -151,7 +152,6 @@
 
     <!-- Popper.js, Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 

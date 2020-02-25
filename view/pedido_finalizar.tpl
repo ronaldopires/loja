@@ -38,9 +38,9 @@
                     <h4>
                         Total R$ {$TOTAL}
                     </h4>
-                    <!-- <h4>
+                    <h4>
                         Cupom R$ {$CUPOM}
-                    </h4> -->
+                    </h4>
                     <h4>
                         Frete R$ {$FRETE}
                     </h4>

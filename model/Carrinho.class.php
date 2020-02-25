@@ -37,7 +37,8 @@ class Carrinho
             return $this->itens;
         } else {
             Rotas::Redirecionar(2, Rotas::pag_Produtos());
-            exit('<h4 class="alert alert-danger alertAdd"><i class="material-icons mr-2">error</i>Sem produtos no carrinho</h4>');
+            echo '<h4 class="alert alert-danger alertDel">Sem produtos no carrinho</h4>';
+            exit();
         }
     }
     public function GetTotal()
@@ -77,7 +78,13 @@ class Carrinho
                     $_SESSION['PRO'][$ID]['IMG'] = $IMG;
                     $_SESSION['PRO'][$ID]['LINK'] = $LINK;
                 } else {
-                    $_SESSION['PRO'][$ID]['QTD'] += $QTD;
+                    if($_SESSION['PRO'][$ID]['QTD'] < $_SESSION['PRO'][$ID]['ESTOQUE']){
+                        $_SESSION['PRO'][$ID]['QTD'] += $QTD;
+                    }else{
+                        echo '<h4 class="alert alert-danger alertAdd">Quantidade disponivel em estoque é somente '. $ESTOQUE . '</h4>';
+                        Rotas::Redirecionar(2, Rotas::pag_Carrinho());
+                        exit();
+                    }
                 }
                 Rotas::Redirecionar(2, Rotas::pag_Carrinho());
                 exit('<h4 class="alert alert-success alertAdd">Produto inserido no carrinho</h4>');
@@ -107,6 +114,7 @@ class Carrinho
     private function CarrinhoLimpar()
     {
         unset($_SESSION['PRO']);
+        unset($_SESSION['CUPOM']);
     }
     private function CarrinhoExcluir($ID, $QTD)
     {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-08 18:13:06
+/* Smarty version 3.1.34-dev-7, created on 2020-02-24 17:41:14
   from 'C:\xampp\htdocs\loja\view\carrinho.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e1645e26ec6a1_15675234',
+  'unifunc' => 'content_5e5434eadc0fb3_11262249',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ad4aca169a1025971aeec1f166e642be7e628458' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\carrinho.tpl',
-      1 => 1578517985,
+      1 => 1582576870,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e1645e26ec6a1_15675234 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5434eadc0fb3_11262249 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--Carrinho -->
 <div class="container containers mb-4">
     <div class="row no-gutters">
@@ -138,7 +138,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <?php if ($_smarty_tpl->tpl_vars['SALE']->value == true) {?>
                 <div class="col text-right">
                     <div class="col">
-                        Cupom aplicado: R$ <?php echo $_smarty_tpl->tpl_vars['CUPOM']->value;?>
+                        Cupom aplicado: <?php echo $_smarty_tpl->tpl_vars['CUPOM']->value;?>
 
                     </div>
                     <div class="col">
@@ -152,7 +152,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             <div class="row no-gutters p-0 justify-content-end">
                 <input type="hidden" name="peso_frete" id="peso_frete" value="<?php echo $_smarty_tpl->tpl_vars['PESO']->value;?>
 " class="form-control" readonly>
-                <input style="width: 150px !important;" autofocus="true" required type="text" name="cep_frete" class="form-control" id="cep_frete" value="" placeholder="Digite seu CEP" >
+                <input style="width: 150px !important;" autofocus="true" required type="text" name="cep_frete" class="form-control" id="cep_frete" value="" maxlength="8" placeholder="Digite seu CEP" >
                 <input type="hidden" name="frete_valor" id="frete_valor" value="0">
                 <button class="ml-3 btn btn-outline-warning" id="buscar_frete"><i class="far fa-paper-plane"></i> Calcular Frete </button>
             </div>

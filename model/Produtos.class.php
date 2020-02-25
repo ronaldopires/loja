@@ -2,7 +2,7 @@
 class Produtos extends Conexao
 {
 
-    private $pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref,
+    private $pro_nome, $pro_categoria, $pro_ativo, $pro_modelo, $pro_ref, $pro_tamanho,
     $pro_valor, $pro_estoque, $pro_peso, $pro_altura, $pro_largura, $pro_comprimento,
     $pro_img, $pro_desc, $pro_slug;
 
@@ -119,6 +119,7 @@ class Produtos extends Conexao
                 'cate_id' => $lista['cate_id'],
                 'pro_modelo' => $lista['pro_modelo'],
                 'pro_estoque' => $lista['pro_estoque'],
+                'pro_tamanho' => $lista['pro_tamanho'],
                 'pro_ativo' => $lista['pro_ativo'],
                 'pro_img_arquivo' => Rotas::get_SiteRAIZ() . '/' . Rotas::get_ImagePasta() . $lista['pro_img'],
                 'pro_img_atual' => $lista['pro_img'],
@@ -137,6 +138,7 @@ class Produtos extends Conexao
         $pro_ref,
         $pro_valor,
         $pro_estoque,
+        $pro_tamanho,
         $pro_peso,
         $pro_altura,
         $pro_largura,
@@ -153,6 +155,7 @@ class Produtos extends Conexao
         $this->setPro_ref($pro_ref);
         $this->setPro_valor($pro_valor);
         $this->setPro_estoque($pro_estoque);
+        $this->setPro_tamanho($pro_tamanho);
         $this->setPro_peso($pro_peso);
         $this->setPro_altura($pro_altura);
         $this->setPro_largura($pro_largura);
@@ -166,10 +169,10 @@ class Produtos extends Conexao
     {
 
         $query = "INSERT INTO {$this->prefix}produtos (pro_nome, pro_categoria, pro_ativo, pro_modelo, pro_ref,";
-        $query .= " pro_valor, pro_estoque, pro_peso , pro_altura, pro_largura, pro_comprimento ,pro_img, pro_desc, pro_slug)";
+        $query .= " pro_valor, pro_estoque, pro_peso , pro_altura, pro_largura, pro_tamanho, pro_comprimento ,pro_img, pro_desc, pro_slug)";
         $query .= " VALUES ";
         $query .= " ( :pro_nome, :pro_categoria, :pro_ativo, :pro_modelo, :pro_ref, :pro_valor, :pro_estoque, :pro_peso ,";
-        $query .= " :pro_altura, :pro_largura, :pro_comprimento ,:pro_img, :pro_desc, :pro_slug)";
+        $query .= " :pro_altura, :pro_largura, :pro_tamanho, :pro_comprimento ,:pro_img, :pro_desc, :pro_slug)";
 
         $params = array(
             ':pro_nome' => $this->getPro_nome(),
@@ -179,6 +182,7 @@ class Produtos extends Conexao
             ':pro_ref' => $this->getPro_ref(),
             ':pro_valor' => $this->getPro_valor(),
             ':pro_estoque' => $this->getPro_estoque(),
+            ':pro_tamanho' => $this->getPro_tamanho(),
             ':pro_peso' => $this->getPro_peso(),
             ':pro_altura' => $this->getPro_altura(),
             ':pro_largura' => $this->getPro_largura(),
@@ -223,6 +227,24 @@ class Produtos extends Conexao
             ':pro_id' => (int) $id,
 
         );
+
+        // executo a SQL
+        if ($this->ExecuteSQL($query, $params)):
+            return true;
+        else:
+            return false;
+        endif;
+    }
+    public function Estoque($id, $pro_estoque)
+    {
+        $query = " UPDATE {$this->prefix}produtos SET pro_estoque=:pro_estoque WHERE pro_id = :pro_id";
+
+        $params = array(
+            ':pro_estoque' => $pro_estoque,
+            ':pro_id' => (int) $id,
+
+        );
+        
 
         // executo a SQL
         if ($this->ExecuteSQL($query, $params)):
@@ -281,6 +303,11 @@ class Produtos extends Conexao
     public function getPro_estoque()
     {
         return $this->pro_estoque;
+    }
+
+    public function getPro_tamanho()
+    {
+        return $this->pro_tamanho;
     }
 
     public function getPro_peso()
@@ -362,6 +389,11 @@ class Produtos extends Conexao
     public function setPro_estoque($pro_estoque)
     {
         $this->pro_estoque = $pro_estoque;
+    }
+
+    public function setPro_tamanho($pro_tamanho)
+    {
+        $this->pro_tamanho = implode(",", $pro_tamanho);
     }
 
     public function setPro_peso($pro_peso)

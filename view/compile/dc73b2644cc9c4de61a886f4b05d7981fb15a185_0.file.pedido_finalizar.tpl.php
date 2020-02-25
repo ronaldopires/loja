@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-05 13:39:05
+/* Smarty version 3.1.34-dev-7, created on 2020-02-24 15:45:06
   from 'C:\xampp\htdocs\loja\view\pedido_finalizar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e121129d3c3a4_54173909',
+  'unifunc' => 'content_5e5419b2ae8474_83035459',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dc73b2644cc9c4de61a886f4b05d7981fb15a185' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_finalizar.tpl',
-      1 => 1578242220,
+      1 => 1582569905,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e121129d3c3a4_54173909 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5419b2ae8474_83035459 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
@@ -74,7 +74,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                     </h4>
                     <h4>
-                        Cupo, R$ <?php echo $_smarty_tpl->tpl_vars['CUPOM']->value;?>
+                        Cupom R$ <?php echo $_smarty_tpl->tpl_vars['CUPOM']->value;?>
 
                     </h4>
                     <h4>

@@ -44,7 +44,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Modelo</span>
                             </div>
-                            <input id="pro_modelo" name="pro_modelo" value="{$PRO.1.pro_modelo}" placeholder="Modelo" class="form-control" required type="text" required>
+                            <input id="pro_modelo" name="pro_modelo" value="{$PRO.1.pro_modelo}" placeholder="Modelo" class="form-control" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm">
@@ -52,7 +52,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Referencia</span>
                             </div>
-                            <input id="pro_ref" name="pro_ref" value="{$PRO.1.pro_ref}" class="form-control input-md" required type="text" required>
+                            <input id="pro_ref" name="pro_ref" value="{$PRO.1.pro_ref}" class="form-control input-md" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm">
@@ -60,7 +60,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Valor</span>
                             </div>
-                            <input id="pro_valor" name="pro_valor" value="{$PRO.1.pro_valor}" class="form-control input-md" required type="text" required>
+                            <input id="pro_valor" name="pro_valor" value="{$PRO.1.pro_valor}" class="form-control input-md" type="text" required>
                         </div>
                     </div>
 
@@ -69,17 +69,91 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">Estoque</span>
                         </div>
-                        <input id="pro_estoque" name="pro_estoque" value="{$PRO.1.pro_estoque}" class="form-control input-md" required type="text" required>
+                        <input id="pro_estoque" name="pro_estoque" value="{$PRO.1.pro_estoque}" class="form-control input-md" type="text" required>
                     </div>
                 </div>
-
+                <div class="input-group col mb-3">
+                    <div class="input-group-prepend mr-3">
+                        <span class="input-group-text">Calçados</span>
+                    </div>
+                    <input type="text" value="{$PRO.1.pro_tamanho}">
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="34">
+                        <label class="form-check-label" for="34">34</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="35">
+                        <label class="form-check-label" for="35">35</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="36">
+                        <label class="form-check-label" for="36">36</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="37">
+                        <label class="form-check-label" for="37">37</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="38">
+                        <label class="form-check-label" for="38">38</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="39">
+                        <label class="form-check-label" for="39">39</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="40">
+                        <label class="form-check-label" for="40">40</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="41">
+                        <label class="form-check-label" for="41">41</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="42">
+                        <label class="form-check-label" for="42">42</label>
+                    </div>
+                </div>
+                <div class="input-group col mb-3">
+                    <div class="input-group-prepend mr-3">
+                        <span class="input-group-text">Roupas</span>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="pp">
+                        <label class="form-check-label" for="p">PP</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="p">
+                        <label class="form-check-label" for="p">P</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="m">
+                        <label class="form-check-label" for="m">M</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="g">
+                        <label class="form-check-label" for="g">G</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="gg">
+                        <label class="form-check-label" for="gg">GG</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="xg">
+                        <label class="form-check-label" for="xg">XG</label>
+                    </div>
+                    <div class="form-check-inline form-check">
+                        <input name="pro_tamanho[]" type="checkbox" value="{$PRO.1.pro_tamanho}" selected class="form-check-input" id="xgg">
+                        <label class="form-check-label" for="xgg">XGG</label>
+                    </div>
+                </div>
                 <div class="form-inline mb-3">
                     <div class="col-sm">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Peso</span>
                             </div>
-                            <input id="pro_peso" name="pro_peso" value="{$PRO.1.pro_peso}" class="form-control input-md" required type="text" required>
+                            <input id="pro_peso" name="pro_peso" value="{$PRO.1.pro_peso}" class="form-control input-md" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm">
@@ -87,7 +161,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">Altura</span>
                             </div>
-                            <input id="pro_altura" name="pro_altura" value="{$PRO.1.pro_altura}" class="form-control" required type="text" required>
+                            <input id="pro_altura" name="pro_altura" value="{$PRO.1.pro_altura}" class="form-control" type="text" required>
                         </div>
                     </div>
                     <div class="col-sm">

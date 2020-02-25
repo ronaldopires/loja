@@ -39,9 +39,9 @@
             <div class="row no-gutters mt-2">
                 <div class="col p-2 text-right">
                     <h6>Pedido R$ {$TOTAL}</h6>
-                    <!-- {if $CUPOM == true}
-                    <h6>Cupom R$ -{$CUPOM}</h6>
-                    {/if} -->
+                    {if $CUPOM == true}
+                    <h6>Cupom -{$CUPOM}</h6>
+                    {/if}
                     <h6>Frete R$ {$FRETE}</h6>
                     <h5>Valor Total R$ {$TOTAL_FRETE}</h5>
                 </div>

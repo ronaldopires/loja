@@ -52,79 +52,69 @@ class Clientes extends Conexao
         $this->setCli_hora_cad($cli_hora_cad);
     }
 
-    function GetClientes()
+    public function GetClientes()
     {
         $query = " SELECT * FROM {$this->prefix}clientes ";
 
         $this->ExecuteSQL($query);
         $this->GetLista();
     }
-    function GetClientesMonth()
-    {   
-        $teste = array();
-        
-        for($mes = 0; $mes <= 11; $mes++){
-        
-            $query = " SELECT * FROM {$this->prefix}clientes WHERE month(cli_data_cad) = '$mes'";
-        
-            $teste[$mes] = $query; 
-              
-            var_dump($teste[$mes]);
-            $this->ExecuteSQL($query);
-        }   
-        
-        //return $teste[$mes];
-    }   
+
+    public function GetClientesMonth($mes)
+    {
+        $query = " SELECT * FROM {$this->prefix}clientes WHERE month(cli_data_cad) = '$mes'";
+        $this->ExecuteSQL($query);
+    }
+
     /**
-     * 
-     * @param INT $id id do cliente 
+     *
+     * @param INT $id id do cliente
      */
-    function GetClientesID($id)
+    public function GetClientesID($id)
     {
 
         // monto a SQL
-        $query  = " SELECT * FROM {$this->prefix}clientes ";
+        $query = " SELECT * FROM {$this->prefix}clientes ";
         $query .= " WHERE cli_id = :id ";
         // passo parametros
         $params = array(':id' => (int) $id);
         //executo a SQL
         $this->ExecuteSQL($query, $params);
-        // chamo a listagem 
+        // chamo a listagem
         $this->GetLista();
     }
 
-
     /**
-     * fazendo a listagem dos dados retornados 
+     * fazendo a listagem dos dados retornados
      */
     private function GetLista()
     {
 
         $i = 1;
-        while ($lista = $this->ListarDados()) :
+        while ($lista = $this->ListarDados()):
 
             $this->itens[$i] = array(
 
-                'cli_id'            => $lista['cli_id'],
-                'cli_nome'          => $lista['cli_nome'],
-                'cli_sobrenome'     => $lista['cli_sobrenome'],
-                'cli_sexo'          => $lista['cli_sexo'],
-                'cli_endereco'      => $lista['cli_endereco'],
-                'cli_numero'        => $lista['cli_numero'],
-                'cli_bairro'        => $lista['cli_bairro'],
-                'cli_cidade'        => $lista['cli_cidade'],
-                'cli_uf'            => $lista['cli_uf'],
-                'cli_cpf'           => $lista['cli_cpf'],
-                'cli_cep'           => $lista['cli_cep'],
-                'cli_ddd_celular'   => $lista['cli_ddd_celular'],
-                'cli_celular'       => $lista['cli_celular'],
-                'cli_ddd_fone'      => $lista['cli_ddd_fone'],
-                'cli_fone'          => $lista['cli_fone'],
-                'cli_email'         => $lista['cli_email'],
-                'cli_senha'         => $lista['cli_senha'],
-                'cli_data_nasc'     => Sistema::Fdata($lista['cli_data_nasc']),
-                'cli_hora_cad'      => $lista['cli_hora_cad'],
-                'cli_data_cad'      => Sistema::Fdata($lista['cli_data_cad']),
+                'cli_id' => $lista['cli_id'],
+                'cli_nome' => $lista['cli_nome'],
+                'cli_sobrenome' => $lista['cli_sobrenome'],
+                'cli_sexo' => $lista['cli_sexo'],
+                'cli_endereco' => $lista['cli_endereco'],
+                'cli_numero' => $lista['cli_numero'],
+                'cli_bairro' => $lista['cli_bairro'],
+                'cli_cidade' => $lista['cli_cidade'],
+                'cli_uf' => $lista['cli_uf'],
+                'cli_cpf' => $lista['cli_cpf'],
+                'cli_cep' => $lista['cli_cep'],
+                'cli_ddd_celular' => $lista['cli_ddd_celular'],
+                'cli_celular' => $lista['cli_celular'],
+                'cli_ddd_fone' => $lista['cli_ddd_fone'],
+                'cli_fone' => $lista['cli_fone'],
+                'cli_email' => $lista['cli_email'],
+                'cli_senha' => $lista['cli_senha'],
+                'cli_data_nasc' => Sistema::Fdata($lista['cli_data_nasc']),
+                'cli_hora_cad' => $lista['cli_hora_cad'],
+                'cli_data_cad' => Sistema::Fdata($lista['cli_data_cad']),
 
             );
 
@@ -177,10 +167,10 @@ class Clientes extends Conexao
     public function Editar($id)
     {
         // verifica se o email já esta cadastrado
-        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_SESSION['CLI']['cli_email']) :
-        echo '<div class="alert alert-danger alertAdd">Este E-mail já existe </div>';
-        Rotas::Redirecionar(2, Rotas::pag_CLienteDados());
-        exit();
+        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_SESSION['CLI']['cli_email']):
+            echo '<div class="alert alert-danger alertAdd">Este E-mail já existe </div>';
+            Rotas::Redirecionar(2, Rotas::pag_CLienteDados());
+            exit();
         endif;
 
         // caso passou na verificação grava no banco
@@ -212,30 +202,29 @@ class Clientes extends Conexao
 
         );
 
-        if ($this->ExecuteSQL($query, $params)) :
+        if ($this->ExecuteSQL($query, $params)):
             return true;
-        else :
+        else:
             return false;
         endif;
     }
 
-    function EditarADM($id)
+    public function EditarADM($id)
     {
         // verifico se ja tem este CPF no banco
-        if ($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_REQUEST['cli_cpf']) :
+        if ($this->GetClienteCPF($this->getCli_cpf()) > 0 && $this->getCli_cpf() != $_REQUEST['cli_cpf']):
             echo '<div class="alert alert-danger " id="erro_mostrar"> Este CPF já esta cadastrado ';
             Sistema::VoltarPagina();
             echo '</div>';
             exit();
         endif;
-        // verifica se o email já esta cadstrado 
-        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() !=  $_REQUEST['cli_email']) :
+        // verifica se o email já esta cadstrado
+        if ($this->GetClienteEmail($this->getCli_email()) > 0 && $this->getCli_email() != $_REQUEST['cli_email']):
             echo '<div class="alert alert-danger " id="erro_mostrar"> Este Email já esta cadastrado ';
             Sistema::VoltarPagina();
             echo '</div>';
             exit();
         endif;
-
 
         // caso passou na verificação grava no banco
 
@@ -245,31 +234,31 @@ class Clientes extends Conexao
         $query .= " WHERE  cli_id = :cli_id";
         //  $query .=" (:cli_nome, :cli_sobrenome,:cli_data_nasc,:cli_rg,";
         //  $query .=" :cli_cpf, :cli_ddd,:cli_fone,:cli_celular ,:cli_endereco ,:cli_numero,:cli_bairro ,";
-        //  $query .=" :cli_cidade ,:cli_uf ,:cli_cep ,:cli_email ,:cli_data_cad, :cli_hora_cad, :cli_senha)";  
+        //  $query .=" :cli_cidade ,:cli_uf ,:cli_cep ,:cli_email ,:cli_data_cad, :cli_hora_cad, :cli_senha)";
 
         $params = array(
-            ':cli_nome'         => $this->getCli_nome(),
-            ':cli_sobrenome'    => $this->getCli_sobrenome(),
-            ':cli_data_nasc'    => $this->getCli_data_nasc(),
-            ':cli_sexo'         => $this->getCli_sexo(),
-            ':cli_ddd_celular'  => $this->getCli_ddd_celular(),
-            ':cli_celular'      => $this->getCli_celular(),
-            ':cli_ddd_fone'     => $this->getCli_ddd_fone(),
-            ':cli_fone'         => $this->getCli_fone(),
-            ':cli_endereco'     => $this->getCli_endereco(),
-            ':cli_numero'       => $this->getCli_numero(),
-            ':cli_bairro'       => $this->getCli_bairro(),
-            ':cli_cidade'       => $this->getCli_cidade(),
-            ':cli_uf'           => $this->getCli_uf(),
-            ':cli_cep'          => $this->getCli_cep(),
-            ':cli_email'        => $this->getCli_email(),
-            ':cli_id'           => (int) $id
+            ':cli_nome' => $this->getCli_nome(),
+            ':cli_sobrenome' => $this->getCli_sobrenome(),
+            ':cli_data_nasc' => $this->getCli_data_nasc(),
+            ':cli_sexo' => $this->getCli_sexo(),
+            ':cli_ddd_celular' => $this->getCli_ddd_celular(),
+            ':cli_celular' => $this->getCli_celular(),
+            ':cli_ddd_fone' => $this->getCli_ddd_fone(),
+            ':cli_fone' => $this->getCli_fone(),
+            ':cli_endereco' => $this->getCli_endereco(),
+            ':cli_numero' => $this->getCli_numero(),
+            ':cli_bairro' => $this->getCli_bairro(),
+            ':cli_cidade' => $this->getCli_cidade(),
+            ':cli_uf' => $this->getCli_uf(),
+            ':cli_cep' => $this->getCli_cep(),
+            ':cli_email' => $this->getCli_email(),
+            ':cli_id' => (int) $id,
 
         );
 
-        if ($this->ExecuteSQL($query, $params)) :
+        if ($this->ExecuteSQL($query, $params)):
             return true;
-        else :
+        else:
             return false;
         endif;
     }
@@ -386,20 +375,20 @@ class Clientes extends Conexao
 
     public function setCli_nome($cli_nome)
     {
-        if (strlen($cli_nome) < 3) : echo '<div class="alert alert-danger " id="erro_mostrar"> Digite seu nome ';
+        if (strlen($cli_nome) < 3): echo '<div class="alert alert-danger " id="erro_mostrar"> Digite seu nome ';
             Sistema::VoltarPagina();
             echo '</div>';
-        else :
+        else:
             $this->cli_nome = $cli_nome;
         endif;
     }
 
     public function setCli_sobrenome($cli_sobrenome)
     {
-        if (strlen($cli_sobrenome) < 3) : echo '<div class="alert alert-danger " id="erro_mostrar"> Digite seu sobrenome ';
+        if (strlen($cli_sobrenome) < 3): echo '<div class="alert alert-danger " id="erro_mostrar"> Digite seu sobrenome ';
             Sistema::VoltarPagina();
             echo '</div>';
-        else :
+        else:
             $this->cli_sobrenome = $cli_sobrenome;
         endif;
     }
@@ -434,7 +423,7 @@ class Clientes extends Conexao
     }
     public function setCli_email($cli_email)
     {
-        if (!filter_var($cli_email, FILTER_VALIDATE_EMAIL)) :
+        if (!filter_var($cli_email, FILTER_VALIDATE_EMAIL)):
 
             echo '<div class="alert alert-danger " id="erro_mostrar"> Email incorreto ';
             Sistema::VoltarPagina();
@@ -442,7 +431,7 @@ class Clientes extends Conexao
 
             exit();
 
-        else :
+        else:
 
             $this->cli_email = $cli_email;
         endif;
@@ -456,12 +445,12 @@ class Clientes extends Conexao
     {
         $cep = filter_var($cli_cep, FILTER_SANITIZE_NUMBER_INT);
 
-        if (strlen($cep) != 8) :
+        if (strlen($cep) != 8):
             echo '<div class="alert alert-danger " id="erro_mostrar"> CEP incorreto ';
             Sistema::VoltarPagina();
             echo '</div>';
 
-        else :
+        else:
             $this->cli_cep = $cli_cep;
 
         endif;
@@ -486,12 +475,12 @@ class Clientes extends Conexao
     {
         $uf = filter_var($cli_uf, FILTER_SANITIZE_STRING);
 
-        if (strlen($uf) != 2) : // 11111
+        if (strlen($uf) != 2): // 11111
             echo '<div class="alert alert-danger " id="erro_mostrar"> UF incorreto ';
             Sistema::VoltarPagina();
             echo '</div>';
 
-        else :
+        else:
             $this->cli_uf = $cli_uf;
 
         endif;

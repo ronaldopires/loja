@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-08 18:17:53
+/* Smarty version 3.1.34-dev-7, created on 2020-02-24 21:38:00
   from 'C:\xampp\htdocs\loja\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e1647018e99c2_30493671',
+  'unifunc' => 'content_5e546c68893cb7_36031659',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88a1285121fb32d2e24d6766738b0f2210382789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\index.tpl',
-      1 => 1578518272,
+      1 => 1582591079,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e1647018e99c2_30493671 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e546c68893cb7_36031659 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -172,12 +172,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
             <?php if ($_smarty_tpl->tpl_vars['QTD']->value == true) {?>
             <div class="col text-light d-flex justify-content-end align-items-center">
-                <a role="button" href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
-" class="btn btn-light btn-sm mr-4">
+                <a id="teste" role="button" href="#" class="btn btn-light btn-sm mr-4">
                     <i class="fas fa-shopping-cart p-2 pr-4"></i> <span class="badge badge-success"><?php echo $_smarty_tpl->tpl_vars['QTD']->value;?>
 </span>
                     <span class="sr-only">Itens no Carrinho</span>
                 </a>
+                
             </div>
             <?php }?>
             
@@ -208,8 +208,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     <!-- Popper.js, Bootstrap JS -->
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"><?php echo '</script'; ?>
->
-<?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"><?php echo '</script'; ?>

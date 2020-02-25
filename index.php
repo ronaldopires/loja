@@ -6,18 +6,19 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if(isset($_SESSION['CLI'])){
-    if((time() - $_SESSION['time_last']) > 600){
+/* if(isset($_SESSION['CLI'])){
+    if((time() - $_SESSION['time_last']) > 1000){
         Rotas::Redirecionar(2, Rotas::pag_Logoff());
     }else{
         $_SESSION['last_time'] = time();
     }
-}
+} */
 
 
 $smarty = new Template();
 $categorias = new Categorias();
 $categorias->GetCategorias();
+
 
 // valores para template
 
@@ -39,15 +40,13 @@ $smarty->assign('LOGADO', Login::Logado());
 if (Login::Logado()) {
     $smarty->assign('USER', $_SESSION['CLI']['cli_nome']);
 }
-$smarty->assign('QTD', '');
+$smarty->assign('QTD', false);
 
 if (isset($_SESSION['PRO'])) {
     $total = 0;
-    $carrinho = new Carrinho();
-    $itens = $carrinho->GetCarrinho();
+    
     foreach ($_SESSION['PRO'] as $lista) {
         $qtd = $lista['QTD'];
-
         $total = $total + $qtd;
     }
 

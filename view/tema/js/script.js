@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     $('.carousel').carousel({
         interval: 3000,
         keyboard: false,
@@ -6,7 +6,7 @@ $(document).ready(function () {
         wrap: true
     });
     // validar frete
-    $('#buscar_frete').on('click', function () {
+    $('#buscar_frete').on('click', function() {
 
         var CEP_CLIENTE = $('#cep_frete').val();
         var PESO_FRETE = $('#peso_frete').val();
@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
 
     //Quando o campo cep perde o foco.
-    $("#cep").blur(function () {
+    $("#cep").blur(function() {
 
         //Nova variável "cep" somente com dígitos.
         var cep = $(this).val().replace(/\D/g, '');
@@ -56,7 +56,7 @@ $(document).ready(function () {
                 $("#estado").val("Pesquisando...");
 
                 //Consulta o webservice viacep.com.br/
-                $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+                $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function(dados) {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
@@ -84,14 +84,20 @@ $(document).ready(function () {
         }
     });
 
-    $('#senha, #confirmsenha').on('keyup', function () {
-            
-        if ($('#senha').val() == $('#confirmsenha').val() ) {
+    $('#senha, #confirmsenha').on('keyup', function() {
+
+        if ($('#senha').val() == $('#confirmsenha').val()) {
             $('#message').html('Tudo Certo!').css('color', 'green');
-        } else 
+        } else
             $('#message').html('Senhas Diferentes!!!').css('color', 'red');
 
     });
+
+    $(function() {
+        $('.popover-cart').popover({
+            container: 'body'
+        })
+    })
 
     /* $("#overlay").hide(); */
 }); // fim do ready
