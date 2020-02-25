@@ -36,6 +36,7 @@ class Categorias extends Conexao
                 'cate_id' => $lista['cate_id'],
                 'cate_nome' => $lista['cate_nome'],
                 'cate_slug' => $lista['cate_slug'],
+                'cate_img' => Rotas::ImageLink($lista['cate_img'], 150, 150),
                 'cate_link' => Rotas::pag_Produtos() . '/' . $lista['cate_id'] . '/' . $lista['cate_slug'],
                 'cate_link_adm' => Rotas::pag_ProdutosADM() . '/' . $lista['cate_id'] . '/' . $lista['cate_slug'],
             );

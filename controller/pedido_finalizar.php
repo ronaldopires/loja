@@ -22,8 +22,23 @@ if (!Login::Logado()) {
             $_SESSION['PED']['ref'] = $ref_cod_pedido;
         }
 
-        
-        $cupom = $_SESSION['PED']['cupom_desconto'];
+        if(isset($_SESSION['CUPOM'])){
+            $cupom = $_SESSION['PED']['cupom_desconto'];
+            $cupom_nome = $_SESSION['CUPOM']['cupom_nome'];
+            $cupom_qtd = $_SESSION['CUPOM']['cupom_qtd'] - 1;
+            $cupons = new Cupons();
+            $cupons->GetQtd($cupom_nome, $cupom_qtd);
+            $smarty->assign('CUPOM', $cupom);
+            }
+    
+            foreach($_SESSION['PRO'] as $produto){
+                $produto_id = $produto['ID'];
+                $produto_qtd = $produto['QTD'];
+                $produto_estoque = $produto['ESTOQUE']; 
+                $estoque_novo = $produto_estoque - $produto_qtd;
+                $produtos->Estoque($produto_id, $estoque_novo);
+            }
+
         $smarty->assign('PRO', $carrinho->GetCarrinho());
         $smarty->assign('NOME_CLIENTE', $_SESSION['CLI']['cli_nome']);
         $smarty->assign('SITE_NOME', Config::SITE_NOME);
@@ -33,9 +48,9 @@ if (!Login::Logado()) {
         $smarty->assign('FRETE', Sistema::MoedaBR($_SESSION['PED']['frete']));
         $smarty->assign('TOTAL_FRETE', Sistema::MoedaBR($_SESSION['PED']['total_com_frete']));
         $smarty->assign('TEMA', Rotas::get_SiteTEMA());
-        $smarty->assign('CUPOM', $cupom);
+        $smarty->assign('CUPOM', false);
 
-        /*$pedido = new Pedidos();
+        $pedido = new Pedidos();
         $cliente = $_SESSION['CLI']['cli_id'];
         $cod = $_SESSION['PED']['pedido'];
         $ref = $_SESSION['PED']['ref'];
@@ -48,7 +63,7 @@ if (!Login::Logado()) {
 
         $email->Enviar($assunto, $msg, $destinatarios);
 
-        /* if ($pedido->PedidoGravar($cliente, $cod, $ref, $frete)) {
+        if ($pedido->PedidoGravar($cliente, $cod, $ref, $frete)) {
             $pag = new PagamentoPS();
 
             $pag->Pagamento($_SESSION['CLI'], $_SESSION['PED'], $carrinho->GetCarrinho());
@@ -62,24 +77,7 @@ if (!Login::Logado()) {
             $smarty->assign('REF', $ref);
 
             $pedido->LimparSessoes();
-        } */
-        
-        if(isset($_SESSION['CUPOM'])){
-        $cupom_nome = $_SESSION['CUPOM']['cupom_nome'];
-        $cupom_qtd = $_SESSION['CUPOM']['cupom_qtd'] - 1;
-        $cupons = new Cupons();
-        $cupons->GetQtd($cupom_nome, $cupom_qtd);
         }
-
-        foreach($_SESSION['PRO'] as $produto){
-            $produto_id = $produto['ID'];
-            $produto_qtd = $produto['QTD'];
-            $produto_estoque = $produto['ESTOQUE']; 
-            $estoque_novo = $produto_estoque - $produto_qtd;
-            $produtos->Estoque($produto_id, $estoque_novo);
-        }
-        
-
 
         $smarty->display('pedido_finalizar.tpl');
     } else {

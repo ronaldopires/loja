@@ -10347,14 +10347,15 @@ a.text-gray-dark:hover {
     border-color: #08ad95;
 }
 
+#editar {
+    display: none;
+}
 
-#editar{
+#ocultar {
     display: none;
 }
-#ocultar{
-    display: none;
-}
-#cupom-container{
+
+#cupom-container {
     overflow: auto;
     height: 31vh;
 }
@@ -10374,23 +10375,25 @@ a.text-gray-dark:hover {
 #cupom-container::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
-.list-group{
+
+.list-group {
     border: 1px solid #000;
     border-radius: 5px;
 }
-.list-group-item{
+
+.list-group-item {
     background-color: #ccc;
     color: #000;
     font-weight: 500;
-    
 }
-.list-group-item:hover{
+
+.list-group-item:hover {
     background-color: #00796b;
     color: #fff;
     font-weight: 500;
 }
 
-#list_estoque{
+#list_estoque {
     height: 45vh;
     overflow: auto;
 }

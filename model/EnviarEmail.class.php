@@ -1,7 +1,6 @@
 ﻿<?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-
 class EnviarEmail extends PHPMailer {
     /**
    * inicializa a classe com os dados iniciais

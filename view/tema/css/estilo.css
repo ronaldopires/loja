@@ -15,7 +15,8 @@ body {
     background: transparent;
     border: none;
 }
-#pesquisar{
+
+#pesquisar {
     border-radius: 20px;
     height: 40px;
 }

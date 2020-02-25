@@ -1,4 +1,14 @@
 {
+    "name": "ronaldopires/loja",
+    "description": "E-commerce virtual com PHP 7",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [{
+        "name": "Ronaldo Pires de Carvalho",
+        "email": "ronaldo.carvalho@hotmail.com",
+        "homepage": "https://www.github.com/ronaldopires",
+        "role": "Developer"
+    }],
     "require": {
         "smarty/smarty": "~3.1",
         "phpmailer/phpmailer": "~6.1"

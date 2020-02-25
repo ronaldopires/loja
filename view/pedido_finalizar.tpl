@@ -12,6 +12,7 @@
                 <table class="table table-bordered">
                     <thead class="">
                         <tr class="table-success text-success">
+                            <th scope="col">Imagem </th>
                             <th scope="col">Produto </th>
                             <th class="text-center" scope="col">Valor <i class="fas fa-dollar-sign"></i></th>
                             <th class="text-center" scope="col">Quantidade</i>
@@ -22,6 +23,7 @@
                     <tbody>
                         {foreach from=$PRO item=P}
                         <tr>
+                            <td class="align-middle"><img src="{$P.pro_img}" alt="{$P.pro_img}"></td>
                             <td class="align-middle">{$P.pro_nome}</td>
                             <td class="text-center align-middle">R$ {$P.pro_valor}</td>
                             <td class="text-center align-middle">{$P.pro_qtd}</td>
@@ -38,9 +40,11 @@
                     <h4>
                         Total R$ {$TOTAL}
                     </h4>
+                    {if $CUPOM == true}
                     <h4>
                         Cupom R$ {$CUPOM}
                     </h4>
+                    {/if}
                     <h4>
                         Frete R$ {$FRETE}
                     </h4>

@@ -8,8 +8,10 @@ if (!isset($_SESSION)) {
 require '../lib/autoload.php';
 
 if (!Login::LogadoADM()) {
-    Rotas::Redirecionar(2, Rotas::pag_Login());
-    exit('<body style="background-color: #ff2222"><div style="color: #fff; text-align: center; paddinng-top: 400px;"><h1 style="padding-top: 50vh;">Erro! Acesso negado </h1></div></body>');
+    require_once("../adm/acess_denied.php");
+    exit();
+    //Rotas::Redirecionar(2, Rotas::pag_Login());
+    //exit('<body style="background-color: #ff2222"><div style="color: #fff; text-align: center; paddinng-top: 400px;"><h1 style="padding-top: 50vh;">Erro! Acesso negado </h1></div></body>');
 }
 
 $smarty = new Template();

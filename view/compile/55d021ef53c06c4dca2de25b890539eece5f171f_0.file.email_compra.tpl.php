@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-28 21:56:04
+/* Smarty version 3.1.34-dev-7, created on 2020-02-25 15:09:32
   from 'C:\xampp\htdocs\loja\view\email_compra.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e07f9a41f99f0_08379993',
+  'unifunc' => 'content_5e5562dcc4b4a0_39325121',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '55d021ef53c06c4dca2de25b890539eece5f171f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\email_compra.tpl',
-      1 => 1577580902,
+      1 => 1582653742,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e07f9a41f99f0_08379993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e5562dcc4b4a0_39325121 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
     .tabela {
         border-collapse: collapse;
@@ -100,7 +100,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 ?>
         <tr style="border: 1px solid #000">
-            <td><img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
+            <td class="align-middle"><img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
+" alt="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
 "></td>
             <td><?php echo $_smarty_tpl->tpl_vars['P']->value['pro_nome'];?>
  </td>

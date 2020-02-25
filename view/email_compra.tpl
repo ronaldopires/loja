@@ -67,7 +67,7 @@
         </tr>
         {foreach from=$PRO item=P}
         <tr style="border: 1px solid #000">
-            <td><img src="{$P.pro_img}"></td>
+            <td class="align-middle"><img src="{$P.pro_img}" alt="{$P.pro_img}"></td>
             <td>{$P.pro_nome} </td>
             <td>{$P.pro_valor} </td>
             <td style="text-align: center;">{$P.pro_qtd} </td>
