@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-25 00:29:01
+/* Smarty version 3.1.34-dev-7, created on 2020-02-26 13:41:19
   from 'C:\xampp\htdocs\loja\adm\view\adm_produtos_editar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e54947db447f2_92200084',
+  'unifunc' => 'content_5e569faf399450_18929743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6708a8797b6bcd34e341724e543349de3d56ed82' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_produtos_editar.tpl',
-      1 => 1582601340,
+      1 => 1582735278,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e54947db447f2_92200084 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5e569faf399450_18929743 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['TEMA']->value;?>
 /tema/js/tinymce/tinymce.min.js"><?php echo '</script'; ?>
@@ -120,53 +120,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="input-group-prepend mr-3">
                         <span class="input-group-text">Calçados</span>
                     </div>
-                    <input type="text" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-">
+                    <?php if ($_smarty_tpl->tpl_vars['TAMANHO']->value == true) {?>
                     <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="34">
+                        <input name="pro_tamanho[]" type="checkbox" value="34" checked class="form-check-input" id="34">
                         <label class="form-check-label" for="34">34</label>
                     </div>
+
                     <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="35">
+                        <input name="pro_tamanho[]" type="checkbox" value="35" checked class="form-check-input" id="35">
                         <label class="form-check-label" for="35">35</label>
                     </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="36">
-                        <label class="form-check-label" for="36">36</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="37">
-                        <label class="form-check-label" for="37">37</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="38">
-                        <label class="form-check-label" for="38">38</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="39">
-                        <label class="form-check-label" for="39">39</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="40">
-                        <label class="form-check-label" for="40">40</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="41">
-                        <label class="form-check-label" for="41">41</label>
-                    </div>
-                    <div class="form-check-inline form-check">
-                        <input name="pro_tamanho[]" type="checkbox" value="<?php echo $_smarty_tpl->tpl_vars['PRO']->value[1]['pro_tamanho'];?>
-" selected class="form-check-input" id="42">
-                        <label class="form-check-label" for="42">42</label>
-                    </div>
+                    <?php }?>
                 </div>
                 <div class="input-group col mb-3">
                     <div class="input-group-prepend mr-3">
