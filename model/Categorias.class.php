@@ -32,6 +32,11 @@ class Categorias extends Conexao
     {
         $i = 1;
         while ($lista = $this->ListarDados()):
+
+            if(empty($lista['cate_img'])){
+                $lista['cate_img'] = '';
+            }
+
             $this->itens[$i] = array(
                 'cate_id' => $lista['cate_id'],
                 'cate_nome' => $lista['cate_nome'],
