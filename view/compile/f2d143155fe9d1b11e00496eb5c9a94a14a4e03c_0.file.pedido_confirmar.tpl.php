@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-24 17:42:10
+/* Smarty version 3.1.36, created on 2020-06-30 13:20:40
   from 'C:\xampp\htdocs\loja\view\pedido_confirmar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e543522852666_33993734',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb6658bab736_85646328',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e543522852666_33993734 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb6658bab736_85646328 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container containers my-5">
     <div class="row no-gutters">
         <div class="col p-0">
@@ -47,8 +47,9 @@ function content_5e543522852666_33993734 (Smarty_Internal_Template $_smarty_tpl)
                     <tbody>
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
                         <tr>
                             <td><img src="<?php echo $_smarty_tpl->tpl_vars['P']->value['pro_img'];?>
@@ -65,7 +66,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
 
                         </tr>
                         <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </tbody>

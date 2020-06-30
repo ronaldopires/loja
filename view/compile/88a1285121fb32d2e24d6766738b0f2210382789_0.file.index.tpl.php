@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-05-28 23:10:31
+/* Smarty version 3.1.36, created on 2020-06-30 13:18:12
   from 'C:\xampp\htdocs\loja\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ed06f17acab22_75742788',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb65c4907c13_84482923',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88a1285121fb32d2e24d6766738b0f2210382789' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\index.tpl',
-      1 => 1590718231,
+      1 => 1593533889,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ed06f17acab22_75742788 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb65c4907c13_84482923 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -68,7 +68,15 @@ function content_5ed06f17acab22_75742788 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-
+    <div class="row">
+        <div class="col-12">
+            <h5 class="alert alert-danger text-center">
+                <p>Site em Desenvolvimento</p>
+                <span><a href="https://www.linkedin.com/in/ronaldo-carvalho2019/" target="_blank">Meu Linkedin</a></span>,
+                <span><a href="https://github.com/ronaldopires/loja" target="_blank">Meu Github</a></span>
+            </h5>
+        </div>
+    </div>
     <!--Container Principal-->
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -142,13 +150,13 @@ function content_5ed06f17acab22_75742788 (Smarty_Internal_Template $_smarty_tpl)
 
                                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'C');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+$_smarty_tpl->tpl_vars['C']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+$_smarty_tpl->tpl_vars['C']->do_else = false;
 ?>
                                 <a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['C']->value['cate_link'];?>
 "><?php echo $_smarty_tpl->tpl_vars['C']->value['cate_nome'];?>
 </a> <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </div>
@@ -177,10 +185,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </span>
                     <span class="sr-only">Itens no Carrinho</span>
                 </a>
-                
+
             </div>
             <?php }?>
-            
+
         </div>
         <!-- <div id="overlay">
             <div class="spinner"></div>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-03 21:09:30
+/* Smarty version 3.1.36, created on 2020-06-30 13:07:16
   from 'C:\xampp\htdocs\loja\adm\view\adm_index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e38b63a5165f7_04769860',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb63346e8a56_12592942',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e38b63a5165f7_04769860 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb63346e8a56_12592942 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="pt-br">
 
@@ -350,14 +350,14 @@ function content_5e38b63a5165f7_04769860 (Smarty_Internal_Template $_smarty_tpl)
 ">Todos</a></li>
                                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['CATEGORIAS']->value, 'C');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+$_smarty_tpl->tpl_vars['C']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['C']->value) {
+$_smarty_tpl->tpl_vars['C']->do_else = false;
 ?>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['C']->value['cate_link_adm'];?>
 "><?php echo $_smarty_tpl->tpl_vars['C']->value['cate_nome'];?>
 </a></li>
                                     <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                 </ul>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-07 12:51:18
+/* Smarty version 3.1.36, created on 2020-06-30 13:07:22
   from 'C:\xampp\htdocs\loja\adm\view\adm_pedidos.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e14a8f6648ab1_25829972',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb633a31dae5_83881026',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '956a3cba91a033750e25a47d2052c8b112a1c3a0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\adm\\view\\adm_pedidos.tpl',
-      1 => 1578412277,
+      1 => 1580769839,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e14a8f6648ab1_25829972 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb633a31dae5_83881026 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid p-3">
     <div class="row no-gutters">
         <h4 class="text-center col-12"> Gerenciar Pedidos </h4>
@@ -74,8 +74,9 @@ function content_5e14a8f6648ab1_25829972 (Smarty_Internal_Template $_smarty_tpl)
                             <tbody>
                                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PEDIDOS']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
                                 <tr class="text-left">
                                     <th class="align-middle" scope="row"><?php echo $_smarty_tpl->tpl_vars['P']->value['cli_nome'];?>
@@ -115,7 +116,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
                                     </td>
                                 </tr>
                                 <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                             </tbody>

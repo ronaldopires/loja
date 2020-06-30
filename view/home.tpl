@@ -81,7 +81,7 @@
         <div class="card-group">
             <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
                 <a class="card-link img-hover-zoom" href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
-                    <img class="card-img-top img-fluid p-1" src="{$P.pro_img_gg}" alt="{$P.pro_nome}" title="Clique para visualizar">
+                    <img class="card-img-top img-fluid p-1" src="{$P.pro_img_g}" alt="{$P.pro_nome}" title="Clique para visualizar">
                     <div class="card-body">
                         <h5 class="card-title text-dark">{$P.pro_nome}</h5>
                         <hr>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-11 18:07:42
+/* Smarty version 3.1.36, created on 2020-06-30 13:06:13
   from 'C:\xampp\htdocs\loja\view\clientes_recovery.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df1225e2b00d6_85999106',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb62f5accf10_17415585',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '523065679501e18956c9ffc56df2f622f22de6fe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\clientes_recovery.tpl',
-      1 => 1576084059,
+      1 => 1580769840,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df1225e2b00d6_85999106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb62f5accf10_17415585 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container my-4">
     <div class="row no-gutters justify-content-center">
         <div class="col-md-4">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-01-07 23:08:10
+/* Smarty version 3.1.36, created on 2020-06-30 13:03:38
   from 'C:\xampp\htdocs\loja\view\produtos_info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e15398a971680_15414909',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb625aaf3011_45397844',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '41c25063825d62e3712cd0061d037e31c8fd1a59' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\produtos_info.tpl',
-      1 => 1578449289,
+      1 => 1580769840,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e15398a971680_15414909 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb625aaf3011_45397844 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container pt-3">
 
     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['PRO']->value, 'P');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
+$_smarty_tpl->tpl_vars['P']->do_else = false;
 ?>
 
     <hr>
@@ -37,8 +38,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['P']->value) {
             <div class="col">
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['IMAGES']->value, 'I');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['I']->value) {
+$_smarty_tpl->tpl_vars['I']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['I']->value) {
+$_smarty_tpl->tpl_vars['I']->do_else = false;
 ?>
                 <div class="card" style="width: 5rem;">
                     <img class="card-img-top" src="<?php echo $_smarty_tpl->tpl_vars['I']->value['img_nome'];?>
@@ -46,7 +48,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['I']->value) {
 ">
                 </div>
                 <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             </div>
@@ -127,7 +128,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
 
     <?php
-}
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div><?php }

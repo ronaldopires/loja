@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-29 19:56:24
+/* Smarty version 3.1.36, created on 2020-06-30 13:21:40
   from 'C:\xampp\htdocs\loja\view\pedido_retorno_erro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e092f18b106a0_20277072',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb66945a94d9_35002841',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a24d1dee86b3215e129dd51fc24c2777224f23ec' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\pedido_retorno_erro.tpl',
-      1 => 1577660183,
+      1 => 1580769840,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e092f18b106a0_20277072 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb66945a94d9_35002841 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container my-4">
     <div class="row no-gutters justify-content-center">
         <div class="col-12">

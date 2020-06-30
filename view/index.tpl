@@ -35,7 +35,15 @@
 </head>
 
 <body>
-
+    <div class="row">
+        <div class="col-12">
+            <h5 class="alert alert-danger text-center">
+                <p>Site em Desenvolvimento</p>
+                <span><a href="https://www.linkedin.com/in/ronaldo-carvalho2019/" target="_blank">Meu Linkedin</a></span>,
+                <span><a href="https://github.com/ronaldopires/loja" target="_blank">Meu Github</a></span>
+            </h5>
+        </div>
+    </div>
     <!--Container Principal-->
     <div class="container-fluid">
         <div class="row no-gutters">
@@ -123,10 +131,10 @@
                     <i class="fas fa-shopping-cart p-2 pr-4"></i> <span class="badge badge-success">{$QTD}</span>
                     <span class="sr-only">Itens no Carrinho</span>
                 </a>
-                
+
             </div>
             {/if}
-            
+
         </div>
         <!-- <div id="overlay">
             <div class="spinner"></div>

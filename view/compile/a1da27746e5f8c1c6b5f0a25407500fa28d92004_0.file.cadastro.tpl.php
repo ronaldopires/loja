@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2019-12-17 23:48:13
+/* Smarty version 3.1.36, created on 2020-06-30 13:06:07
   from 'C:\xampp\htdocs\loja\view\cadastro.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5df9936d10f284_30673808',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb62efc6cb28_05632213',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1da27746e5f8c1c6b5f0a25407500fa28d92004' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja\\view\\cadastro.tpl',
-      1 => 1576637292,
+      1 => 1580769840,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5df9936d10f284_30673808 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb62efc6cb28_05632213 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
 >
     function formatar(mascara, documento) {
@@ -119,7 +119,7 @@ echo '<script'; ?>
                         </div>
                         <input id="dtnasc" name="cli_data_nasc" placeholder="DD/MM/AAAA" class="form-control input-md" required type="date" maxlength="10">
                     </div>
-                    <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px; " id="newpost"></span>
+                    <span class="text-danger" style="background-color:#f7c0bc; font-size: 12px; border-radius: 5px;" id="newpost"></span>
 
                     <div class="input-group col-4 justify-content-end">
                         <div class="input-group-prepend">

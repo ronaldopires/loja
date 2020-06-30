@@ -128,7 +128,7 @@ class Rotas
     //Rotas para área adm
     public static function get_SiteADM()
     {
-        return self::get_SiteHOME() . '/' . self::$pasta_ADM;
+        return self::get_SiteHOME() . '/' . self::$pasta_ADM . '/';
     }
     public static function pag_ProdutosADM()
     {

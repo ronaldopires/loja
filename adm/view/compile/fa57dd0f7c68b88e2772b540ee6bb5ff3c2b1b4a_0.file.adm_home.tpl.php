@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-02-14 18:22:23
+/* Smarty version 3.1.36, created on 2020-06-30 13:07:16
   from 'C:\xampp\htdocs\loja\adm\view\adm_home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e470f8fa2e538_18015524',
+  'version' => '3.1.36',
+  'unifunc' => 'content_5efb6334ccaab9_15020220',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e470f8fa2e538_18015524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5efb6334ccaab9_15020220 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container-fluid">
     <div class="row no-gutters">
         <div class="col-sm-6 p-3 my-4" style="border-radius: 10px; background-color: rgba(210, 214, 208, 0.2); border: 1px solid black;">

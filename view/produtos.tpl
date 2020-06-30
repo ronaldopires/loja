@@ -3,6 +3,13 @@
 < 1} <h4 class="alert alert-danger text-center alertAdd"> <i class="fas fa-exclamation"></i> Nenhum Produto Encontrado
     </h4>
     <meta http-equiv="refresh" content="1;url={$PAG_PRODUTOS}"> {/if}
+    <div class="row">
+        <div class="col-12">
+            <h5 class="alert alert-danger text-center">
+                <p>Produtos meramente ilustrativos</p>
+            </h5>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row no-gutters">
             <!--Menu lateral -->
@@ -16,7 +23,7 @@
 
             <!-- Conteudos de Produtos -->
             <div class="col p-3">
-                <div class="row no-gutters" >
+                <div class="row no-gutters">
                     {foreach from=$PRO item=P}
                     <div class="card-group">
                         <div class="card m-2 mb-4" id="divProduto" style="width: 19rem;">
