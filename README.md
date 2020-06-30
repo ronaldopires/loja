@@ -1,5 +1,7 @@
 # E-commerce Virtual
 
+![home](https://i.ibb.co/2tY1N8W/loja.jpg)
+
 Um site completo de loja virtual para venda de diversos produtos.
 
 ## Getting Started
