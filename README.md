@@ -2,7 +2,13 @@
 
 ![home](https://i.ibb.co/2tY1N8W/loja.jpg)
 
-Um site completo de loja virtual para venda de diversos produtos.
+Um site completo de loja virtual para venda de diversos produtos, com dashboard administrativas para gerenciamento de produtos.
+
+Loja ainda em desenvolvimento
+
+Ficarei feliz caso queira fazer alguma contribuição no projeto.
+
+Meu linkedin: https://www.linkedin.com/in/ronaldo-carvalho2019/
 
 ## Getting Started
 
@@ -21,8 +27,10 @@ Adicione produtos ao carrinho, crie usuário e faça pedidos
 # :warning: Warning
 
 ```
-Não faça o pagamento do pedido com cartão sem um login de teste da API do PagSeguro,
-ou será descontado o valor do seu cartão.
+Ao finalizar o pedido o modo de pagamento está em sandbox
+
+Todos os produtos oferecidos no site são meramente ilustrativos.
+
 ```
 
 ## Built With
