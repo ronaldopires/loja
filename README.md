@@ -24,6 +24,27 @@ Meu linkedin: https://www.linkedin.com/in/ronaldo-carvalho2019/
 
 Adicione produtos ao carrinho, crie usuário e faça pedidos
 
+## Dashboard - ADM
+O que é possível fazer na dasboard administrativa do projeto ?
+* Adicionar, editar e remover produtos.
+* Adicionar, editar e remover categorias.
+* Visualizar clientes
+* Acompanhar pedidos realizados
+* Status do pedido
+* Busca de pedidos
+* Acompanhar estoque disponível
+* Adicionar, editar e remover cupons
+
+Acessando área ADM
+
+localhost/lojacarvalho/adm
+
+Usuário: admin@admin.com
+Senha: 123
+
+Site: https://www.lojacarvalho.ga
+Adm: https://www.lojacarvalho.ga/adm
+
 # :warning: Warning
 
 ```
